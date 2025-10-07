@@ -2,7 +2,7 @@
 // Author: Pinchas
 // Created with claude.md rules
 
-import { Variants } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
 // Base animation presets
 export const fadeInUp: Variants = {
