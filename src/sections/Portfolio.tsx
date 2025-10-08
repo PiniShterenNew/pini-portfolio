@@ -1,60 +1,80 @@
-// Description: Portfolio section with new projects and hover effects
+// Description: Portfolio section with premium glass effect cards
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import ScrollReveal from '../components/ScrollReveal'
 
 const Portfolio: React.FC = () => {
-
   const projects = [
     {
-      title: 'מותג אופנה',
-      description: 'אתר תדמית וקטלוג',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBg9owuH2PbdPL5JOLXRY69aUxY4z2X5_rUNNFFRgWfVNNY9Ha_3kYSXenWGuklTlyjtT3u49KGrS-CIolcSk9BH3j98RCvdDIBnWcf2cesBURLyT238e31-VerLayJOrSKmgzEKY3Rfv76LtsvZQYxrl9kX2_yLtQpvyTiOhvGFPO3g6wUYTlKGq8UbyCKkh8WVN2CRpbdyRJzMbK50QUx6yhVXtkJ6HpqoTrWLBAMYsUt8O1imBNhoqUbahkYHp1UQTyHXr1uAGxf'
+      title: 'אתר תדמית לעסק קטן',
+      image: '/assets/project1.webp',
+      description: 'אתר מרהיב עם חוויית משתמש רכה, תואם לכל מכשיר, עם עיצוב נקי ואלגנטי.'
     },
     {
-      title: 'סטארט-אפ טכנולוגי',
-      description: 'אתר חברה ובלוג',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBG5M8SA-BwX-I3-uJKiWSvRJ_AIiQJE8yvSAfvHjaQut45WFqv8gnTier9-G6JbvY7Qjwzz6hKVb53kjE2onNxuqmcBVVzjJXIk0XXxHJMwGbxyjpJca5V7RNVZjx_9czRySanG_NdaEMVSdSf6r7oKlADRoOEN0zlV9I2jOyFRVMKDST1cOVjhR4dLcPb7Jl-D9ah5WjWGRAd5solxGjb9OkCrKQn5rkOoraU5C6RIrxJbFUPSqAuNTY8dQvmpdfq3NeFLwg8KDfe'
+      title: 'חנות אונליין למותג אופנה',
+      image: '/assets/project2.webp',
+      description: 'מערכת מסחר אלקטרוני מהירה ומאובטחת עם ממשק ניהול חכם ומודרני.'
     },
     {
-      title: 'מסעדת שף',
-      description: 'אתר עם מערכת הזמנות',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCj_x-8AxOdbXfB-q_U5OdYrGaoXJhYMr3mOecVZjyDFoClhYxdrzKZd2Mf-_kJYyPklWXi3Oc-GwfvysAl8IXvZjWeR9Ij1G4T8OBEzjB2t4FGtCWZWQFSc_xQ3zmEz8JpcIh_Zyf_KoQN4z-lGFai7gRqT73R2TREj2sMD8iBY9aj3rx86QIoFIfdbdNcrck1eMuSDSSxJ1R4umH-vKljnuVNnKXpnR6hAJF11gwe6bVjWvOvCmK0OQ0D6pWmqFgWCPYfnYp9yPel'
+      title: 'דף נחיתה לקמפיין שיווקי',
+      image: '/assets/project3.webp',
+      description: 'דף נחיתה ממוקד המרה עם עיצוב גרפי מרהיב ואופטימיזציה מלאה למובייל.'
     }
   ]
 
   return (
-    <section className="py-20 sm:py-28" id="portfolio">
-      <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center mb-16 text-[hsl(var(--text-primary))]">
-            פרויקטים נבחרים
-          </h2>
-        </ScrollReveal>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
-              <motion.div
-                className="group relative overflow-hidden rounded-xl card-enhanced shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
-                whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              >
-                <img 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  src={project.image} 
+    <section id="projects" className="relative py-24 px-6 bg-gradient-to-b from-[#FDFDFF] via-[#F9F5FF] to-[#EEF2FF]">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.h2 
+          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          פרויקטים נבחרים
+        </motion.h2>
+
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+          {projects.map((project, i) => (
+            <motion.div
+              key={i}
+              className="group bg-white/80 backdrop-blur-lg rounded-[20px] overflow-hidden shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_-8px_rgba(99,102,241,0.2)] transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-[220px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.parentElement!.classList.add('bg-gradient-to-br', 'from-[#E0E7FF]', 'via-[#F5F3FF]', 'to-[#FFF0F6]', 'flex', 'items-center', 'justify-center')
+                    e.currentTarget.parentElement!.innerHTML = '<span class="text-6xl">🎨</span>'
+                  }}
                 />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-all duration-300"></div>
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{project.description}</p>
-                </div>
-              </motion.div>
-            </ScrollReveal>
+              </div>
+              <div className="p-6 text-right">
+                <h3 className="font-display text-xl font-semibold text-zinc-800 mb-2">
+                  {project.title}
+                </h3>
+                <p className="font-sans text-zinc-600 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                <button 
+                  className="px-5 py-2 text-sm font-medium text-indigo-600 border border-indigo-600 rounded-[12px] hover:bg-indigo-600 hover:text-white transition-all duration-300"
+                  onClick={() => window.location.href = '#contact'}
+                  aria-label={`צפייה בפרויקט ${project.title}`}
+                >
+                  צפייה בפרויקט
+                </button>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

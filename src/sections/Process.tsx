@@ -1,132 +1,88 @@
-// Description: Process section with elegant infographic design and modular cards
+// Description: Clean process section with infographic design
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import ScrollReveal from '../components/ScrollReveal'
-import { Search, Palette, Code, Rocket } from 'lucide-react'
+import { Lightbulb, Palette, Code, Rocket } from 'lucide-react'
 
 const Process: React.FC = () => {
-
   const steps = [
     {
       title: 'גילוי ואסטרטגיה',
-      description: 'נבין לעומק את המטרות והחזון שלכם כדי לגבש אסטרטגיה מנצחת.',
-      icon: Search,
-      number: '01'
+      description: 'נתחיל בזיהוי הצרכים, המטרות והחזון שלך — כדי לוודא שהאתר משרת את העסק בצורה מדויקת.',
+      icon: Lightbulb,
+      color: '#6366F1'
     },
     {
-      title: 'עיצוב חוויתי',
-      description: 'ניצור עיצוב ייחודי ואינטואיטיבי שמספר את הסיפור של המותג.',
+      title: 'עיצוב חוויית משתמש',
+      description: 'נבנה חוויה ויזואלית מזמינה, עם דגש על אסתטיקה, קלות שימוש, וזרימה אינטואיטיבית.',
       icon: Palette,
-      number: '02'
+      color: '#8B5CF6'
     },
     {
-      title: 'פיתוח מתקדם',
-      description: 'נכתוב קוד נקי ויעיל עם הטכנולוגיות המתקדמות ביותר.',
+      title: 'פיתוח והתאמה',
+      description: 'פיתוח האתר בפועל — בקוד נקי, ביצועים גבוהים והתאמה מושלמת לכל מסך ודפדפן.',
       icon: Code,
-      number: '03'
+      color: '#A855F7'
     },
     {
       title: 'השקה ותמיכה',
-      description: 'נעלה את האתר ונמשיך ללוות אתכם עם תמיכה מתמשכת.',
+      description: 'העלאת האתר לאוויר, בדיקות אחרונות וליווי צמוד גם לאחר ההשקה.',
       icon: Rocket,
-      number: '04'
+      color: '#EC4899'
     }
   ]
 
   return (
-    <section className="py-20 sm:py-28 process-infographic-section" id="process">
-      {/* Gradient Top */}
-      <div className="process-gradient-top"></div>
-      
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        {/* כותרת עם gradient */}
-        <ScrollReveal className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 process-infographic-title">
-            התהליך שלנו
-          </h2>
-          <p className="text-lg text-[hsl(var(--text-secondary))] max-w-2xl mx-auto leading-relaxed">
-            מתהליך גילוי מעמיק ועד השקה מושלמת - כל צעד מתוכנן בקפידה
-          </p>
-        </ScrollReveal>
+    <section id="process" className="relative py-24 px-6 bg-[#FDFDFF]" dir="rtl">
+      <div className="max-w-2xl mx-auto">
+        {/* כותרת */}
+        <motion.h2 
+          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          איך אני עובד
+        </motion.h2>
 
-        {/* פריסה למחשב - אופקית */}
-        <div className="hidden md:flex md:flex-row md:justify-center md:items-start md:gap-8 lg:gap-12 relative">
-          {/* קו חיבור אופקי אנימטיבי */}
-          <motion.div 
-            className="absolute top-16 left-1/2 transform -translate-x-1/2 h-0.5 bg-[hsl(var(--primary))]"
-            initial={{ width: 0 }}
-            whileInView={{ width: '100%' }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-            viewport={{ once: true }}
-            style={{ maxWidth: '4xl' }}
-          />
-          
-          {steps.map((step, index) => {
-            return (
-              <ScrollReveal key={index} delay={index * 0.15} className="relative flex-1 max-w-xs">
-                {/* נקודת חיבור */}
-                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[hsl(var(--primary))] rounded-full z-20 process-connector-dot"></div>
-                
-                <div className="process-infographic-card group">
-                  {/* מספר השלב */}
+        {/* פריסה אנכית */}
+        <div className="flex flex-col items-start gap-10">
+          {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                className="flex items-start gap-4 w-full"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                {/* נקודה עם מספר */}
+                <div className="flex flex-col items-center flex-shrink-0">
                   <motion.div 
-                    className="process-step-number-large"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="w-7 h-7 rounded-full bg-gradient-to-tr from-fuchsia-500 to-indigo-500 text-white flex items-center justify-center text-sm font-bold shadow-md"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   >
-                    {step.number}
+                    {index + 1}
                   </motion.div>
-                  
-                  {/* תוכן הכרטיס */}
-                  <div className="process-card-content">
-                    <h3 className="process-card-title">{step.title}</h3>
-                    <p className="process-card-description">{step.description}</p>
-                  </div>
                 </div>
-              </ScrollReveal>
-            )
-          })}
-        </div>
 
-        {/* פריסה למובייל - אנכית */}
-        <div className="md:hidden space-y-8">
-          {steps.map((step, index) => {
-            return (
-              <ScrollReveal key={index} delay={index * 0.1} direction="left" className="relative">
-                {/* קו חיבור אנכי (לא אחרון) */}
-                {index < steps.length - 1 && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-8 process-connector-mobile"></div>
-                )}
-                
-                <div className="process-infographic-card-mobile group">
-                  {/* מספר השלב */}
-                  <div className="flex justify-center mb-6">
-                    <motion.div 
-                      className="process-step-number-mobile-large"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    >
-                      {step.number}
-                    </motion.div>
-                  </div>
-                  
-                  {/* תוכן הכרטיס */}
-                  <div className="process-card-content-mobile">
-                    <h3 className="process-card-title-mobile">{step.title}</h3>
-                    <p className="process-card-description-mobile">{step.description}</p>
-                  </div>
+                {/* תוכן */}
+                <div className="flex-1">
+                  <h3 className="font-display text-lg font-bold text-zinc-800 mb-1">
+                    {step.title}
+                  </h3>
+                  <p className="font-sans text-zinc-600 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
                 </div>
-              </ScrollReveal>
-            )
-          })}
+              </motion.div>
+          ))}
         </div>
       </div>
-
-      {/* Gradient Bottom */}
-      <div className="process-gradient-bottom"></div>
     </section>
   )
 }

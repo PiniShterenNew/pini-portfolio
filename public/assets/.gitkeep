@@ -1,0 +1,13 @@
+# Assets Directory
+
+## Profile Image
+Place your profile image here as `profile.png`
+
+Recommended specifications:
+- Size: 400x400px minimum
+- Format: PNG or JPG
+- Aspect ratio: 1:1 (square)
+- Max file size: 500KB
+
+If no image is provided, a gradient placeholder will be shown.
+

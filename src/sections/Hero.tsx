@@ -1,70 +1,62 @@
-// Description: Hero section with new design and client logos
+// Description: Hero section with premium typography and modern gradient design
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import TypewriterText from '../components/TypewriterText'
-import RippleButton from '../components/RippleButton'
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-24 pb-20 sm:pt-32 sm:pb-28 text-center overflow-hidden">
-      <div className="absolute inset-0 gradient-hero-light dark:gradient-hero-dark -z-10"></div>
-      <div className="absolute inset-0 bg-overlay dark:block hidden -z-5"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[hsl(var(--blob-pink)/0.25)] rounded-full filter blur-3xl opacity-70 animate-blob"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[hsl(var(--blob-blue)/0.25)] rounded-full filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[hsl(var(--blob-purple)/0.25)] rounded-full filter blur-3xl opacity-60 animate-blob"></div>
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden bg-gradient-to-b from-white via-purple-50 to-indigo-100">
+      {/* Blur overlay */}
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-lg z-[-1]"></div>
       
-      <div className="container mx-auto px-4 max-w-5xl relative z-10">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.h1 
-          className="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-[hsl(var(--text-primary))] dark:text-white text-shadow-soft"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="font-['Plus_Jakarta_Sans'] text-[48px] sm:text-[72px] lg:text-[96px] font-extrabold leading-[1.05] tracking-[-0.02em]"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <TypewriterText 
-            text="בונה אתרים שיוצרים"
-            speed={100}
-            className="inline-block"
-          />
-          <span className="text-gradient ml-2">רגש</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 animate-gradient-flow drop-shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
+            בונה אתרים שמספרים סיפור
+          </span>
         </motion.h1>
         
         <motion.p 
-          className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-[hsl(var(--text-primary))] dark:text-white"
+          className="font-['Heebo'] text-[22px] sm:text-[24px] text-zinc-700 font-light leading-[1.6] tracking-wide max-w-[680px] mx-auto mt-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
+          transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
         >
-          אני פנחס, מפתח ויוצר חוויות דיגיטליות ייחודיות. אני מתמחה בבניית אתרים מודרניים וממירים שמספרים את הסיפור שלכם ומחברים אתכם לקהל היעד.
+          אני יוצר חוויות דיגיטליות שמשלבות עיצוב מדויק וטכנולוגיה חכמה, כדי לקדם את המטרה שלך.
         </motion.p>
         
         <motion.div 
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row gap-4 mt-10 justify-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
+          transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
         >
-          <RippleButton
-            className="flex min-w-[180px] items-center justify-center rounded-lg h-14 px-8 bg-gradient-to-r from-[hsl(265_75%_65%)] to-[hsl(250_70%_60%)] text-white text-lg font-bold glow-button dark:bg-[hsl(var(--primary))] dark:hover:bg-[hsl(var(--primary-hover))]"
-            onClick={() => window.location.href = '#portfolio'}
-            ariaLabel="צפו בתיק העבודות"
-          >
-            צפו בתיק העבודות
-          </RippleButton>
-          <RippleButton
-            className="flex min-w-[180px] items-center justify-center rounded-lg h-14 px-8 bg-transparent text-[hsl(var(--text-primary))] dark:text-white border border-[hsl(265_25%_45%)] dark:border-white/90 hover:bg-[hsl(265_25%_45%)]/10 hover:border-[hsl(265_25%_45%)]/60 dark:hover:border-white font-bold"
+          <button
+            className="px-8 py-4 text-lg font-semibold rounded-[14px] text-white bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 shadow-[0_6px_20px_rgba(147,51,234,0.25)] hover:shadow-[0_8px_25px_rgba(147,51,234,0.35)] hover:scale-105 transition-all duration-300 ease-out"
             onClick={() => window.location.href = '#contact'}
-            ariaLabel="קבלו הצעת מחיר"
+            aria-label="ספר לי על הפרויקט שלך"
           >
-            קבלו הצעת מחיר
-          </RippleButton>
+            ספר לי על הפרויקט שלך
+          </button>
+          <button
+            className="px-8 py-4 text-lg font-semibold rounded-[14px] text-indigo-600 border-2 border-indigo-500 hover:text-purple-600 hover:border-purple-500 bg-transparent hover:bg-purple-50 transition-all duration-300 ease-out"
+            onClick={() => window.location.href = '#portfolio'}
+            aria-label="צפה בתיק עבודות"
+          >
+            צפה בתיק עבודות
+          </button>
         </motion.div>
-        
       </div>
     </section>
   )
 }
 
 export default Hero
+

@@ -1,67 +1,73 @@
-// Description: Services section with new design and Material Symbols icons
+// Description: Services section with glass effect cards and modern design
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import ScrollReveal from '../components/ScrollReveal'
+import { Rocket, ShoppingCart, Globe } from 'lucide-react'
 
 const Services: React.FC = () => {
-
   const services = [
     {
-      icon: 'view_quilt',
-      title: 'פיתוח אתרי תדמית',
-      description: 'אתרים מרהיבים שמציגים את העסק שלכם בצורה המקצועית והמרשימה ביותר, עם דגש על חווית משתמש ועיצוב מותאם אישית.',
-      bgColor: 'bg-[hsl(var(--primary)/0.15)] dark:bg-[hsl(var(--primary)/0.25)]',
-      textColor: 'text-primary'
-    },
-    {
-      icon: 'shopping_cart',
-      title: 'חנויות מסחר אלקטרוני',
-      description: 'פיתוח חנויות אונליין חכמות, מהירות וממירות שמספקות חווית קנייה נוחה ומגדילות את המכירות שלכם.',
-      bgColor: 'bg-[hsl(var(--secondary)/0.15)] dark:bg-[hsl(var(--secondary)/0.25)]',
-      textColor: 'text-secondary'
-    },
-    {
-      icon: 'devices',
+      icon: Rocket,
       title: 'דפי נחיתה ממירים',
-      description: 'עיצוב ופיתוח דפי נחיתה ממוקדי מטרה, שמניעים את הגולשים לפעולה ומשיגים אחוזי המרה גבוהים.',
-      bgColor: 'bg-[hsl(var(--tertiary)/0.15)] dark:bg-[hsl(var(--tertiary)/0.25)]',
-      textColor: 'text-tertiary'
+      description: 'עיצוב ופיתוח דפי נחיתה ממוקדי מטרה, שמניעים לפעולה ומביאים תוצאות אמיתיות.',
+      color: '#6366F1',
+      hoverShadow: 'hover:shadow-[0_12px_40px_-8px_rgba(99,102,241,0.2)]'
+    },
+    {
+      icon: ShoppingCart,
+      title: 'חנויות מסחר אלקטרוני',
+      description: 'פיתוח חנויות אונליין חכמות, מהירות ומעוצבות — שמגדילות את המכירות ומעצימות את המותג שלכם.',
+      color: '#8B5CF6',
+      hoverShadow: 'hover:shadow-[0_12px_40px_-8px_rgba(139,92,246,0.2)]'
+    },
+    {
+      icon: Globe,
+      title: 'פיתוח אתרי תדמית',
+      description: 'אתרים מהירים שמציגים את העסק שלך בצורה מקצועית ומרשימה, עם דגש על חוויית משתמש מדויקת ועיצוב מותאם אישית.',
+      color: '#EC4899',
+      hoverShadow: 'hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.2)]'
     }
   ]
 
   return (
-    <section className="py-20 sm:py-28" id="services">
-      <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-center mb-16 text-[hsl(var(--text-primary))] text-shadow-soft">
-            איך אני יכול לעזור?
-          </h2>
-        </ScrollReveal>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
-          {services.map((service, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
+    <section id="services" className="relative py-24 px-6 bg-gradient-to-b from-white via-[#F9F5FF] to-[#EEF2FF]">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.h2 
+          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          איך אני יכול לעזור?
+        </motion.h2>
+
+        <div className="grid md:grid-cols-3 gap-10">
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            return (
               <motion.div
-                className="card-hover p-8 bg-card rounded-2xl card-enhanced card-border shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out hover:bg-[hsl(var(--bg-secondary))]"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                key={index}
+                className={`group bg-white/70 backdrop-blur-md border border-[#E5E7EB] rounded-[20px] p-8 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] ${service.hoverShadow} transition-all duration-300`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <motion.div 
-                  className={`service-icon inline-flex items-center justify-center size-14 rounded-xl mb-6`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                >
-                  <span className="material-symbols-outlined text-3xl">{service.icon}</span>
-                </motion.div>
-                <h3 className="text-xl font-bold mb-2 text-[hsl(var(--text-primary))]">{service.title}</h3>
-                <p className="text-[hsl(var(--text-secondary))]">{service.description}</p>
+                <div className="w-[70px] h-[70px] mx-auto mb-6 rounded-[16px] flex items-center justify-center bg-gradient-to-br from-[#E0E7FF] via-[#F5F3FF] to-[#FFF0F6] group-hover:scale-105 transition-transform duration-300">
+                  <IconComponent className="w-9 h-9" style={{ color: service.color }} />
+                </div>
+                <h3 className="font-display text-xl font-bold text-zinc-800 mb-3">
+                  {service.title}
+                </h3>
+                <p className="font-sans text-zinc-600 leading-relaxed text-sm">
+                  {service.description}
+                </p>
               </motion.div>
-            </ScrollReveal>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

@@ -1,10 +1,11 @@
-// Description: Contact section with WhatsApp button
+// Description: Contact section with modern glass effect design
 // Author: Pinchas
 // Created with claude.md rules
 
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import ScrollReveal from '../components/ScrollReveal'
+import { motion } from 'framer-motion'
+import { Mail, Send } from 'lucide-react'
+import emailjs from 'emailjs-com'
 
 interface FormData {
   name: string
@@ -13,130 +14,170 @@ interface FormData {
 }
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
 
-  const onSubmit = async (data: FormData) => {
+  const whatsappNumber = '972548345192'
+  const whatsappMessage = 'היי! אשמח לקבל פרטים נוספים על השירותים שלך'
+  const emailAddress = 'pini5192@gmail.com'
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     setIsSubmitting(true)
-    setSubmitStatus('idle')
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      setSubmitStatus('success')
-      console.log('Form submitted:', data)
+      // שליחה באמצעות EmailJS
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_id',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_id',
+        e.currentTarget,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'user_key'
+      )
+      
+      alert('ההודעה נשלחה בהצלחה! אחזור אליך בקרוב 😊')
+      setFormData({ name: '', email: '', message: '' })
     } catch (error) {
-      setSubmitStatus('error')
+      console.error('שגיאה בשליחת ההודעה:', error)
+      alert('שגיאה בשליחת ההודעה. אנא נסה שוב או צור קשר דרך WhatsApp.')
     } finally {
       setIsSubmitting(false)
     }
   }
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value })
+  }
+
   return (
-    <section className="py-20 sm:py-28" id="contact">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <ScrollReveal>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-center mb-4 text-[hsl(var(--text-primary))] text-shadow-soft">
-            בואו נדבר
-          </h2>
-        </ScrollReveal>
+    <section
+      id="contact"
+      className="relative py-28 px-6 bg-gradient-to-b from-[#FDFDFF] via-[#F9F5FF] to-[#EEF2FF]"
+    >
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h2 
+          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          בוא נדבר
+        </motion.h2>
         
-        <ScrollReveal delay={0.2}>
-          <p className="text-center text-[hsl(var(--text-secondary))] mb-12">
-            מוכנים להתחיל פרויקט חדש? מלאו את הטופס או שלחו לי הודעה בוואטסאפ.
-          </p>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.4}>
-          <form 
-            className="space-y-6 bg-card p-8 rounded-2xl card-enhanced card-border shadow-unified"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <input 
-                className={`w-full bg-input text-primary placeholder-placeholder border rounded-lg px-4 py-3 transition-colors ${
-                  errors.name ? 'border-red-500' : 'border-default'
-                }`}
-                placeholder="שם מלא" 
-                type="text"
-                {...register('name', { required: 'שם הוא שדה חובה' })}
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-              )}
-            </div>
-            <div>
-              <input 
-                className={`w-full bg-input text-primary placeholder-placeholder border rounded-lg px-4 py-3 transition-colors ${
-                  errors.email ? 'border-red-500' : 'border-default'
-                }`}
-                placeholder="אימייל" 
-                type="email"
-                {...register('email', { 
-                  required: 'אימייל הוא שדה חובה',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'כתובת אימייל לא תקינה'
-                  }
-                })}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-              )}
-            </div>
-          </div>
-          
+        <motion.p 
+          className="font-sans text-zinc-600 mb-12 text-lg leading-relaxed max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          רוצה לקחת את הפרויקט שלך לשלב הבא?  
+          <br />
+          מלא את הטופס הקצר הזה — ואני אחזור אליך בהקדם.
+        </motion.p>
+
+        <motion.form
+          onSubmit={handleSubmit}
+          className="bg-white/80 backdrop-blur-lg rounded-[24px] p-10 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] flex flex-col gap-6 text-right max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div>
-            <textarea 
-              className={`w-full bg-input text-primary placeholder-placeholder border rounded-lg px-4 py-3 input-focus transition-colors ${
-                errors.message ? 'border-red-500' : 'border-default'
-              }`}
-              placeholder="איך אני יכול לעזור?" 
-              rows={5}
-              {...register('message', { required: 'הודעה היא שדה חובה' })}
+            <label htmlFor="name" className="block text-sm font-medium text-zinc-700 mb-2 text-right">
+              שם מלא
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="הקלד את שמך..."
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full rounded-[12px] border border-zinc-200 px-4 py-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all text-right"
+              required
             />
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-zinc-700 mb-2 text-right">
+              אימייל
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full rounded-[12px] border border-zinc-200 px-4 py-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+              required
+              dir="ltr"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-zinc-700 mb-2 text-right">
+              הודעה
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder="ספר לי קצת על הפרויקט שלך..."
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full rounded-[12px] border border-zinc-200 px-4 py-3 resize-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition-all text-right"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] text-white font-semibold py-3 rounded-[12px] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                שולח...
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5" />
+                שלח הודעה
+              </>
             )}
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <button 
-              className={`flex w-full sm:w-auto min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 text-lg font-bold transition-all duration-300 mx-auto sm:mx-0 ${
-                isSubmitting 
-                  ? 'bg-gray-400 cursor-not-allowed' 
-                  : submitStatus === 'success'
-                  ? 'bg-green-500'
-                  : 'bg-[hsl(var(--primary))] hover:scale-105 glow-button'
-              }`}
-              type="submit"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  שולח...
-                </div>
-              ) : submitStatus === 'success' ? (
-                'נשלח בהצלחה!'
-              ) : (
-                'שליחת פניה'
-              )}
-            </button>
-            <a 
-              className="flex w-full sm:w-auto min-w-[180px] items-center justify-center gap-2 rounded-lg h-14 px-8 bg-[#25D366] text-white text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-300 mx-auto sm:mx-0" 
-              href="#"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.35 3.43 16.84L2.05 22L7.31 20.62C8.75 21.41 10.35 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.28 20.93 6.88 19.16 5.11C17.39 3.34 14.99 2.32 12.36 2.32L12.04 2M12.04 3.67C16.56 3.67 20.28 7.39 20.28 11.91C20.28 16.43 16.56 20.15 12.04 20.15C10.48 20.15 8.99 19.72 7.74 18.96L7.3 18.7L3.91 19.74L4.97 16.45L4.72 16.02C3.91 14.71 3.46 13.18 3.46 11.91C3.46 7.39 7.18 3.67 12.04 3.67M17.36 14.83C17.13 15.34 16.22 15.89 15.86 15.96C15.5 16.03 15.01 16.04 14.6 15.87C14.19 15.71 13.31 15.39 12.28 14.43C11.03 13.28 10.19 11.9 9.96 11.59C9.73 11.28 9.59 11.11 9.42 10.88C9.25 10.65 9.12 10.48 8.99 10.28C8.86 10.08 8.73 9.91 8.61 9.71C8.5 9.53 8.35 9.38 8.19 9.23C7.94 8.99 7.72 8.8 7.42 8.59C7.12 8.38 6.89 8.28 6.64 8.28C6.39 8.28 6.16 8.28 5.92 8.28C5.68 8.28 5.37 8.34 5.13 8.85C4.89 9.36 4.29 9.94 4.29 11.1C4.29 12.26 5.15 13.31 5.28 13.47C5.41 13.63 6.95 16.05 9.36 17.01C11.33 17.81 11.75 17.65 12.21 17.62C12.87 17.56 13.82 17.01 14.1 16.4C14.38 15.78 14.38 15.28 14.31 15.15C14.25 15.02 14.12 14.95 13.89 14.83C13.66 14.71 12.78 14.27 12.55 14.18C12.32 14.09 12.15 14.06 11.99 14.3C11.83 14.54 11.45 15.01 11.33 15.18C11.21 15.35 11.08 15.38 10.85 15.26C10.62 15.14 9.93 14.9 9.07 14.15C8.36 13.54 7.89 12.8 7.72 12.5C7.55 12.2 7.68 12.07 7.81 11.95C7.92 11.85 8.06 11.7 8.22 11.55C8.38 11.41 8.45 11.31 8.58 11.18C8.71 11.05 8.74 10.95 8.84 10.78C8.94 10.61 9.22 11.16 9.22 11.16C9.8 11.85 10.32 12.44 10.82 12.79C10.9 12.85 10.98 12.89 11.06 12.92C11.14 12.95 11.22 12.97 11.3 12.97C11.35 12.97 11.4 12.96 11.45 12.96C11.53 12.95 11.61 12.93 11.69 12.9C11.81 12.84 11.93 12.77 12.05 12.68C12.2 12.57 12.32 12.43 12.41 12.26C12.5 12.09 12.56 11.91 12.6 11.7C12.64 11.49 12.62 11.27 12.56 11.06C12.41 10.48 11.99 10.01 11.99 10.01L11.92 9.87C11.86 9.75 11.83 9.6 11.83 9.45C11.83 9.04 12.17 8.7 12.58 8.7C12.71 8.7 12.83 8.72 12.95 8.76C13.07 8.8 13.18 8.85 13.28 8.9C13.38 8.95 13.47 9 13.55 9.04C13.88 9.18 16.14 10.25 17.13 10.74C17.33 10.84 17.5 10.92 17.59 11.02C17.81 11.22 17.88 11.42 17.91 11.6C17.94 11.78 17.95 12.61 17.79 13.2C17.63 13.79 17.59 14.32 17.36 14.83Z"></path>
-              </svg>
-              <span>שליחת הודעה</span>
-            </a>
-          </div>
-          </form>
-        </ScrollReveal>
+          </button>
+        </motion.form>
+
+        <motion.div 
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <a
+            href={`mailto:${emailAddress}`}
+            className="flex items-center gap-2 text-sm text-zinc-500 hover:text-indigo-600 transition-all"
+          >
+            <Mail className="w-4 h-4" />
+            {emailAddress}
+          </a>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-green-600 font-medium hover:scale-105 transition-transform"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            שלחו לי הודעה בוואטסאפ
+          </a>
+        </motion.div>
       </div>
     </section>
   )

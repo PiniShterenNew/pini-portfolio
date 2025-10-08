@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
@@ -8,20 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--bg-primary))",
-        foreground: "hsl(var(--text-primary))",
-        primary: "hsl(var(--primary))",
-        "primary-hover": "hsl(var(--primary-hover))",
-        secondary: "hsl(var(--secondary))",
-        tertiary: "hsl(var(--tertiary))",
-        border: "hsl(var(--border))",
-        "border-hover": "hsl(var(--border-hover))"
+        primary: {
+          50: '#EEF2FF',
+          100: '#E0E7FF',
+          400: '#818CF8',
+          500: '#6366F1',
+          600: '#4F46E5',
+          700: '#4338CA',
+          from: '#6366F1',
+          via: '#8B5CF6',
+          to: '#EC4899',
+        },
+        accent: '#EC4899',
+        surface: '#FFFFFF',
+        bg: '#FDFDFF',
+        text: {
+          main: '#1F2937',
+          subtle: '#4B5563',
+        },
       },
-      fontFamily: {
-        "sans": ["Assistant", "sans-serif"]
+      borderRadius: {
+        lg: '16px',
+        xl: '24px',
       },
       boxShadow: {
-        'glow-soft': '0 0 25px -5px rgba(59, 130, 246, 0.4), 0 10px 20px -10px rgba(59, 130, 246, 0.2)',
+        soft: '0 4px 20px rgba(139, 92, 246, 0.15)',
+        hover: '0 6px 24px rgba(139, 92, 246, 0.2)',
+        card: '0 2px 12px rgba(139, 92, 246, 0.08)',
+      },
+      fontFamily: {
+        sans: ['Heebo', 'Plus Jakarta Sans', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'Heebo', 'sans-serif'],
       },
       animation: {
         'blob': 'blob 7s infinite',
@@ -41,9 +57,6 @@ export default {
             transform: 'translate(0px, 0px) scale(1)',
           },
         },
-      },
-      backdropBlur: {
-        'xs': '2px',
       },
     },
   },

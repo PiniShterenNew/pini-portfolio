@@ -13,6 +13,7 @@ interface RippleButtonProps {
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
   ariaLabel?: string
+  tooltip?: string
 }
 
 const RippleButton: React.FC<RippleButtonProps> = ({
@@ -21,7 +22,8 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   className = '',
   disabled = false,
   type = 'button',
-  ariaLabel
+  ariaLabel,
+  tooltip
 }) => {
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([])
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -60,13 +62,20 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       type={type}
       onClick={createRipple}
       disabled={disabled}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden group ${className}`}
       aria-label={ariaLabel}
       whileHover={buttonHover.whileHover}
       whileTap={rippleEffect.whileTap}
       transition={rippleEffect.whileTap.transition}
     >
       {children}
+      
+      {/* Tooltip */}
+      {tooltip && (
+        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-xs font-medium text-white bg-zinc-900 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+          {tooltip}
+        </span>
+      )}
       
       {/* Ripple effects */}
       {ripples.map(ripple => (

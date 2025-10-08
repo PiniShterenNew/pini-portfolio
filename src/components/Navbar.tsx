@@ -1,17 +1,14 @@
-// Description: Premium navbar with dark mode toggle and Material Symbols icons
+// Description: Premium navbar with modern transparent design and centered dropdown menu
 // Author: Pinchas
 // Created with claude.md rules
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useDarkMode } from '../hooks/useDarkMode'
-import { useAccessibility } from '../hooks/useAccessibility'
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const { isDark, toggleDarkMode } = useDarkMode()
-  const { isKeyboardUser } = useAccessibility()
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const navLinks = [
     { name: 'שירותים', href: '#services' },
@@ -21,117 +18,103 @@ const Navbar: React.FC = () => {
   ]
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
 
   return (
-    <header className={`sticky top-0 z-50 flex items-center justify-between whitespace-nowrap px-6 sm:px-10 h-16 sm:h-20 bg-[hsl(var(--bg-primary)/0.75)] backdrop-blur-md transition-all duration-300 ${
-      isScrolled ? 'shadow-lg' : 'shadow-sm'
-    }`} style={{ borderBottom: 'none', boxShadow: '0 1px 0 hsl(var(--border)/0.2)' }}>
-      <div className="flex items-center gap-3 text-[hsl(var(--text-primary))]">
-        <a className="flex items-center gap-2" href="#">
-          <img
-            src="/logo.svg"
-            alt="Pinhas Studio Logo"
-            className="h-8 w-8 logo transition-opacity duration-200"
-          />
-          <span className="text-xl font-semibold text-[hsl(var(--primary))]">
-            פנחס סטודיו
-          </span>
-        </a>
-      </div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-white/40 shadow-[0_4px_30px_-10px_rgba(0,0,0,0.08)]">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* לוגו + שם */}
+        <div className="flex items-center gap-2">
+          <Link to="/" aria-label="חזרה לדף הבית" className="flex items-center gap-2">
+            <img
+              src="/logo.svg"
+              alt="logo"
+              className="w-[34px] h-[34px] rounded-full shadow-sm"
+            />
+            <span className="text-[20px] font-['Plus_Jakarta_Sans'] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500">
+              פנחס סטודיו
+            </span>
+          </Link>
+        </div>
 
-      <nav className="hidden lg:flex items-center gap-8 text-[hsl(var(--text-secondary))]">
-        {navLinks.map((link) => (
-          <a key={link.name} className="text-sm font-semibold hover:text-[hsl(var(--text-primary))] transition-colors" href={link.href}>
-            {link.name}
-          </a>
-        ))}
-      </nav>
-
-      <div className="flex items-center gap-4">
-        <a className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[hsl(var(--primary))] text-[hsl(var(--text-inverse))] text-sm font-bold glow-button hover:scale-105 transition-all duration-300" href="#contact">
-          <span>צור קשר</span>
-        </a>
-        <button 
-          onClick={() => {
-            console.log('Toggle clicked, current isDark:', isDark) // Debug log
-            toggleDarkMode()
-          }} 
-          className={`p-2 rounded-md text-[hsl(var(--text-secondary))] hover:bg-[hsl(var(--bg-secondary))] transition-colors focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:ring-offset-2 ${
-            isKeyboardUser ? 'focus:ring-2' : ''
-          }`}
-          aria-label={isDark ? 'החלף למצב בהיר' : 'החלף למצב כהה'}
-        >
-          <span className="material-symbols-outlined">
-            {isDark ? 'light_mode' : 'dark_mode'}
-          </span>
-        </button>
-        <button 
-          className={`lg:hidden p-2 rounded-md text-[hsl(var(--text-secondary))] hover:bg-[hsl(var(--bg-secondary))] transition-colors focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:ring-offset-2 ${
-            isKeyboardUser ? 'focus:ring-2' : ''
-          }`}
+        {/* כפתור פתיחה */}
+        <button
+          className="lg:hidden flex items-center justify-center w-[42px] h-[42px] rounded-[10px] bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-white shadow-sm hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isMenuOpen}
         >
-          <span className="material-symbols-outlined">
+          <span className="material-symbols-outlined text-[22px]">
             {isMenuOpen ? 'close' : 'menu'}
           </span>
         </button>
+
+        {/* ניווט רגיל */}
+        <nav className="hidden lg:flex items-center gap-8 text-[17px] font-['Heebo'] text-zinc-700">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-purple-600 transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            className="px-5 py-2 rounded-[10px] bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-lg transition-all"
+          >
+            צור קשר
+          </a>
+        </nav>
       </div>
 
-      {/* Mobile Menu */}
-      <div aria-live="polite" aria-label="תפריט ניווט">
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-[hsl(var(--bg-primary)/0.95)] backdrop-blur-md shadow-lg border-t border-[hsl(var(--border)/0.2)]"
-              role="navigation"
-              aria-label="תפריט ניווט ראשי"
-            >
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.2 }}
-              className="px-6 py-4 space-y-4"
-            >
-              {navLinks.map((link, index) => (
-                <motion.a 
-                  key={link.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05, duration: 0.2 }}
-                  className="block text-sm font-semibold text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--text-primary))] transition-colors" 
-                  href={link.href} 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
-              <motion.a 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.2 }}
-                className="block w-full text-center bg-[hsl(var(--primary))] text-[hsl(var(--text-inverse))] py-2 rounded-full text-sm font-bold glow-button" 
-                href="#contact" 
+      {/* תפריט נפתח */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            ref={menuRef}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="lg:hidden absolute top-[68px] right-[50%] translate-x-[50%] bg-white/90 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,0,0,0.1)] rounded-[16px] p-6 flex flex-col items-center gap-4 border border-white/40 min-w-[260px]"
+            role="navigation"
+            aria-label="תפריט ניווט נפתח"
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-[18px] font-['Heebo'] font-medium text-zinc-700 hover:text-purple-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                צור קשר
-              </motion.a>
-            </motion.div>
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="mt-3 px-5 py-2 rounded-[10px] bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-lg transition-all"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              צור קשר
+            </a>
           </motion.div>
         )}
-        </AnimatePresence>
-      </div>
+      </AnimatePresence>
     </header>
   )
 }
