@@ -1,18 +1,54 @@
-// Description: Component to scroll to top on route change
+// Description: Scroll to top button component with smooth animation
 // Author: Pinchas
 // Created with claude.md rules
 
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiChevronUp } from 'react-icons/fi'
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation()
+const ScrollToTop: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    }
 
-  return null
+    window.addEventListener('scroll', toggleVisibility)
+    return () => window.removeEventListener('scroll', toggleVisibility)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={scrollToTop}
+          className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-grad-brand text-white rounded-full shadow-glow hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+          aria-label="חזרה למעלה"
+          data-tooltip-id="app-tooltip"
+          data-tooltip-content="חזור למעלה"
+        >
+          <FiChevronUp className="text-xl" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  )
 }
 
 export default ScrollToTop

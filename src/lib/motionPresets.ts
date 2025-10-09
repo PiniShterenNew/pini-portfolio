@@ -78,7 +78,7 @@ export const hoverGlow = {
 export const focusRing = {
   outline: 'none',
   ring: '2px',
-  ringColor: 'hsl(var(--primary))',
+  ringColor: '#8B5CF6',
   ringOffset: '2px'
 }
 

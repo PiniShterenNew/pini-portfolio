@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent">
+          <h2 className="font-jakarta text-4xl font-extrabold bg-grad-brand bg-clip-text text-transparent">
             קצת עליי
           </h2>
 
@@ -37,15 +37,19 @@ const AboutMe: React.FC = () => {
 
           <div className="flex gap-4 pt-4">
             <button 
-              className="px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] shadow-soft hover:shadow-hover hover:scale-[1.03] transition-all duration-300"
+              className="px-6 py-3 text-white font-heebo font-semibold rounded-lg bg-grad-brand shadow-card hover:shadow-glow hover:scale-[1.03] transition-all duration-300"
               onClick={() => window.location.href = '#contact'}
+              data-tooltip-id="app-tooltip"
+              data-tooltip-content="צור קשר עכשיו"
               aria-label="דברו איתי - מעבר לטופס יצירת קשר"
             >
               דברו איתי
             </button>
             <button 
-              className="px-6 py-3 border-2 border-[#8B5CF6] text-[#4F46E5] font-semibold rounded-lg hover:bg-[#F9F5FF] transition-all duration-300"
+              className="px-6 py-3 border-2 border-brand-primary text-brand-secondary font-heebo font-semibold rounded-lg hover:bg-purple-50 transition-all duration-300"
               onClick={() => window.location.href = '#portfolio'}
+              data-tooltip-id="app-tooltip"
+              data-tooltip-content="צפה בעבודות קודמות"
               aria-label="קראו עוד - מעבר לתיק עבודות"
             >
               קראו עוד
@@ -61,7 +65,7 @@ const AboutMe: React.FC = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
         >
-          <div className="relative w-[280px] h-[280px] rounded-full overflow-hidden shadow-[0_8px_30px_-10px_rgba(0,0,0,0.15)] bg-gradient-to-tr from-[#E0E7FF] via-[#F5F3FF] to-[#FFF0F6] flex items-center justify-center">
+          <div className="relative w-[280px] h-[280px] rounded-full overflow-hidden shadow-card bg-gradient-to-tr from-purple-100 via-pink-50 to-indigo-100 flex items-center justify-center">
             <img
               src="/assets/profile.png"
               alt="Pinhas Stern Portrait"
@@ -70,11 +74,11 @@ const AboutMe: React.FC = () => {
                 e.currentTarget.style.display = 'none'
               }}
             />
-            <div className="absolute inset-0 flex items-center justify-center text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#EC4899]">
+            <div className="absolute inset-0 flex items-center justify-center text-6xl font-jakarta font-bold text-transparent bg-clip-text bg-grad-brand">
               PS
             </div>
           </div>
-          <div className="absolute -z-10 blur-3xl opacity-40 w-[400px] h-[400px] bg-gradient-to-tr from-[#8B5CF6] to-[#EC4899] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute -z-10 blur-3xl opacity-40 w-[400px] h-[400px] bg-gradient-to-tr from-brand-primary to-brand-accent rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
         </motion.div>
       </div>
     </section>

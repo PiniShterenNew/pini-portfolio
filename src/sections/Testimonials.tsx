@@ -1,80 +1,96 @@
-// Description: Testimonials section with premium glass effect cards
+// Description: Testimonials section with client reviews
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { User } from 'lucide-react'
+import { FiUser } from 'react-icons/fi'
+import ScrollReveal from '../components/ScrollReveal'
+
+interface Testimonial {
+  id: string
+  name: string
+  role?: string
+  avatar?: string
+  quote: string
+}
 
 const Testimonials: React.FC = () => {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
+      id: '1',
       name: 'שירה כהן',
-      role: 'מנהלת שיווק, סטודיו קריאייטיב',
-      text: 'פנחס בנה לנו אתר מושלם! שילוב של עיצוב, דיוק וחוויית משתמש מדהימה. הוא היה מקצועי וסבלני לאורך כל הדרך.',
-      avatar: '/assets/avatars/avatar1.webp'
+      role: 'מנהלת שיווק',
+      avatar: '/assets/avatars/avatar1.webp',
+      quote: 'העבודה עם פיני הייתה חוויה מדהימה. הוא הבין בדיוק מה אנחנו צריכים ובנה לנו אתר שמייצר לידים כל יום.',
     },
     {
+      id: '2',
       name: 'דניאל לוי',
-      role: 'בעלים, מותג אופנה אונליין',
-      text: 'שדרוג רציני לעסק שלי. האתר החדש העלה את אחוזי ההמרה והלקוחות פשוט מתאהבים בו. תודה!',
-      avatar: '/assets/avatars/avatar2.webp'
+      role: 'בעל עסק',
+      avatar: '/assets/avatars/avatar2.webp',
+      quote: 'האתר שבנה פיני העלה את המכירות שלנו ב-60%. מקצועי, מהיר ותמיד זמין לעזרה.',
     },
     {
+      id: '3',
       name: 'יעל רוזן',
-      role: 'עצמאית בתחום הטיפול',
-      text: 'מעבר לעיצוב היפהפה, פנחס הקשיב באמת לצרכים שלי ותרגם את זה לחוויה דיגיטלית מדויקת.',
-      avatar: '/assets/avatars/avatar3.webp'
-    }
+      role: 'יועצת עסקית',
+      avatar: '/assets/avatars/avatar3.webp',
+      quote: 'שירות ברמה הכי גבוהה! פיני ליווה אותנו מההתחלה ועד ההשקה ומעבר לה. ממליצה בחום!',
+    },
   ]
 
   return (
-    <section id="testimonials" className="relative py-24 px-6 bg-gradient-to-b from-[#EEF2FF] via-white to-[#FDFDFF]">
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.h2 
-          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-        >
-          מה לקוחות אומרים
-        </motion.h2>
+    <section id="testimonials" className="py-20 bg-surface-base">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="font-jakarta text-4xl sm:text-5xl font-bold text-brand-text mb-4">
+              מה הלקוחות שלנו אומרים
+            </h2>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              className="group relative bg-white/80 backdrop-blur-lg rounded-[20px] p-8 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_-8px_rgba(99,102,241,0.15)] transition-all duration-300 hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-            >
-              <div className="flex flex-col items-center text-center">
-                {/* תמונה עם fallback */}
-                <div className="relative w-[80px] h-[80px] rounded-full mb-4 overflow-hidden border-4 border-indigo-100 bg-gradient-to-br from-[#E0E7FF] to-[#F5F3FF] flex items-center justify-center">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-full h-full object-cover absolute inset-0"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                    }}
-                  />
-                  <User className="w-10 h-10 text-indigo-400" />
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {testimonials.map((testimonial, index) => (
+                    <ScrollReveal key={testimonial.id} delay={index * 0.15}>
+                      <motion.div
+                        whileHover={{ y: -5 }}
+                        className="p-8 bg-surface-soft rounded-2xl border border-gray-100 transition-all duration-300 h-full flex flex-col"
+                      >
+                        <div className="flex flex-col items-center text-center h-full">
+                          <div className="w-20 h-20 rounded-full mb-6 overflow-hidden border-4 border-brand-primary/20 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                            {testimonial.avatar ? (
+                              <img
+                                src={testimonial.avatar}
+                                alt={testimonial.name}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = 'none'
+                                }}
+                              />
+                            ) : (
+                              <FiUser className="text-4xl text-brand-primary" />
+                            )}
+                          </div>
 
-                {/* ציטוט */}
-                <p className="font-sans text-zinc-700 text-sm leading-relaxed italic mb-4">
-                  "{t.text}"
-                </p>
+                          <p className="font-heebo text-gray-700 leading-relaxed italic mb-6 flex-grow">
+                            "{testimonial.quote}"
+                          </p>
 
-                {/* שם ותפקיד */}
-                <h4 className="font-display text-lg font-semibold text-zinc-900">{t.name}</h4>
-                <p className="font-sans text-zinc-500 text-xs">{t.role}</p>
-              </div>
-            </motion.div>
+                          <div>
+                            <h4 className="font-heebo text-lg font-bold text-brand-text">
+                              {testimonial.name}
+                            </h4>
+                            {testimonial.role && (
+                              <p className="font-heebo text-sm text-gray-500">
+                                {testimonial.role}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

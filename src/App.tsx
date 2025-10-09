@@ -4,6 +4,8 @@
 
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 import Navbar from './components/Navbar'
 import Footer from './sections/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -30,6 +32,18 @@ const App: React.FC = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      <Tooltip 
+        id="app-tooltip" 
+        style={{ 
+          backgroundColor: '#1B1529',
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '8px 12px',
+          fontSize: '13px',
+          fontWeight: '500',
+          zIndex: 9999
+        }}
+      />
     </Router>
   )
 }

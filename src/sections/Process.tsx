@@ -1,85 +1,78 @@
-// Description: Clean process section with infographic design
+// Description: Process section with 4 steps and pop animations
 // Author: Pinchas
 // Created with claude.md rules
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Lightbulb, Palette, Code, Rocket } from 'lucide-react'
+import { FiFileText, FiPenTool, FiCode, FiZap } from 'react-icons/fi'
+import ScrollReveal from '../components/ScrollReveal'
 
 const Process: React.FC = () => {
   const steps = [
     {
-      title: 'גילוי ואסטרטגיה',
-      description: 'נתחיל בזיהוי הצרכים, המטרות והחזון שלך — כדי לוודא שהאתר משרת את העסק בצורה מדויקת.',
-      icon: Lightbulb,
-      color: '#6366F1'
+      number: '01',
+      title: 'אפיון',
+      description: 'שיחה ראשונית להבנת הצרכים, המטרות והקהל שלך. מפתחים יחד אסטרטגיה דיגיטלית ממוקדת.',
+      icon: FiFileText,
     },
     {
-      title: 'עיצוב חוויית משתמש',
-      description: 'נבנה חוויה ויזואלית מזמינה, עם דגש על אסתטיקה, קלות שימוש, וזרימה אינטואיטיבית.',
-      icon: Palette,
-      color: '#8B5CF6'
+      number: '02',
+      title: 'עיצוב',
+      description: 'בונה עיצוב חכם וממיר שמותאם לזהות המותג שלך ומעוצב להמרה מקסימלית.',
+      icon: FiPenTool,
     },
     {
-      title: 'פיתוח והתאמה',
-      description: 'פיתוח האתר בפועל — בקוד נקי, ביצועים גבוהים והתאמה מושלמת לכל מסך ודפדפן.',
-      icon: Code,
-      color: '#A855F7'
+      number: '03',
+      title: 'פיתוח',
+      description: 'הופך את העיצוב לאתר חי – מהיר, רספונסיבי, ומוכן ל-SEO מלא. בדיקות איכות קפדניות.',
+      icon: FiCode,
     },
     {
-      title: 'השקה ותמיכה',
-      description: 'העלאת האתר לאוויר, בדיקות אחרונות וליווי צמוד גם לאחר ההשקה.',
-      icon: Rocket,
-      color: '#EC4899'
-    }
+      number: '04',
+      title: 'השקה',
+      description: 'מעלים לאוויר, מבצעים אופטימיזציה אחרונה ומלווים אותך גם אחרי ההשקה.',
+      icon: FiZap,
+    },
   ]
 
   return (
-    <section id="process" className="relative py-24 px-6 bg-[#FDFDFF]" dir="rtl">
-      <div className="max-w-2xl mx-auto">
-        {/* כותרת */}
-        <motion.h2 
-          className="font-display text-4xl font-extrabold bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-        >
-          איך אני עובד
-        </motion.h2>
+    <section id="process" className="py-20 bg-surface-base">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="font-jakarta text-4xl sm:text-5xl font-bold text-brand-text mb-4">
+              כך נבנה האתר שלך –
+            </h2>
+            <p className="font-heebo text-xl text-gray-600">
+              פשוט ושקוף.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* פריסה אנכית */}
-        <div className="flex flex-col items-start gap-10">
-          {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-4 w-full"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                {/* נקודה עם מספר */}
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <motion.div 
-                    className="w-7 h-7 rounded-full bg-gradient-to-tr from-fuchsia-500 to-indigo-500 text-white flex items-center justify-center text-sm font-bold shadow-md"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                  >
-                    {index + 1}
-                  </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {steps.map((step, index) => (
+                    <ScrollReveal key={index} delay={index * 0.1}>
+                      <motion.div
+                        whileHover={{ scale: 1.05, y: -5 }}
+                        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                        className="relative p-6 bg-surface-soft rounded-2xl border border-gray-100 hover:border-brand-primary/30 transition-all duration-300 h-full flex flex-col"
+                      >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-grad-brand rounded-xl">
+                    <step.icon className="text-3xl text-white" />
+                  </div>
+                  <span className="font-jakarta text-4xl font-bold text-gray-200">
+                    {step.number}
+                  </span>
                 </div>
-
-                {/* תוכן */}
-                <div className="flex-1">
-                  <h3 className="font-display text-lg font-bold text-zinc-800 mb-1">
-                    {step.title}
-                  </h3>
-                  <p className="font-sans text-zinc-600 leading-relaxed text-sm">
-                    {step.description}
-                  </p>
-                </div>
+                        <h3 className="font-heebo text-xl font-bold text-brand-text mb-3">
+                          {step.title}
+                        </h3>
+                        <p className="font-heebo text-gray-600 leading-relaxed flex-grow">
+                          {step.description}
+                        </p>
               </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
