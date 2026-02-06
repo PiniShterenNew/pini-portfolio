@@ -1,7 +1,3 @@
-// Description: FAQ section with accordion component
-// Author: Pinchas
-// Created with claude.md rules
-
 import React from 'react'
 import Accordion from '../components/Accordion'
 import ScrollReveal from '../components/ScrollReveal'
@@ -14,7 +10,7 @@ const FAQ: React.FC = () => {
     },
     {
       q: 'האם האתר יהיה מותאם לנייד?',
-      a: 'בהחלט! כל אתר שאני בונה הוא רספונסיבי לחלוטין ומותאם לכל סוגי המסכים - מובייל, טאבלט ודסקטופ.',
+      a: 'בהחלט! כל אתר שאני בונה הוא רספונסיבי לחלוטין ומותאם לכל סוגי המסכים — מובייל, טאבלט ודסקטופ.',
     },
     {
       q: 'מה כלול במחיר?',
@@ -31,13 +27,17 @@ const FAQ: React.FC = () => {
   ]
 
   return (
-    <section id="faq" className="py-20 bg-surface-soft">
-      <div className="max-w-4xl mx-auto px-4">
+    <section id="faq" className="py-section bg-surface-soft">
+      <div className="max-w-narrow mx-auto px-4 sm:px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-jakarta text-4xl sm:text-5xl font-bold text-brand-text mb-4">
+            <span className="inline-block font-heebo text-sm font-semibold text-brand-primary tracking-wide mb-3">שאלות ותשובות</span>
+            <h2 className="section-heading mb-4">
               שאלות נפוצות
             </h2>
+            <p className="section-subtitle">
+              תשובות לשאלות הנפוצות ביותר שאני מקבל.
+            </p>
           </div>
         </ScrollReveal>
 
@@ -50,4 +50,3 @@ const FAQ: React.FC = () => {
 }
 
 export default FAQ
-

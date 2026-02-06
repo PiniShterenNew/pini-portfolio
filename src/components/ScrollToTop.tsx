@@ -1,7 +1,3 @@
-// Description: Scroll to top button component with smooth animation
-// Author: Pinchas
-// Created with claude.md rules
-
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiChevronUp } from 'react-icons/fi'
@@ -11,14 +7,10 @@ const ScrollToTop: React.FC = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      setIsVisible(window.scrollY > 300)
     }
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
@@ -39,12 +31,10 @@ const ScrollToTop: React.FC = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-grad-brand text-white rounded-full shadow-glow hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-6 left-6 z-50 w-11 h-11 bg-grad-brand text-white rounded-full shadow-glow hover:shadow-glow-lg transition-shadow duration-300 flex items-center justify-center"
           aria-label="חזרה למעלה"
-          data-tooltip-id="app-tooltip"
-          data-tooltip-content="חזור למעלה"
         >
-          <FiChevronUp className="text-xl" />
+          <FiChevronUp className="text-lg" />
         </motion.button>
       )}
     </AnimatePresence>
@@ -52,5 +42,3 @@ const ScrollToTop: React.FC = () => {
 }
 
 export default ScrollToTop
-
-

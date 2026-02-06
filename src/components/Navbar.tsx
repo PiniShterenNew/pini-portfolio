@@ -1,7 +1,3 @@
-// Description: Premium navbar with sticky behavior and gradient branding
-// Author: Pinchas
-// Created with claude.md rules
-
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -17,16 +13,16 @@ const Navbar: React.FC = () => {
     { name: 'שירותים', href: '#services' },
     { name: 'פרויקטים', href: '#portfolio' },
     { name: 'תהליך', href: '#process' },
+    { name: 'אודות', href: '#about' },
     { name: 'לקוחות', href: '#testimonials' },
     { name: 'שאלות', href: '#faq' },
-    { name: 'צור קשר', href: '#contact' },
   ]
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -39,105 +35,114 @@ const Navbar: React.FC = () => {
 
     if (isMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = ''
     }
   }, [isMenuOpen])
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-surface-base/95 backdrop-blur-md shadow-card' 
+      isScrolled
+        ? 'bg-surface-base/95 backdrop-blur-md shadow-card'
         : 'bg-transparent'
     }`}>
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
-        {/* לוגו */}
-        <div className="flex items-center gap-3">
-          <Link to="/" aria-label="חזרה לדף הבית" className="flex items-center gap-3">
-            <img
-              src="/logo.svg"
-              alt="פיני לוגו"
-              className="w-10 h-10"
-            />
-            <span className="font-jakarta font-bold text-xl bg-grad-brand bg-clip-text text-transparent">
-              פיני – בניית אתרים ממוקדי המרה
-            </span>
-          </Link>
-        </div>
+      <div className="max-w-content mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+        {/* Logo */}
+        <Link to="/" aria-label="חזרה לדף הבית" className="flex items-center gap-3 flex-shrink-0">
+          <img
+            src="/logo.svg"
+            alt="פיני לוגו"
+            className="w-9 h-9"
+            width={36}
+            height={36}
+          />
+          <span className="font-jakarta font-bold text-lg gradient-text hidden sm:inline">
+            פיני
+          </span>
+        </Link>
 
-        {/* כפתור תפריט נייד */}
+        {/* Mobile menu button */}
         <button
-          className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-grad-brand text-white shadow-md hover:shadow-glow transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-grad-brand text-white shadow-md hover:shadow-glow transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isMenuOpen}
-          data-tooltip-id="app-tooltip"
-          data-tooltip-content={isMenuOpen ? 'סגור תפריט' : 'פתח תפריט'}
         >
-          {isMenuOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+          {isMenuOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
         </button>
 
-        {/* ניווט שולחני */}
-        <nav className="hidden lg:flex items-center gap-6 text-base font-heebo font-medium">
-          {navLinks.slice(0, -1).map((link) => (
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1 text-sm font-heebo font-medium">
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-brand-text hover:text-brand-primary transition-colors duration-200"
-              data-tooltip-id="app-tooltip"
-              data-tooltip-content={`עבור ל${link.name}`}
+              className="px-3 py-2 rounded-lg text-brand-text hover:text-brand-primary hover:bg-brand-primary/5 transition-all duration-200"
             >
               {link.name}
             </a>
           ))}
           <RippleButton
-            onClick={() => window.location.href = '#contact'}
-            className="px-6 py-2.5 rounded-xl bg-grad-brand text-white shadow-md hover:shadow-glow hover:scale-105 transition-all duration-300"
-            data-tooltip-id="app-tooltip"
-            data-tooltip-content="קבלו שיחת אפיון חינמית"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="mr-2 px-5 py-2.5 rounded-xl bg-grad-brand text-white text-sm shadow-md hover:shadow-glow hover:scale-[1.02] transition-all duration-300"
           >
             שיחת אפיון חינם
           </RippleButton>
         </nav>
       </div>
 
-      {/* תפריט נייד */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            ref={menuRef}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="lg:hidden absolute top-20 right-1/2 translate-x-1/2 bg-surface-base/95 backdrop-blur-xl shadow-card rounded-2xl p-6 flex flex-col items-center gap-4 min-w-[280px] border border-gray-100"
-            role="navigation"
-            aria-label="תפריט ניווט נפתח"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-lg font-heebo font-medium text-brand-text hover:text-brand-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <RippleButton
-              onClick={() => {
-                setIsMenuOpen(false)
-                window.location.href = '#contact'
-              }}
-              className="mt-3 px-6 py-2.5 rounded-xl bg-grad-brand text-white shadow-md hover:shadow-glow transition-all"
-              data-tooltip-id="app-tooltip"
-              data-tooltip-content="קבלו שיחת אפיון חינמית"
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <motion.div
+              ref={menuRef}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="lg:hidden absolute top-full left-4 right-4 mt-2 bg-surface-base/98 backdrop-blur-xl shadow-card-hover rounded-2xl p-5 flex flex-col items-center gap-1 border border-gray-100 z-50"
+              role="navigation"
+              aria-label="תפריט ניווט"
             >
-              שיחת אפיון חינם
-            </RippleButton>
-          </motion.div>
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="w-full text-center py-3 px-4 font-heebo font-medium text-brand-text hover:text-brand-primary hover:bg-brand-primary/5 rounded-xl transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="w-full pt-2 mt-2 border-t border-gray-100">
+                <RippleButton
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="w-full py-3 rounded-xl bg-grad-brand text-white font-heebo font-semibold shadow-md"
+                >
+                  שיחת אפיון חינם
+                </RippleButton>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

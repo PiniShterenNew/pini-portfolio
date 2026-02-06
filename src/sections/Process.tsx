@@ -1,7 +1,3 @@
-// Description: Process section with 4 steps and pop animations
-// Author: Pinchas
-// Created with claude.md rules
-
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FiFileText, FiPenTool, FiCode, FiZap } from 'react-icons/fi'
@@ -18,13 +14,13 @@ const Process: React.FC = () => {
     {
       number: '02',
       title: 'עיצוב',
-      description: 'בונה עיצוב חכם וממיר שמותאם לזהות המותג שלך ומעוצב להמרה מקסימלית.',
+      description: 'עיצוב חכם וממיר שמותאם לזהות המותג שלך ומעוצב להמרה מקסימלית.',
       icon: FiPenTool,
     },
     {
       number: '03',
       title: 'פיתוח',
-      description: 'הופך את העיצוב לאתר חי – מהיר, רספונסיבי, ומוכן ל-SEO מלא. בדיקות איכות קפדניות.',
+      description: 'הופך את העיצוב לאתר חי — מהיר, רספונסיבי, ומוכן ל-SEO מלא עם בדיקות איכות.',
       icon: FiCode,
     },
     {
@@ -36,41 +32,55 @@ const Process: React.FC = () => {
   ]
 
   return (
-    <section id="process" className="py-20 bg-surface-base">
-      <div className="max-w-screen-xl mx-auto px-4">
+    <section id="process" className="py-section bg-surface-base relative">
+      <div className="max-w-content mx-auto px-4 sm:px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-jakarta text-4xl sm:text-5xl font-bold text-brand-text mb-4">
-              כך נבנה האתר שלך –
+            <span className="inline-block font-heebo text-sm font-semibold text-brand-primary tracking-wide mb-3">תהליך העבודה</span>
+            <h2 className="section-heading mb-4">
+              כך נבנה האתר שלך
             </h2>
-            <p className="font-heebo text-xl text-gray-600">
-              פשוט ושקוף.
+            <p className="section-subtitle">
+              תהליך פשוט ושקוף, מהרעיון ועד ההשקה.
             </p>
           </div>
         </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {steps.map((step, index) => (
-                    <ScrollReveal key={index} delay={index * 0.1}>
-                      <motion.div
-                        whileHover={{ scale: 1.05, y: -5 }}
-                        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                        className="relative p-6 bg-surface-soft rounded-2xl border border-gray-100 hover:border-brand-primary/30 transition-all duration-300 h-full flex flex-col"
-                      >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-grad-brand rounded-xl">
-                    <step.icon className="text-3xl text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {steps.map((step, index) => (
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="relative p-6 bg-surface-soft rounded-2xl border border-gray-100 hover:border-brand-primary/20 transition-all duration-300 h-full flex flex-col group"
+              >
+                {/* Step number watermark */}
+                <span className="absolute top-4 left-4 font-jakarta text-6xl font-extrabold text-gray-100 group-hover:text-brand-primary/10 transition-colors duration-300 select-none leading-none">
+                  {step.number}
+                </span>
+
+                <div className="relative z-10">
+                  <div className="p-3 bg-grad-brand rounded-xl w-fit mb-4 shadow-md">
+                    <step.icon className="text-2xl text-white" />
                   </div>
-                  <span className="font-jakarta text-4xl font-bold text-gray-200">
-                    {step.number}
-                  </span>
+                  <h3 className="font-heebo text-xl font-bold text-brand-text mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="font-heebo text-brand-muted leading-relaxed flex-grow text-[0.95rem]">
+                    {step.description}
+                  </p>
                 </div>
-                        <h3 className="font-heebo text-xl font-bold text-brand-text mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="font-heebo text-gray-600 leading-relaxed flex-grow">
-                          {step.description}
-                        </p>
+
+                {/* Connector arrow for desktop */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute -left-4 top-1/2 -translate-y-1/2 z-20">
+                    <div className="w-8 h-8 rounded-full bg-surface-base border-2 border-brand-primary/30 flex items-center justify-center">
+                      <svg className="w-3 h-3 text-brand-primary rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
               </motion.div>
             </ScrollReveal>
           ))}
