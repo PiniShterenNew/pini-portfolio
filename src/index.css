@@ -19,15 +19,78 @@
     direction: rtl;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #1E1E2F;
+    background-color: #FFFFFF;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', 'Heebo', sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: #1B1529;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-jakarta text-4xl sm:text-5xl font-bold text-brand-text;
+  }
+
+  .section-subtitle {
+    @apply font-heebo text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-glass rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-grad-brand bg-clip-text text-transparent;
   }
 }
 
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Gradient mesh background for hero */
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 50% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+}
+
+/* Noise overlay for texture */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

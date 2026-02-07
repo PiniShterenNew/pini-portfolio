@@ -1,7 +1,3 @@
-// Description: Button component with ripple effect and accessibility
-// Author: Pinchas
-// Created with claude.md rules
-
 import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { rippleEffect, buttonHover } from '../lib/motionPresets'
@@ -13,9 +9,6 @@ interface RippleButtonProps {
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
   ariaLabel?: string
-  tooltip?: string
-  'data-tooltip-id'?: string
-  'data-tooltip-content'?: string
 }
 
 const RippleButton: React.FC<RippleButtonProps> = ({
@@ -25,8 +18,6 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   disabled = false,
   type = 'button',
   ariaLabel,
-  tooltip,
-  ...rest
 }) => {
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([])
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -49,7 +40,6 @@ const RippleButton: React.FC<RippleButtonProps> = ({
 
     setRipples(prev => [...prev, newRipple])
 
-    // Remove ripple after animation
     setTimeout(() => {
       setRipples(prev => prev.filter(ripple => ripple.id !== newRipple.id))
     }, 600)
@@ -70,13 +60,9 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       whileHover={buttonHover.whileHover}
       whileTap={rippleEffect.whileTap}
       transition={rippleEffect.whileTap.transition}
-      data-tooltip-id={rest['data-tooltip-id'] || (tooltip ? 'app-tooltip' : undefined)}
-      data-tooltip-content={rest['data-tooltip-content'] || tooltip}
-      {...rest}
     >
       {children}
-      
-      {/* Ripple effects */}
+
       {ripples.map(ripple => (
         <motion.span
           key={ripple.id}
@@ -88,8 +74,8 @@ const RippleButton: React.FC<RippleButtonProps> = ({
             height: 0
           }}
           initial={{ scale: 0, opacity: 1 }}
-          animate={{ 
-            scale: 4, 
+          animate={{
+            scale: 4,
             opacity: 0,
             width: 20,
             height: 20,

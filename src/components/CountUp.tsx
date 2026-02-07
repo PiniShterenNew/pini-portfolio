@@ -3,7 +3,7 @@
 // Created with claude.md rules
 
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
+import { useInView, useMotionValue, useSpring } from 'framer-motion'
 
 interface CountUpProps {
   end: number
@@ -16,7 +16,6 @@ interface CountUpProps {
 
 const CountUp: React.FC<CountUpProps> = ({
   end,
-  duration = 2,
   suffix = '',
   prefix = '',
   decimals = 0,
