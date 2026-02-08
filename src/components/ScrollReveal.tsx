@@ -1,72 +1,34 @@
-// Description: Universal scroll reveal component with consistent animations
-// Author: Pinchas
-// Created with claude.md rules
-
 import React from 'react'
-import { motion } from 'framer-motion'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-import { useAccessibility } from '../hooks/useAccessibility'
-import { getAccessibleVariants, fadeInUp, fadeInDown, fadeInLeft, fadeInRight, smoothTransition } from '../lib/motionPresets'
+import { useInView } from 'react-intersection-observer'
 
 interface ScrollRevealProps {
   children: React.ReactNode
-  delay?: number
-  direction?: 'up' | 'down' | 'left' | 'right'
-  duration?: number
   className?: string
+  delay?: number
 }
 
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
+  className = '',
   delay = 0,
-  direction = 'up',
-  duration = 0.6,
-  className = ''
 }) => {
-  const { ref, inView } = useScrollAnimation()
-  const { shouldAnimate, prefersReducedMotion } = useAccessibility()
-
-  const getVariants = () => {
-    switch (direction) {
-      case 'up':
-        return fadeInUp
-      case 'down':
-        return fadeInDown
-      case 'left':
-        return fadeInLeft
-      case 'right':
-        return fadeInRight
-      default:
-        return fadeInUp
-    }
-  }
-
-  const variants = getAccessibleVariants(prefersReducedMotion, getVariants())
-
-  // If reduced motion is preferred, show content immediately
-  if (!shouldAnimate) {
-    return (
-      <div ref={ref} className={className}>
-        {children}
-      </div>
-    )
-  }
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.15,
+  })
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      variants={variants}
-      initial="initial"
-      animate={inView ? "animate" : "initial"}
-      transition={{ 
-        ...smoothTransition,
-        duration,
-        delay
-      }}
       className={className}
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(12px)',
+        transition: `opacity 0.4s ease-out ${delay}s, transform 0.4s ease-out ${delay}s`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
