@@ -12,7 +12,6 @@ import Disclaimer from './pages/Disclaimer'
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
       <div className="min-h-screen bg-surface-base text-brand-text">
         <Navbar />
         <main>
@@ -25,6 +24,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
         <WhatsAppButton />
+        <ScrollToTop />
       </div>
     </Router>
   )

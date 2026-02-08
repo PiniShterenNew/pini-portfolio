@@ -1,10 +1,5 @@
-// Description: Accordion component for FAQ section
-// Author: Pinchas
-// Created with claude.md rules
-
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiChevronDown } from 'react-icons/fi'
 
 interface AccordionItem {
   q: string
@@ -23,24 +18,25 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="divide-y divide-surface-border">
       {items.map((item, index) => (
-        <div
-          key={index}
-          className="bg-surface-base rounded-2xl border border-gray-100 overflow-hidden"
-        >
+        <div key={index}>
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-6 py-5 flex items-center justify-between text-right hover:bg-surface-soft transition-colors duration-200"
+            className="w-full py-5 flex items-center justify-between text-right group"
           >
-            <motion.div
-              animate={{ rotate: openIndex === index ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="ml-4"
+            <svg
+              className={`w-4 h-4 text-brand-muted transition-transform duration-200 flex-shrink-0 ${
+                openIndex === index ? 'rotate-180' : ''
+              }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-              <FiChevronDown className="text-brand-primary text-xl" />
-            </motion.div>
-            <h3 className="font-heebo font-semibold text-lg text-brand-text">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+            <h3 className="font-rubik font-medium text-body text-brand-text group-hover:text-brand-gold transition-colors duration-200">
               {item.q}
             </h3>
           </button>
@@ -50,9 +46,9 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                transition={{ duration: 0.2, ease: 'easeInOut' }}
               >
-                <div className="px-6 pb-5 pt-2 text-gray-600 font-heebo leading-relaxed">
+                <div className="pb-5 text-brand-muted font-heebo text-body leading-relaxed">
                   {item.a}
                 </div>
               </motion.div>
@@ -65,4 +61,3 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
 }
 
 export default Accordion
-

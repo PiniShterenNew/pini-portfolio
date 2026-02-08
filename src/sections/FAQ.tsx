@@ -5,43 +5,29 @@ import ScrollReveal from '../components/ScrollReveal'
 const FAQ: React.FC = () => {
   const faqItems = [
     {
-      q: 'כמה זמן לוקח לבנות אתר?',
-      a: 'תלוי בגודל הפרויקט. אתר תדמית בסיסי יכול להיות מוכן תוך 2-3 שבועות, בעוד שפרויקטים מורכבים יותר (כמו חנות אונליין) יכולים לקחת 4-8 שבועות.',
+      q: 'כמה עולה אתר?',
+      a: 'תלוי בפרויקט. דף נחיתה מתחיל מ-3,000₪, אתר תדמית מ-5,000₪, וחנות אונליין מ-8,000₪. אשמח לתת הצעת מחיר מדויקת אחרי שיחה קצרה.',
     },
     {
-      q: 'האם האתר יהיה מותאם לנייד?',
-      a: 'בהחלט! כל אתר שאני בונה הוא רספונסיבי לחלוטין ומותאם לכל סוגי המסכים — מובייל, טאבלט ודסקטופ.',
+      q: 'כמה זמן לוקח?',
+      a: 'דף נחיתה: 1-2 שבועות. אתר תדמית: 2-4 שבועות. חנות אונליין: 4-8 שבועות. תלוי בהיקף ובמהירות קבלת חומרים.',
     },
     {
-      q: 'מה כלול במחיר?',
-      a: 'המחיר כולל עיצוב מותאם אישית, פיתוח מלא, אופטימיזציה ל-SEO, אינטגרציה עם כלי ניתוח, וליווי טכני למשך 30 יום אחרי ההשקה.',
-    },
-    {
-      q: 'האם אוכל לערוך את האתר בעצמי?',
-      a: 'כן! אני יכול לבנות את האתר עם מערכת ניהול תוכן (CMS) שמאפשרת לך לערוך תוכן, להוסיף תמונות ולעדכן את האתר בקלות ללא ידע טכני.',
-    },
-    {
-      q: 'מה קורה אחרי השקת האתר?',
-      a: 'אני מספק תמיכה טכנית למשך 30 יום לאחר ההשקה. לאחר מכן, אפשר להמשיך עם חבילת תחזוקה חודשית או לפנות אליי לפי צורך לעדכונים ושיפורים.',
+      q: 'מה כלול?',
+      a: 'עיצוב מותאם, פיתוח מלא, רספונסיביות, SEO בסיסי, אינטגרציה עם Google Analytics, וליווי של 30 יום אחרי ההשקה.',
     },
   ]
 
   return (
-    <section id="faq" className="py-section bg-surface-soft">
+    <section id="faq" className="py-section">
       <div className="max-w-narrow mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="inline-block font-heebo text-sm font-semibold text-brand-primary tracking-wide mb-3">שאלות ותשובות</span>
-            <h2 className="section-heading mb-4">
-              שאלות נפוצות
-            </h2>
-            <p className="section-subtitle">
-              תשובות לשאלות הנפוצות ביותר שאני מקבל.
-            </p>
+          <div className="text-center mb-10">
+            <h2 className="section-heading mb-3">שאלות נפוצות</h2>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal delay={0.05}>
           <Accordion items={faqItems} />
         </ScrollReveal>
       </div>
