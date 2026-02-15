@@ -14,7 +14,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.15,
+    threshold: 0.12,
   })
 
   return (
@@ -23,8 +23,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       className={className}
       style={{
         opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(12px)',
-        transition: `opacity 0.4s ease-out ${delay}s, transform 0.4s ease-out ${delay}s`,
+        transform: inView ? 'translateY(0)' : 'translateY(16px)',
+        transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
       }}
     >
       {children}
