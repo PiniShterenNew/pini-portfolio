@@ -1,85 +1,67 @@
 import React from 'react'
-import ScrollReveal from '../components/ScrollReveal'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage()
+
   return (
-    <section className="min-h-[85vh] flex items-center pt-20 pb-12">
-      <div className="max-w-content mx-auto px-4 sm:px-6 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          {/* Content - right side (RTL) */}
-          <div className="lg:col-span-3 space-y-6">
-            <ScrollReveal>
-              <span className="inline-block font-rubik text-small font-medium text-brand-gold tracking-wide">
-                מפתח ומעצב אתרים
-              </span>
-            </ScrollReveal>
+    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+      {/* Background glow */}
+      <div className="hero-glow" />
 
-            <ScrollReveal delay={0.05}>
-              <h1 className="font-rubik text-hero-sm sm:text-hero text-brand-text leading-tight">
-                אני בונה אתרים
-                <br />
-                שעובדים קשה כמוך.
-              </h1>
-            </ScrollReveal>
+      <div className="section-wrap relative z-10 w-full">
+        <div className="hero-stagger max-w-3xl">
+          {/* Tag */}
+          <span className="inline-block animate-hero-fade font-body text-sm font-medium text-accent tracking-wide mb-6">
+            {t('מפתח Full-Stack · React & Next.js', 'Full-Stack Developer · React & Next.js')}
+          </span>
 
-            <ScrollReveal delay={0.1}>
-              <p className="font-heebo text-body-lg text-brand-muted max-w-lg leading-relaxed">
-                העסק שלך צריך נוכחות דיגיטלית שבאמת מביאה לקוחות.
-                לא רק אתר יפה — אתר שעובד.
-              </p>
-            </ScrollReveal>
+          {/* Headline */}
+          <h1 className="animate-hero-d1 font-head text-display text-tx-primary mb-6">
+            {t(
+              <>אני בונה מוצרים דיגיטליים<br /><span className="text-gradient-accent">שעובדים.</span></>,
+              <>I build digital products<br /><span className="text-gradient-accent">that work.</span></>
+            )}
+          </h1>
 
-            <ScrollReveal delay={0.15}>
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <button
-                  onClick={() => {
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className="btn-primary text-body px-8 py-3.5"
-                >
-                  בואו נדבר
-                </button>
-                <a href="#portfolio" className="btn-ghost group">
-                  ראו עבודות
-                  <svg
-                    className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1 rtl:rotate-180"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </ScrollReveal>
+          {/* Subheadline */}
+          <p className="animate-hero-d2 font-body text-body-lg text-tx-secondary max-w-xl mb-10 leading-relaxed">
+            {t(
+              'מפתח Full-Stack עם פוקוס על React, Next.js ובניית מוצרי SaaS. מהרעיון ועד הפרודקשן — קוד נקי, ביצועים גבוהים, חוויית משתמש מושלמת.',
+              'Full-Stack developer focused on React, Next.js, and building SaaS products. From concept to production — clean code, high performance, perfect UX.'
+            )}
+          </p>
 
-            <ScrollReveal delay={0.2}>
-              <p className="font-heebo text-small text-brand-muted pt-4">
-                בניתי 40+ אתרים לעסקים קטנים ובינוניים בישראל.
-              </p>
-            </ScrollReveal>
+          {/* CTAs */}
+          <div className="animate-hero-d3 flex flex-col sm:flex-row gap-4 mb-12">
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary text-body px-8 py-3.5"
+            >
+              {t('בואו נדבר', "Let's Talk")}
+            </button>
+            <a href="#work" className="btn-secondary text-body px-8 py-3.5">
+              {t('ראו עבודות', 'View Work')}
+              <svg className="w-4 h-4 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
 
-          {/* Image - left side (RTL) */}
-          <div className="lg:col-span-2">
-            <ScrollReveal delay={0.1}>
-              <div className="relative max-w-sm mx-auto lg:mx-0">
-                <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-surface-warm">
-                  <img
-                    src="/assets/profile.png"
-                    alt="פיני שטרן — מפתח ומעצב אתרים"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                    }}
-                  />
-                </div>
-                {/* Gold accent line */}
-                <div className="absolute -right-3 top-8 bottom-8 w-0.5 bg-brand-gold hidden lg:block" />
-              </div>
-            </ScrollReveal>
+          {/* Proof row */}
+          <div className="animate-hero-d4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-tx-muted font-body">
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              {t('40+ פרויקטים', '40+ Projects')}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              {t('מוצרי SaaS', 'SaaS Products')}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              React & Next.js
+            </span>
           </div>
         </div>
       </div>

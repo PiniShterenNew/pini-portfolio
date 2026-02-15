@@ -1,111 +1,65 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { FiUser, FiStar } from 'react-icons/fi'
 import ScrollReveal from '../components/ScrollReveal'
-
-interface Testimonial {
-  id: string
-  name: string
-  role?: string
-  avatar?: string
-  quote: string
-  rating: number
-}
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Testimonials: React.FC = () => {
-  const testimonials: Testimonial[] = [
+  const { t } = useLanguage()
+
+  const testimonials = [
     {
-      id: '1',
-      name: 'שירה כהן',
-      role: 'מנהלת שיווק',
-      avatar: '/assets/avatars/avatar1.webp',
-      quote: 'העבודה עם פיני הייתה חוויה מדהימה. הוא הבין בדיוק מה אנחנו צריכים ובנה לנו אתר שמייצר לידים כל יום.',
-      rating: 5,
+      quote: t(
+        'פיני הבין בדיוק מה אנחנו צריכים והפך את הרעיון למוצר עובד תוך שבועות. הקוד נקי, האתר מהיר, והתמיכה אחרי ההשקה — ברמה אחרת לגמרי.',
+        'Pini understood exactly what we needed and turned our idea into a working product within weeks. Clean code, fast site, and post-launch support on a completely different level.'
+      ),
+      name: t('דוד כהן', 'David Cohen'),
+      role: t('מייסד, TechFlow', 'Founder, TechFlow'),
     },
     {
-      id: '2',
-      name: 'דניאל לוי',
-      role: 'בעל עסק',
-      avatar: '/assets/avatars/avatar2.webp',
-      quote: 'האתר שבנה פיני העלה את המכירות שלנו ב-60%. מקצועי, מהיר ותמיד זמין לעזרה.',
-      rating: 5,
-    },
-    {
-      id: '3',
-      name: 'יעל רוזן',
-      role: 'יועצת עסקית',
-      avatar: '/assets/avatars/avatar3.webp',
-      quote: 'שירות ברמה הכי גבוהה! פיני ליווה אותנו מההתחלה ועד ההשקה ומעבר לה. ממליצה בחום!',
-      rating: 5,
+      quote: t(
+        'עבדנו עם כמה מפתחים לפני פיני. ההבדל הוא בתשומת הלב לפרטים ובגישה המוצרית. הוא לא רק כותב קוד — הוא חושב על כל החוויה.',
+        "We worked with several developers before Pini. The difference is in the attention to detail and product mindset. He doesn't just write code — he thinks about the entire experience."
+      ),
+      name: t('שירה לוי', 'Shira Levi'),
+      role: t('סמנכ״לית שיווק, Brandly', 'CMO, Brandly'),
     },
   ]
 
   return (
-    <section id="testimonials" className="py-section bg-surface-base relative overflow-hidden">
-      <div className="absolute inset-0 bg-grad-glow pointer-events-none" />
-
-      <div className="max-w-content mx-auto px-4 sm:px-6 relative z-10">
+    <section className="py-section">
+      <div className="section-wrap">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block font-heebo text-sm font-semibold text-brand-primary tracking-wide mb-3">המלצות</span>
-            <h2 className="section-heading mb-4">
-              מה הלקוחות אומרים
+            <span className="inline-block font-body text-sm font-medium text-accent tracking-wide mb-4">
+              {t('מה אומרים עליי', 'What They Say')}
+            </span>
+            <h2 className="font-head text-h1 text-tx-primary">
+              {t('המלצות', 'Testimonials')}
             </h2>
-            <p className="section-subtitle">
-              לקוחות מרוצים שמספרים על החוויה שלהם.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <ScrollReveal key={testimonial.id} delay={index * 0.12}>
-              <motion.div
-                whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="p-8 bg-surface-soft rounded-2xl border border-gray-100 hover:border-brand-primary/15 transition-all duration-300 h-full flex flex-col"
-              >
-                {/* Stars */}
-                <div className="flex gap-1 mb-5">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <FiStar key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <blockquote className="card p-6 sm:p-8 h-full flex flex-col">
+                {/* Quote icon */}
+                <svg className="w-8 h-8 text-accent/30 mb-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+                </svg>
 
-                {/* Quote */}
-                <p className="font-heebo text-brand-text leading-relaxed mb-6 flex-grow text-[0.95rem]">
-                  &ldquo;{testimonial.quote}&rdquo;
+                <p className="font-body text-body text-tx-secondary leading-relaxed mb-6 flex-grow">
+                  "{testimonial.quote}"
                 </p>
 
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center flex-shrink-0">
-                    {testimonial.avatar ? (
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none'
-                        }}
-                      />
-                    ) : (
-                      <FiUser className="text-xl text-brand-primary" />
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="font-heebo text-sm font-bold text-brand-text">
-                      {testimonial.name}
-                    </h4>
-                    {testimonial.role && (
-                      <p className="font-heebo text-xs text-brand-muted">
-                        {testimonial.role}
-                      </p>
-                    )}
-                  </div>
+                <div className="border-t border-midnight-border pt-4">
+                  <p className="font-head text-sm font-semibold text-tx-primary">
+                    {testimonial.name}
+                  </p>
+                  <p className="font-body text-xs text-tx-muted mt-0.5">
+                    {testimonial.role}
+                  </p>
                 </div>
-              </motion.div>
+              </blockquote>
             </ScrollReveal>
           ))}
         </div>
