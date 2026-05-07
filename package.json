@@ -1,47 +1,30 @@
 {
-  "name": "my-landing",
+  "name": "pini-portfolio",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "aos": "^2.3.4",
+    "@anthropic-ai/sdk": "^0.52.0",
     "clsx": "^2.1.1",
-    "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.23.22",
-    "lucide-react": "^0.545.0",
-    "motion": "^12.23.22",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-hook-form": "^7.64.0",
-    "react-icons": "^5.5.0",
-    "react-intersection-observer": "^9.16.0",
-    "react-router-dom": "^7.9.3",
-    "react-tooltip": "^5.29.1",
-    "typed.js": "^2.1.0"
+    "lucide-react": "^0.453.0",
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@types/node": "^24.6.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
-    "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^5.0.4",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.22",
-    "globals": "^16.4.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.3.2",
     "postcss": "^8.5.6",
-    "rollup": "^4.52.4",
     "tailwindcss": "^3.4.13",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.45.0",
-    "vite": "^7.1.7"
+    "typescript": "^5.9.0"
   }
 }
