@@ -150,7 +150,7 @@ export default function Work() {
   const { t } = useApp();
 
   return (
-    <section id="work" className="relative py-24 md:py-36 border-t border-[var(--border)]">
+    <section id="work" className="relative py-16 md:py-24 lg:py-36 border-t border-[var(--border)]">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-7">
@@ -158,7 +158,7 @@ export default function Work() {
               <Eyebrow>{t.work.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[34px] md:text-[52px] xl:text-[60px] leading-[1.02]">
+              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[26px] sm:text-[34px] md:text-[48px] xl:text-[60px] leading-[1.05]">
                 {t.work.title}
               </h2>
             </Reveal>
@@ -181,7 +181,7 @@ export default function Work() {
               <Reveal key={c.title} delay={i * 80}>
                 <article className="group relative overflow-hidden border border-[var(--border)] bg-[var(--bg)] grid lg:grid-cols-12 hover:border-[var(--border-strong)] transition-colors">
                   <div
-                    className={`relative h-56 sm:h-64 lg:h-auto lg:col-span-5 ${
+                    className={`relative h-44 sm:h-52 lg:h-auto lg:col-span-5 ${
                       reverse ? "lg:order-2" : ""
                     } border-b lg:border-b-0 ${
                       reverse ? "lg:border-s" : "lg:border-e"
@@ -200,7 +200,7 @@ export default function Work() {
                         className="text-[var(--muted)] group-hover:text-[var(--text)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
                       />
                     </div>
-                    <h3 className="mt-5 font-display text-2xl md:text-[34px] xl:text-[40px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.1]">
+                    <h3 className="mt-5 font-display text-xl sm:text-2xl md:text-[34px] xl:text-[40px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.1]">
                       {c.title}
                     </h3>
                     <p className="mt-4 text-[14.5px] md:text-[15.5px] text-[var(--muted)] leading-relaxed max-w-xl">

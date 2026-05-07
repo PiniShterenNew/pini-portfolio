@@ -38,7 +38,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="top" className="relative min-h-[100svh] pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
+    <section id="top" className="relative min-h-[100svh] pt-20 md:pt-28 pb-12 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 hero-noise pointer-events-none" />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
       <div className="absolute inset-0 hero-grid pointer-events-none" />
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-10 pt-12 md:pt-20">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Left — type column */}
           <div className="lg:col-span-7 xl:col-span-7 relative z-10 order-2 lg:order-1">
             <div
@@ -67,19 +67,19 @@ export default function Hero() {
               <span className="font-mono text-[var(--muted)] text-[11px]">{t.hero.meta.city}</span>
             </div>
 
-            <h1 className="mt-7 md:mt-9 font-display tracking-[-0.03em] leading-[0.95] text-[var(--text)]">
-              <span className="block text-[44px] sm:text-[64px] md:text-[80px] xl:text-[104px] font-light italic-display">
+            <h1 className="mt-6 md:mt-9 font-display tracking-[-0.03em] leading-[0.92] text-[var(--text)]">
+              <span className="block text-[34px] sm:text-[52px] md:text-[72px] xl:text-[104px] font-light italic-display">
                 <WordReveal text={t.hero.tag1} delay={200} />
               </span>
-              <span className="block text-[44px] sm:text-[64px] md:text-[80px] xl:text-[104px] font-bold mt-1">
+              <span className="block text-[34px] sm:text-[52px] md:text-[72px] xl:text-[104px] font-bold mt-1">
                 <span className="bg-gradient-to-br from-[var(--text)] via-[var(--text)] to-[var(--muted)] bg-clip-text text-transparent">
                   <WordReveal text={t.hero.tag2} delay={400} />
                 </span>
               </span>
-              <span className="block text-[44px] sm:text-[64px] md:text-[80px] xl:text-[104px] font-light mt-1 flex items-baseline gap-3 md:gap-5 flex-wrap">
+              <div className="flex items-baseline gap-2 sm:gap-3 md:gap-5 flex-wrap mt-1 text-[34px] sm:text-[52px] md:text-[72px] xl:text-[104px] font-light">
                 <WordReveal text={t.hero.tag3} delay={650} />
-                <span className="inline-flex items-center text-[var(--accent-2)] -mt-2">
-                  <svg width="38" height="38" viewBox="0 0 40 40" fill="none" className="hero-spin">
+                <span className="inline-flex items-center text-[var(--accent-2)] self-center">
+                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none" className="hero-spin sm:w-[34px] sm:h-[34px] md:w-[38px] md:h-[38px]">
                     <path
                       d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z"
                       fill="currentColor"
@@ -89,7 +89,7 @@ export default function Hero() {
                 <span className="font-light italic-display">
                   <WordReveal text={t.hero.tag4} delay={850} />
                 </span>
-              </span>
+              </div>
             </h1>
 
             <p
@@ -116,7 +116,7 @@ export default function Hero() {
             </div>
 
             <div
-              className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 max-w-2xl reveal-fade"
+              className="mt-8 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-3 md:gap-y-4 max-w-2xl reveal-fade"
               style={{ animationDelay: "1400ms" }}
             >
               {stats.map((s) => (
@@ -174,7 +174,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-10 md:-bottom-12 end-0 max-w-[180px] text-end">
+              <div className="hidden sm:block absolute -bottom-10 md:-bottom-12 end-0 max-w-[180px] text-end">
                 <div className="text-[10.5px] font-mono italic text-[var(--muted)] leading-snug">
                   {t.hero.caption}
                 </div>

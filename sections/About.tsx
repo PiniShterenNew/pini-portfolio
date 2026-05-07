@@ -8,7 +8,7 @@ export default function About() {
   const { t } = useApp();
 
   return (
-    <section id="about" className="relative py-24 md:py-36 overflow-hidden">
+    <section id="about" className="relative py-16 md:py-24 lg:py-36 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
@@ -16,7 +16,7 @@ export default function About() {
               <Eyebrow>{t.about.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[34px] md:text-[52px] xl:text-[60px] leading-[1.02]">
+              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[26px] sm:text-[34px] md:text-[48px] xl:text-[60px] leading-[1.05]">
                 {t.about.title}
               </h2>
             </Reveal>
