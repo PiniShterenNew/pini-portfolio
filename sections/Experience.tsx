@@ -11,7 +11,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-36 border-t border-[var(--border)] bg-[var(--surface-0)]"
+      className="relative py-16 md:py-24 lg:py-36 border-t border-[var(--border)] bg-[var(--surface-0)]"
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 mb-12 md:mb-16">
@@ -20,7 +20,7 @@ export default function Experience() {
               <Eyebrow>{t.experience.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[34px] md:text-[52px] leading-[1.02]">
+              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[26px] sm:text-[34px] md:text-[48px] leading-[1.05]">
                 {t.experience.title}
               </h2>
             </Reveal>

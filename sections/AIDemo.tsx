@@ -84,7 +84,7 @@ function AIChat() {
   }
 
   return (
-    <div className="flex flex-col h-[460px] md:h-[520px]">
+    <div className="flex flex-col h-[380px] sm:h-[440px] md:h-[520px]">
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-6 space-y-3">
         {messages.length === 0 && (
           <div className="space-y-3">
@@ -206,7 +206,7 @@ Project: ${desc}`;
   }
 
   return (
-    <div className="grid md:grid-cols-2 gap-0 md:gap-px bg-[var(--border)] min-h-[460px] md:min-h-[520px]">
+    <div className="grid md:grid-cols-2 gap-0 md:gap-px bg-[var(--border)] min-h-[380px] sm:min-h-[440px] md:min-h-[520px]">
       <div className="bg-[var(--bg)] p-5 md:p-7 flex flex-col">
         <h3 className="font-display text-xl font-medium tracking-tight text-[var(--text)]">
           {t.ai.estimator.title}
@@ -322,7 +322,7 @@ export default function AIDemo() {
   return (
     <section
       id="ai"
-      className="relative py-24 md:py-36 border-t border-[var(--border)] overflow-hidden"
+      className="relative py-16 md:py-24 lg:py-36 border-t border-[var(--border)] overflow-hidden"
     >
       <div className="absolute inset-0 hero-glow opacity-60 pointer-events-none" />
       <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">

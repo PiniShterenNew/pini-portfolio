@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative pt-24 md:pt-36 pb-10 border-t border-[var(--border)] overflow-hidden"
+      className="relative pt-16 md:pt-24 lg:pt-36 pb-10 border-t border-[var(--border)] overflow-hidden"
     >
       <div className="absolute inset-0 hero-glow opacity-50 pointer-events-none" />
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-10">
@@ -21,7 +21,7 @@ export default function Footer() {
               <Eyebrow>{t.contact.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-6 font-display font-medium tracking-[-0.03em] text-[var(--text)] text-[44px] sm:text-[64px] md:text-[88px] xl:text-[112px] leading-[0.95]">
+              <h2 className="mt-6 font-display font-medium tracking-[-0.03em] text-[var(--text)] text-[30px] sm:text-[48px] md:text-[72px] xl:text-[112px] leading-[1.0] md:leading-[0.95]">
                 {t.contact.titleA}{" "}
                 <span className="italic-display font-light bg-gradient-to-br from-[var(--accent-2)] to-[var(--accent-3)] bg-clip-text text-transparent">
                   {t.contact.titleB}
@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Massive signature */}
         <div className="mt-20 md:mt-28 overflow-hidden">
           <div
-            className="font-display font-medium tracking-[-0.04em] text-[var(--text)] leading-[0.85] text-[19vw] sig-fill"
+            className="font-display font-medium tracking-[-0.04em] text-[var(--text)] leading-[0.85] text-[13vw] sm:text-[16vw] md:text-[19vw] sig-fill"
             dir="ltr"
           >
             PINI
