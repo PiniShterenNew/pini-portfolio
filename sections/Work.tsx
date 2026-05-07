@@ -1,31 +1,38 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUpRight, ShieldCheck, Gauge, Info } from "lucide-react";
 import { useApp } from "@/contexts/AppContext";
 import Reveal from "@/components/Reveal";
 import Eyebrow from "@/components/Eyebrow";
 
+/* ─── Mock UI panels ──────────────────────────────────────────── */
+
 function MockRealtime() {
   return (
-    <div className="absolute inset-0 p-5 flex flex-col gap-3" dir="ltr">
-      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)]">
+    <div className="absolute inset-0 p-4 flex flex-col gap-2 overflow-hidden" dir="ltr">
+      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)] shrink-0">
         <span className="h-2 w-2 rounded-full bg-emerald-400 pulse-dot" />
         socket.io · live
         <span className="ms-auto text-[var(--muted-2)]">412ms</span>
       </div>
-      <div className="grid grid-cols-8 gap-1 mt-1">
+      {/* Bar chart — inline rgba avoids Tailwind JIT CSS-var opacity bug */}
+      <div className="grid grid-cols-8 gap-1 items-end" style={{ height: 56 }}>
         {Array.from({ length: 48 }).map((_, i) => {
-          const h = 10 + ((i * 17) % 32);
+          const h = 10 + ((i * 17) % 46);
           return (
             <div
               key={i}
-              className="rounded-sm bg-gradient-to-t from-[var(--accent-2)]/40 to-[var(--accent-3)]/30"
-              style={{ height: h }}
+              className="rounded-sm"
+              style={{
+                height: h,
+                background: "linear-gradient(to top, rgba(212,165,116,0.55), rgba(107,155,209,0.35))",
+              }}
             />
           );
         })}
       </div>
-      <div className="mt-auto rounded border border-[var(--border)] bg-[var(--surface-2)] p-3 font-mono text-[11px] text-[var(--muted)] leading-relaxed">
+      <div className="mt-auto shrink-0 rounded border border-[var(--border)] bg-[var(--surface-2)] p-2.5 font-mono text-[10.5px] text-[var(--muted)] leading-relaxed">
         <div>
           <span className="text-[var(--muted-2)]">→</span> ws://api/stream{" "}
           <span className="text-emerald-400">200</span>
@@ -41,29 +48,30 @@ function MockRealtime() {
 function MockRBAC() {
   const roles = ["admin", "manager", "trainer", "trainee", "viewer"];
   return (
-    <div className="absolute inset-0 p-5 flex flex-col gap-3" dir="ltr">
-      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)]">
+    <div className="absolute inset-0 p-4 flex flex-col gap-2 overflow-hidden" dir="ltr">
+      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)] shrink-0">
         <ShieldCheck size={12} />
         permissions · 5 roles
       </div>
-      <div className="space-y-1.5 mt-1">
+      <div className="space-y-1.5 mt-1 flex-1">
         {roles.map((r, i) => (
           <div key={r} className="flex items-center gap-2">
-            <div className="w-16 text-[10.5px] font-mono text-[var(--muted-2)] truncate">{r}</div>
-            <div className="flex-1 h-2 bg-[var(--surface-2)] overflow-hidden">
+            <div className="w-14 text-[10px] font-mono text-[var(--muted-2)] truncate">{r}</div>
+            <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.07)" }}>
               <div
-                className="h-full bg-gradient-to-r from-[var(--accent-3)]/70 to-[var(--accent-2)]/70"
-                style={{ width: `${20 + i * 18}%` }}
+                className="h-full rounded-full"
+                style={{
+                  width: `${20 + i * 18}%`,
+                  background: "linear-gradient(to right, rgba(107,155,209,0.8), rgba(212,165,116,0.8))",
+                }}
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-auto rounded border border-[var(--border)] bg-[var(--surface-2)] p-3 font-mono text-[11px] text-[var(--muted)]">
-        <div>
-          <span className="text-[var(--muted-2)]">if</span> user.can(
-          <span className="text-[var(--accent-3)]">&quot;edit&quot;</span>)
-        </div>
+      <div className="shrink-0 rounded border border-[var(--border)] bg-[var(--surface-2)] p-2.5 font-mono text-[10.5px] text-[var(--muted)]">
+        <span className="text-[var(--muted-2)]">if</span> user.can(
+        <span style={{ color: "rgba(107,155,209,0.9)" }}>&quot;edit&quot;</span>)
       </div>
     </div>
   );
@@ -71,68 +79,46 @@ function MockRBAC() {
 
 function MockPerf() {
   return (
-    <div className="absolute inset-0 p-5 flex flex-col gap-3" dir="ltr">
-      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)]">
+    <div className="absolute inset-0 p-4 flex flex-col gap-2 overflow-hidden" dir="ltr">
+      <div className="flex items-center gap-2 text-[11px] font-mono text-[var(--muted)] shrink-0">
         <Gauge size={12} />
         lighthouse
       </div>
-      <div className="flex items-center gap-5 mt-1">
-        <div className="relative h-20 w-20">
+      <div className="flex items-center gap-4 mt-1 shrink-0">
+        <div className="relative h-16 w-16 shrink-0">
           <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
-            <circle cx="18" cy="18" r="15.9" stroke="var(--surface-2)" strokeWidth="2.5" fill="none" />
+            <circle cx="18" cy="18" r="15.9" stroke="rgba(255,255,255,0.07)" strokeWidth="2.5" fill="none" />
             <circle
-              cx="18"
-              cy="18"
-              r="15.9"
-              stroke="url(#perfg)"
-              strokeWidth="2.5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="15"
-              strokeLinecap="round"
+              cx="18" cy="18" r="15.9" stroke="url(#pg)" strokeWidth="2.5" fill="none"
+              strokeDasharray="100" strokeDashoffset="15" strokeLinecap="round"
             />
             <defs>
-              <linearGradient id="perfg">
+              <linearGradient id="pg">
                 <stop offset="0%" stopColor="#34d399" />
                 <stop offset="100%" stopColor="#22d3ee" />
               </linearGradient>
             </defs>
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center font-display text-xl font-semibold text-[var(--text)]">
+          <div className="absolute inset-0 flex items-center justify-center font-display text-lg font-semibold text-[var(--text)]">
             85
           </div>
         </div>
-        <div className="text-[11px] font-mono text-[var(--muted)]">
-          <div>
-            FCP <span className="text-[var(--text-2)]">1.2s</span>
-          </div>
-          <div>
-            TBT <span className="text-[var(--text-2)]">90ms</span>
-          </div>
-          <div>
-            CLS <span className="text-[var(--text-2)]">0.02</span>
-          </div>
+        <div className="text-[10.5px] font-mono text-[var(--muted)] space-y-0.5">
+          <div>FCP <span className="text-[var(--text-2)]">1.2s</span></div>
+          <div>TBT <span className="text-[var(--text-2)]">90ms</span></div>
+          <div>CLS <span className="text-[var(--text-2)]">0.02</span></div>
         </div>
       </div>
-      <div className="mt-auto h-12 relative">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 40" preserveAspectRatio="none">
-          <path
-            d="M0 30 L 40 28 L 80 22 L 120 14 L 160 9 L 200 6"
-            stroke="url(#perfg2)"
-            strokeWidth="1.5"
-            fill="none"
-          />
-          <path
-            d="M0 30 L 40 28 L 80 22 L 120 14 L 160 9 L 200 6 L 200 40 L 0 40 Z"
-            fill="url(#perfg2)"
-            opacity="0.15"
-          />
+      <div className="mt-auto h-10 relative shrink-0">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 36" preserveAspectRatio="none">
           <defs>
-            <linearGradient id="perfg2">
+            <linearGradient id="pg2" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor="#34d399" />
               <stop offset="100%" stopColor="#22d3ee" />
             </linearGradient>
           </defs>
+          <path d="M0 28 L40 26 L80 20 L120 13 L160 8 L200 5" stroke="url(#pg2)" strokeWidth="1.5" fill="none" />
+          <path d="M0 28 L40 26 L80 20 L120 13 L160 8 L200 5 L200 36 L0 36Z" fill="url(#pg2)" opacity="0.12" />
         </svg>
       </div>
     </div>
@@ -140,10 +126,13 @@ function MockPerf() {
 }
 
 const Mocks = [MockRealtime, MockRBAC, MockPerf];
-const accents = [
-  "from-[var(--accent-2)]/15 via-[var(--accent-2)]/5",
-  "from-[var(--accent-3)]/15 via-[var(--accent-3)]/5",
-  "from-emerald-400/12 via-emerald-400/5",
+const slugs = ["realtime", "access", "performance"];
+
+/* background tints — hardcoded rgba so they always render */
+const accentStyles: React.CSSProperties[] = [
+  { background: "linear-gradient(135deg, rgba(212,165,116,0.12) 0%, rgba(212,165,116,0.03) 50%, transparent 100%)" },
+  { background: "linear-gradient(135deg, rgba(107,155,209,0.12) 0%, rgba(107,155,209,0.03) 50%, transparent 100%)" },
+  { background: "linear-gradient(135deg, rgba(52,211,153,0.10) 0%, rgba(52,211,153,0.03) 50%, transparent 100%)" },
 ];
 
 export default function Work() {
@@ -179,47 +168,55 @@ export default function Work() {
             const reverse = i % 2 === 1;
             return (
               <Reveal key={c.title} delay={i * 80}>
-                <article className="group relative overflow-hidden border border-[var(--border)] bg-[var(--bg)] grid lg:grid-cols-12 hover:border-[var(--border-strong)] transition-colors">
-                  <div
-                    className={`relative h-44 sm:h-52 lg:h-auto lg:col-span-5 ${
-                      reverse ? "lg:order-2" : ""
-                    } border-b lg:border-b-0 ${
-                      reverse ? "lg:border-s" : "lg:border-e"
-                    } border-[var(--border)] bg-gradient-to-br ${accents[i]} to-transparent`}
-                  >
-                    <div className="absolute inset-0 hero-grid opacity-40" />
-                    <Mock />
-                  </div>
-                  <div
-                    className={`p-6 md:p-10 lg:col-span-7 flex flex-col ${reverse ? "lg:order-1" : ""}`}
-                  >
-                    <div className="flex items-center justify-between text-[10.5px] font-mono uppercase tracking-[0.18em] text-[var(--muted)]">
-                      <span>{c.tag}</span>
-                      <ArrowUpRight
-                        size={14}
-                        className="text-[var(--muted)] group-hover:text-[var(--text)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
-                      />
+                <Link href={`/work/${slugs[i]}`} className="block group">
+                  <article className="relative overflow-hidden border border-[var(--border)] bg-[var(--bg)] grid lg:grid-cols-12 hover:border-[var(--border-strong)] transition-colors cursor-pointer">
+                    {/* Mock panel */}
+                    <div
+                      className={`relative h-44 sm:h-52 lg:h-auto lg:col-span-5 overflow-hidden ${
+                        reverse ? "lg:order-2" : ""
+                      } border-b lg:border-b-0 ${
+                        reverse ? "lg:border-s" : "lg:border-e"
+                      } border-[var(--border)]`}
+                      style={accentStyles[i]}
+                    >
+                      <div className="absolute inset-0 hero-grid opacity-30" />
+                      <Mock />
                     </div>
-                    <h3 className="mt-5 font-display text-xl sm:text-2xl md:text-[34px] xl:text-[40px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.1]">
-                      {c.title}
-                    </h3>
-                    <p className="mt-4 text-[14.5px] md:text-[15.5px] text-[var(--muted)] leading-relaxed max-w-xl">
-                      {c.desc}
-                    </p>
-                    <div className="mt-auto pt-7 grid grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)]">
-                      {c.metrics.map((m) => (
-                        <div key={m.v} className="bg-[var(--bg)] p-3 md:p-4">
-                          <div className="font-display text-lg md:text-2xl font-medium tracking-tight text-[var(--text)]">
-                            {m.k}
+
+                    {/* Text content */}
+                    <div
+                      className={`p-6 md:p-10 lg:col-span-7 flex flex-col min-h-0 ${reverse ? "lg:order-1" : ""}`}
+                    >
+                      <div className="flex items-center justify-between text-[10.5px] font-mono uppercase tracking-[0.18em] text-[var(--muted)]">
+                        <span>{c.tag}</span>
+                        <ArrowUpRight
+                          size={14}
+                          className="text-[var(--muted)] group-hover:text-[var(--text)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                        />
+                      </div>
+                      <h3 className="mt-4 font-display text-xl sm:text-2xl md:text-[30px] xl:text-[38px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.1]">
+                        {c.title}
+                      </h3>
+                      <p className="mt-3 text-[14px] md:text-[15px] text-[var(--muted)] leading-relaxed max-w-xl">
+                        {c.desc}
+                      </p>
+
+                      {/* Metrics */}
+                      <div className="mt-auto pt-6 grid grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)]">
+                        {c.metrics.map((m) => (
+                          <div key={m.v} className="bg-[var(--bg)] p-3 md:p-4 overflow-hidden">
+                            <div className="font-display text-base md:text-xl font-medium tracking-tight text-[var(--text)] truncate">
+                              {m.k}
+                            </div>
+                            <div className="mt-0.5 text-[9.5px] md:text-[10.5px] font-mono uppercase tracking-[0.1em] text-[var(--muted)] truncate">
+                              {m.v}
+                            </div>
                           </div>
-                          <div className="mt-1 text-[10.5px] font-mono uppercase tracking-[0.12em] text-[var(--muted)] truncate">
-                            {m.v}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               </Reveal>
             );
           })}
