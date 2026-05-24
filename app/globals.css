@@ -37,6 +37,14 @@
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.7, 0, 0.3, 1);
+
+  /* Accessible typography scale */
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-body-sm: clamp(0.9375rem, 0.91rem + 0.12vw, 1rem);
+  --fs-label: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --fs-micro: clamp(0.75rem, 0.735rem + 0.08vw, 0.8125rem);
+  --lh-body: 1.6;
+  --lh-label: 1.45;
 }
 
 html {
@@ -58,8 +66,8 @@ body {
   text-rendering: optimizeLegibility;
   position: relative;
   min-height: 100vh;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 html[dir="ltr"] body {
@@ -85,6 +93,64 @@ html[dir="ltr"] body {
 html[dir="rtl"] body {
   font-family: var(--hebrew);
   letter-spacing: 0;
+}
+
+p,
+li,
+.play .desc,
+.metric .desc,
+.pillar .d,
+.fact .sub,
+.tl-bullets li {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
+}
+
+.nav,
+.btn,
+.langtoggle,
+.hero__meta,
+.ticker__inner,
+.section__num,
+.skillrow__cat,
+.skillrow__count,
+.tl-item__date,
+.tl-meta,
+.edu__card .meta,
+.contact__pre,
+.contact__channels,
+.footer,
+.project__brandline,
+.techstrip .lbl,
+.chip,
+.pillar .ix,
+.project__live,
+.metric .k {
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+}
+
+.hero__meta .label,
+.fact .k,
+.edu__card .k,
+.play .label,
+.play .stamp,
+.pui-top,
+.pui-balance .l,
+.pui-balance .delta,
+.pui-sec-h,
+.pui-sub .s,
+.pui-sub.flag::after,
+.pui-cta,
+.pui-sub .ic {
+  font-size: var(--fs-micro);
+  line-height: var(--lh-label);
+}
+
+.pui-sub .n,
+.pui-sub .p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
 }
 
 ::selection {
