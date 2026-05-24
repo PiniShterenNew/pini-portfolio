@@ -2,53 +2,62 @@
 
 import { useApp } from "@/contexts/AppContext";
 import Reveal from "@/components/Reveal";
-import Eyebrow from "@/components/Eyebrow";
+import Segments from "@/components/Segments";
+import Marquee from "@/components/Marquee";
 
 export default function About() {
   const { t } = useApp();
+  const a = t.about;
 
   return (
-    <section id="about" className="relative py-16 md:py-24 lg:py-36 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-5">
-            <Reveal>
-              <Eyebrow>{t.about.eyebrow}</Eyebrow>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="mt-6 font-display font-medium tracking-[-0.025em] text-[var(--text)] text-[26px] sm:text-[34px] md:text-[48px] xl:text-[60px] leading-[1.05]">
-                {t.about.title}
-              </h2>
-            </Reveal>
+    <section className="section shell" id="about">
+      <div className="wrap">
+        <Reveal as="header" className="section__head">
+          <span className="section__num">{a.num}</span>
+          <h2 className="section__title">
+            <Segments parts={a.title} />
+          </h2>
+        </Reveal>
+
+        <Reveal className="about">
+          <div className="about__bio">
+            <p>
+              <Segments parts={a.p1} />
+            </p>
+            <p>{a.p2}</p>
           </div>
 
-          <div className="lg:col-span-7 lg:pt-3">
-            <Reveal delay={140}>
-              <div className="space-y-5 text-[15.5px] md:text-[17px] text-[var(--muted)] leading-[1.7] max-w-2xl">
-                {t.about.body.map((p, i) => (
-                  <p key={i} className={i === 0 ? "first-letter-display" : ""}>
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={220}>
-              <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5">
-                {t.about.facts.map((f) => (
-                  <div key={f.v} className="border-t border-[var(--text)] pt-3">
-                    <div className="font-display text-[28px] md:text-[34px] font-medium tracking-tight text-[var(--text)]">
-                      {f.k}
-                    </div>
-                    <div className="mt-1 text-[11px] font-mono uppercase tracking-[0.14em] text-[var(--muted)]">
-                      {f.v}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+          <div className="factgrid">
+            <div className="fact">
+              <span className="k">{a.f1k}</span>
+              <span className="v">
+                <Segments parts={a.f1v} />
+              </span>
+              <span className="sub">{a.f1s}</span>
+            </div>
+            <div className="fact">
+              <span className="k">{a.f2k}</span>
+              <span className="v">
+                <Segments parts={a.f2v} />
+              </span>
+              <span className="sub">{a.f2s}</span>
+            </div>
+            <div className="fact">
+              <span className="k">{a.f3k}</span>
+              <span className="v">
+                <Segments parts={a.f3v} />
+              </span>
+              <span className="sub">{a.f3s}</span>
+            </div>
+            <div className="fact">
+              <span className="k">{a.f4k}</span>
+              <span className="v">{a.f4v}</span>
+              <span className="sub">{a.f4s}</span>
+            </div>
           </div>
-        </div>
+        </Reveal>
+
+        <Marquee />
       </div>
     </section>
   );

@@ -1,58 +1,63 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter, Heebo, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Geist, Heebo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
 
-const fraunces = Fraunces({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
+  weight: ["400"],
   style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
 });
 
 const heebo = Heebo({
   subsets: ["latin", "hebrew"],
-  variable: "--font-heebo",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hebrew",
+  weight: ["300", "400", "500", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-mono",
   weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Pini Shteren — React.js Developer & Frontend Engineer",
+  title: "Pini Shteren — Frontend Engineer",
   description:
-    "React.js developer & frontend engineer. Five years of high-performance B2B SaaS. Tel Aviv, Israel.",
+    "Frontend engineer building React and TypeScript products. 5+ years shipping production UI.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Pini Shteren — Frontend Engineer",
+    description: "React · TypeScript · Product UI",
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "he_IL",
+    images: [{ url: "/logo.png", width: 512, height: 512, alt: "Pini Shteren" }],
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0c" },
-    { media: "(prefers-color-scheme: light)", color: "#f5f3ee" },
-  ],
+  themeColor: "#0b0b0a",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" data-theme="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("pini-theme")||"dark";var l=localStorage.getItem("pini-lang")||"en";document.documentElement.setAttribute("data-theme",t);document.documentElement.setAttribute("lang",l);document.documentElement.setAttribute("dir",l==="he"?"rtl":"ltr");}catch(e){}})();`,
-          }}
-        />
-      </head>
+    <html lang="he" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${fraunces.variable} ${inter.variable} ${heebo.variable} ${jetbrainsMono.variable}`}
+        className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable}`}
       >
         <AppProvider>{children}</AppProvider>
       </body>

@@ -9,10 +9,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-fraunces)", "var(--font-heebo)", "ui-serif", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "var(--font-heebo)", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
-        heebo: ["var(--font-heebo)", "sans-serif"],
+        serif: ["var(--font-serif)", "ui-serif", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "var(--font-hebrew)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        hebrew: ["var(--font-hebrew)", "sans-serif"],
+      },
+      colors: {
+        bg: "#0b0b0a",
+        ink: "#f1efe7",
+        accent: "#c8f15a",
       },
     },
   },
