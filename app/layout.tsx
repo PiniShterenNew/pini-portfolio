@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Geist, Heebo, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Geist, Heebo, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
 
@@ -26,6 +26,12 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400", "500"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-hand",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -57,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable}`}
+        className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
         <AppProvider>{children}</AppProvider>
       </body>
