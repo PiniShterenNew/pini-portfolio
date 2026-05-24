@@ -44,6 +44,10 @@ export default function Hero() {
 
           <div className="hero__sub">
             <p className="hero__tag">{t.hero.tag}</p>
+            <div className="hero__signature" aria-hidden="true">
+              <span className="sigline" />
+              <span className="signature">{lang === "he" ? "פיני" : "Pini"}</span>
+            </div>
             <div className="hero__cta">
               <a href="#work" className="btn btn--solid">
                 {t.hero.cta1}
@@ -57,8 +61,14 @@ export default function Hero() {
         </div>
 
         <aside className="hero__portrait" aria-hidden="false">
-          <PortraitPicture alt="Pini Shteren" priority sizes="(min-width: 1024px) 40vw, 100vw" />
+          <div className="hero__portrait__frame">
+            <PortraitPicture alt="Pini Shteren" priority sizes="(min-width: 1024px) 40vw, 100vw" />
+          </div>
           <span className="hero__portrait-badge">{t.hero.portraitBadge}</span>
+          <div className="hero__portrait__caption">
+            <span>{lang === "he" ? "פיני, בסטודיו" : "Pini, in the studio"}</span>
+            <span className="date">{lang === "he" ? "2025" : "'25"}</span>
+          </div>
         </aside>
       </div>
 
