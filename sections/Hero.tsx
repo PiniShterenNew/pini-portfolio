@@ -1,43 +1,47 @@
-"use client";
+// Description: hero section, all text from i18n
+// Author: Pinchas
+// Created with claude.md rules
 
-import { useApp } from "@/contexts/AppContext";
-import Segments from "@/components/Segments";
-import Ticker from "@/components/Ticker";
-import PortraitPicture from "@/components/PortraitPicture";
+'use client'
+
+import { useApp } from '@/contexts/AppContext'
+import Segments from '@/components/Segments'
+import Ticker from '@/components/Ticker'
+import PortraitPicture from '@/components/PortraitPicture'
 
 export default function Hero() {
-  const { t, lang } = useApp();
+  const { t, lang } = useApp()
 
   return (
-    <section className="hero shell" id="top">
-      <div className="wrap hero__grid">
-        <div className="hero__content">
-          <div className="hero__meta">
-            <div className="item">
-              <span className="label">{t.hero.metaBased}</span>
-              <span className="value">{t.hero.metaBasedV}</span>
+    <section className='hero shell' id='top'>
+      <div className='wrap hero__grid'>
+        <div className='hero__content'>
+          <div className='hero__meta'>
+            <div className='item'>
+              <span className='label'>{t.hero.metaBased}</span>
+              <span className='value'>{t.hero.metaBasedV}</span>
             </div>
-            <div className="item">
-              <span className="label">{t.hero.metaYears}</span>
-              <span className="value">{t.hero.metaYearsV}</span>
+            <div className='item'>
+              <span className='label'>{t.hero.metaYears}</span>
+              <span className='value'>{t.hero.metaYearsV}</span>
             </div>
-            <div className="item">
-              <span className="label">{t.hero.metaStatus}</span>
-              <span className="value live">{t.hero.metaStatusV}</span>
+            <div className='item'>
+              <span className='label'>{t.hero.metaStatus}</span>
+              <span className='value live'>{t.hero.metaStatusV}</span>
             </div>
           </div>
 
-          <h1 className="display">
-            <span className="stack">
+          <h1 className='display'>
+            <span className='stack'>
               <Segments parts={t.hero.l1} />
             </span>
-            <span className="stack">
+            <span className='stack'>
               <Segments parts={t.hero.l2} />
             </span>
-            <span className="stack">
+            <span className='stack'>
               <Segments parts={t.hero.l3} />
             </span>
-            <span className="stack">
+            <span className='stack'>
               <Segments parts={t.hero.l4} />
             </span>
           </h1>
@@ -51,9 +55,9 @@ export default function Hero() {
             <div className="hero__cta">
               <a href="#work" className="btn btn--solid">
                 {t.hero.cta1}
-                <span className="arrow">{lang === "he" ? "←" : "→"}</span>
+                <span className='arrow'>{t.hero.ctaArrow}</span>
               </a>
-              <a href="mailto:pini5192@gmail.com" className="btn">
+              <a href={t.hero.ctaEmail} className='btn'>
                 {t.hero.cta2}
               </a>
             </div>
@@ -74,5 +78,5 @@ export default function Hero() {
 
       <Ticker />
     </section>
-  );
+  )
 }

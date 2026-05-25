@@ -4,29 +4,29 @@ import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400"],
-  style: ["normal", "italic"],
-});
+  subsets: ['latin'],
+  variable: '--font-serif',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+})
 
 const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["300", "400", "500", "600"],
-});
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['300', '400', '500', '600'],
+})
 
 const heebo = Heebo({
-  subsets: ["latin", "hebrew"],
-  variable: "--font-hebrew",
-  weight: ["300", "400", "500", "700", "800"],
-});
+  subsets: ['latin', 'hebrew'],
+  variable: '--font-hebrew',
+  weight: ['300', '400', '500', '700', '800'],
+})
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
-});
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
+})
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -35,29 +35,26 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Pini Shteren — Frontend Engineer",
-  description:
-    "Frontend engineer building React and TypeScript products. 5+ years shipping production UI.",
+  title: "Pini Shteren — Product Designer",
+  description: "Portfolio of Pini Shteren, product designer specializing in fintech and mobile experiences.",
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
-    title: "Pini Shteren — Frontend Engineer",
-    description: "React · TypeScript · Product UI",
-    type: "website",
-    locale: "en_US",
-    alternateLocale: "he_IL",
-    images: [{ url: "/logo.png", width: 512, height: 512, alt: "Pini Shteren" }],
+    title: "Pini Shteren — Product Designer",
+    description: "Portfolio of Pini Shteren, product designer specializing in fintech and mobile experiences.",
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: 'he_IL',
+    images: [{ url: '/logo.png', width: 512, height: 512, alt: "Pini Shteren logo" }],
   },
-};
+}
 
 export const viewport: Viewport = {
-  themeColor: "#0b0b0a",
-};
+  themeColor: '#0b0b0a',
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -68,5 +65,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -1,40 +1,32 @@
-interface Phrase {
-  text: string;
-  acc?: boolean;
-}
+// Description: scrolling tech-stack marquee, text driven from i18n
+// Author: Pinchas
+// Created with claude.md rules
 
-const phrases: Phrase[] = [
-  { text: "React" },
-  { text: "TypeScript", acc: true },
-  { text: "Next.js" },
-  { text: "Tailwind" },
-  { text: "shadcn/ui", acc: true },
-  { text: "Zustand" },
-  { text: "Playwright" },
-  { text: "Vitest", acc: true },
-  { text: "Vite" },
-  { text: "Node" },
-  { text: "PostgreSQL", acc: true },
-];
+'use client'
+
+import { useApp } from '@/contexts/AppContext'
 
 export default function Marquee() {
+  const { t } = useApp()
+  const items = t.marquee.items
+
   const Block = () => (
     <>
-      {phrases.map((p, i) => (
-        <span key={i} className="marquee__item">
-          <span className={p.acc ? "acc" : undefined}>{p.text}</span>
-          <span className="star">✦</span>
+      {items.map((p, i) => (
+        <span key={i} className='marquee__item'>
+          <span className={p.acc ? 'acc' : undefined}>{p.text}</span>
+          <span className='star'>✦</span>
         </span>
       ))}
     </>
-  );
+  )
 
   return (
-    <div className="marquee" aria-hidden>
-      <div className="marquee__track">
+    <div className='marquee' aria-hidden>
+      <div className='marquee__track'>
         <Block />
         <Block />
       </div>
     </div>
-  );
+  )
 }

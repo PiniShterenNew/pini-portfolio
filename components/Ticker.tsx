@@ -1,34 +1,23 @@
-const phrases = [
-  "REACT",
-  "TYPESCRIPT",
-  "PRODUCT UI",
-  "MICRO-INTERACTIONS",
-  "SHIPPING DAILY",
-  "B2B SAAS",
-  "FRONTEND ENGINEER",
-  "ISRAEL",
-  "AVAILABLE 2026",
-  "★",
-  "REACT",
-  "TYPESCRIPT",
-  "PRODUCT UI",
-  "MICRO-INTERACTIONS",
-  "SHIPPING DAILY",
-  "B2B SAAS",
-  "FRONTEND ENGINEER",
-  "ISRAEL",
-  "AVAILABLE 2026",
-  "★",
-];
+// Description: horizontal ticker strip, text driven from i18n
+// Author: Pinchas
+// Created with claude.md rules
+
+'use client'
+
+import { useApp } from '@/contexts/AppContext'
 
 export default function Ticker() {
-  const block = phrases.map((p, i) => <span key={i}>{p}</span>);
+  const { t } = useApp()
+  const items = t.ticker.items
+
+  const block = items.map((p, i) => <span key={i}>{p}</span>)
+
   return (
-    <div className="ticker" aria-hidden>
-      <div className="ticker__inner">
+    <div className='ticker' aria-hidden>
+      <div className='ticker__inner'>
         {block}
         {block}
       </div>
     </div>
-  );
+  )
 }
