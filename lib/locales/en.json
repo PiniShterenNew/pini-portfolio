@@ -14,14 +14,32 @@
     "metaBased": "Based in",
     "metaBasedV": "Israel · UTC+3",
     "metaYears": "Experience",
-    "metaYearsV": "5+ years shipping product",
+    "metaYearsV": "5+ years shipping production products",
     "metaStatus": "Availability",
     "metaStatusV": "● Open to new work · 2026",
-    "l1": ["Frontend"],
-    "l2": ["engineer ", { "em": "building" }],
-    "l3": [{ "stroke": "interfaces" }, " people"],
-    "l4": ["actually ", { "em": "enjoy" }, "."],
-    "tag": "I design and build the front of products — React, TypeScript, a healthy obsession with how things feel under the cursor.",
+    "l1": [
+      "Frontend"
+    ],
+    "l2": [
+      "engineer ",
+      {
+        "em": "building"
+      }
+    ],
+    "l3": [
+      {
+        "stroke": "interfaces"
+      },
+      " users"
+    ],
+    "l4": [
+      "actually ",
+      {
+        "em": "enjoy"
+      },
+      " using."
+    ],
+    "tag": "I design and build product interfaces with React and TypeScript, with a strong focus on responsiveness, usability, and interaction details.",
     "cta1": "See the work",
     "cta2": "Say hello",
     "ctaArrow": "→",
@@ -32,21 +50,43 @@
   },
   "about": {
     "num": "01 / About",
-    "title": [{ "em": "Hello." }, " The short version."],
+    "title": [
+      {
+        "em": "Hello."
+      },
+      " The short version."
+    ],
     "p1": [
       "I'm ",
-      { "em": "Pini" },
-      " — a frontend engineer with five years of building React and TypeScript apps that run in production every day. I care about the in-between: the millisecond before a tooltip appears, the curve a panel slides on, the empty state nobody else thought about."
+      {
+        "em": "Pini"
+      },
+      " — a frontend engineer with five years of building React and TypeScript apps that run in production every day. I care about the details users actually feel — interaction timing, motion, empty states, and the small UX decisions that shape how a product feels in daily use."
     ],
     "p2": "I work end-to-end on product UI — from rough Figma to shipped feature, talking to design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
     "f1k": "Currently",
-    "f1v": [{ "em": "Cinten" }],
+    "f1v": [
+      {
+        "em": "Cinten"
+      }
+    ],
     "f1s": "B2B SaaS · since 2021 (was BeST)",
     "f2k": "Stack of choice",
-    "f2v": ["React", { "em": "·" }, "TS"],
+    "f2v": [
+      "React",
+      {
+        "em": "·"
+      },
+      "TS"
+    ],
     "f2s": "Tailwind, shadcn, Vite, Zustand",
     "f3k": "Shipping since",
-    "f3v": ["202", { "em": "1" }],
+    "f3v": [
+      "202",
+      {
+        "em": "1"
+      }
+    ],
     "f3s": "Production features, daily",
     "f4k": "Loves",
     "f4v": "Micro-UX",
@@ -54,59 +94,120 @@
   },
   "skills": {
     "num": "02 / Stack",
-    "title": ["The ", { "em": "tools" }, ", ordered by hours spent."],
+    "title": [
+      "The ",
+      {
+        "em": "tools"
+      },
+      ", ordered by hours spent."
+    ],
     "rows": [
       {
         "cat": "Frontend",
         "items": [
-          { "text": "React", "hl": true },
-          { "text": "TypeScript", "hl": true },
-          { "text": "JavaScript ES6+" },
-          { "text": "Next.js" },
-          { "text": "HTML5" },
-          { "text": "CSS3" }
+          {
+            "text": "React",
+            "hl": true
+          },
+          {
+            "text": "TypeScript",
+            "hl": true
+          },
+          {
+            "text": "JavaScript ES6+"
+          },
+          {
+            "text": "Next.js"
+          },
+          {
+            "text": "HTML5"
+          },
+          {
+            "text": "CSS3"
+          }
         ],
         "count": "06"
       },
       {
         "cat": "State & Data",
         "items": [
-          { "text": "Redux Toolkit" },
-          { "text": "Zustand", "hl": true },
-          { "text": "Context API" }
+          {
+            "text": "Redux Toolkit"
+          },
+          {
+            "text": "Zustand",
+            "hl": true
+          },
+          {
+            "text": "Context API"
+          }
         ],
         "count": "03"
       },
       {
         "cat": "UI & Styling",
         "items": [
-          { "text": "Tailwind", "hl": true },
-          { "text": "Styled Components" },
-          { "text": "shadcn/ui", "hl": true },
-          { "text": "Ant Design" },
-          { "text": "i18n" }
+          {
+            "text": "Tailwind",
+            "hl": true
+          },
+          {
+            "text": "Styled Components"
+          },
+          {
+            "text": "shadcn/ui",
+            "hl": true
+          },
+          {
+            "text": "Ant Design"
+          },
+          {
+            "text": "i18n"
+          }
         ],
         "count": "05"
       },
       {
         "cat": "Backend & APIs",
         "items": [
-          { "text": "Node.js" },
-          { "text": "Express" },
-          { "text": "REST APIs" },
-          { "text": "PostgreSQL" },
-          { "text": "MongoDB" }
+          {
+            "text": "Node.js"
+          },
+          {
+            "text": "Express"
+          },
+          {
+            "text": "REST APIs"
+          },
+          {
+            "text": "PostgreSQL"
+          },
+          {
+            "text": "MongoDB"
+          }
         ],
         "count": "05"
       },
       {
         "cat": "Testing & Tooling",
         "items": [
-          { "text": "Vitest", "hl": true },
-          { "text": "Playwright", "hl": true },
-          { "text": "Vite" },
-          { "text": "Git" },
-          { "text": "AI-assisted dev tools" }
+          {
+            "text": "Vitest",
+            "hl": true
+          },
+          {
+            "text": "Playwright",
+            "hl": true
+          },
+          {
+            "text": "Vite"
+          },
+          {
+            "text": "Git"
+          },
+          {
+            "text": "AI-assisted dev tools"
+          }
         ],
         "count": "05"
       }
@@ -114,14 +215,31 @@
   },
   "proj": {
     "num": "03 / Selected work",
-    "head": ["One ", { "em": "thing" }, " at a time."],
-    "brandline": "Personal Finance · Full-Stack · 2025",
-    "name": ["Cash ", { "em": "Plus" }],
-    "pitch": "A full-stack app for tracking every recurring financial commitment — subscriptions, rent, loans — with a timeline that shows exactly what's leaving your account and when.",
+    "head": [
+      "One ",
+      {
+        "em": "thing"
+      },
+      " at a time."
+    ],
+    "brandline": "Financial Commitment System · Full-Stack · 2025",
+    "name": [
+      "Cash ",
+      {
+        "em": "Plus"
+      }
+    ],
+    "pitch": "A full-stack financial commitment platform for tracking recurring obligations, variable bills, loans, rent, and one-time payments — with reminders, forecasts, and a timeline that shows what is coming next.",
     "ui": {
       "greet": "Hey, Pini ↗",
       "balL": "Monthly subscriptions",
-      "balV": ["$", { "em": "184" }, ".50"],
+      "balV": [
+        "$",
+        {
+          "em": "184"
+        },
+        ".50"
+      ],
       "balD": "↓ $32 saved this month",
       "upcoming": "Upcoming this week",
       "sub1": "Renews · Mon",
@@ -129,70 +247,159 @@
       "sub3": "Renews · Thu",
       "sub4": "Renews · Sat",
       "cta": "Review & cancel",
-      "subNames": ["Netflix Premium", "Spotify Family", "Figma Pro", "Adobe CC"],
-      "subPrices": ["$22.99", "$16.99", "$15.00", "$54.99"],
-      "subIcons": ["N", "S", "F", "A"],
-      "subColors": ["#ff5b5b", "#1db954", "#c8f15a", "#a78bfa"],
+      "subNames": [
+        "Netflix Premium",
+        "Spotify Family",
+        "Figma Pro",
+        "Adobe CC"
+      ],
+      "subPrices": [
+        "$22.99",
+        "$16.99",
+        "$15.00",
+        "$54.99"
+      ],
+      "subIcons": [
+        "N",
+        "S",
+        "F",
+        "A"
+      ],
+      "subColors": [
+        "#ff5b5b",
+        "#1db954",
+        "#c8f15a",
+        "#a78bfa"
+      ],
       "subCount": "04"
     },
     "metrics": [
       {
-        "k": "Type-safe end-to-end",
-        "v": [{ "em": "Zod" }],
-        "d": "Shared Zod schemas across client and server in a pnpm monorepo — one source of truth from the database all the way to the UI."
+        "k": "Shared validation architecture",
+        "v": [
+          {
+            "em": "Zod"
+          }
+        ],
+        "d": "Shared Zod schemas across client and server in a pnpm monorepo, keeping the data contract consistent from the database to the UI."
       },
       {
-        "k": "Auth security",
-        "v": [{ "em": "JWT" }, " ×2"],
-        "d": "Dual-token flow: access token in memory (15 min) + refresh token in httpOnly cookie (7 days). Protected against XSS with token rotation and mutex."
+        "k": "Authentication architecture",
+        "v": [
+          {
+            "em": "JWT"
+          },
+          " ×2"
+        ],
+        "d": "JWT-based auth with rotating refresh sessions, protected routes, and production-oriented session handling."
       },
       {
-        "k": "Real-time + background jobs",
-        "v": [{ "em": "Live" }],
-        "d": "Socket.io for live notifications. BullMQ + Redis for CSV imports and scheduled reminders — all running quietly in the background."
+        "k": "Engines & background processing",
+        "v": [
+          {
+            "em": "Realtime"
+          }
+        ],
+        "d": "Socket.io powers realtime updates, while BullMQ and Redis handle scheduled reminders, recurring billing jobs, and asynchronous processing."
       }
     ],
     "pillars": [
       {
         "ix": "P · 01",
-        "t": ["Built ", { "em": "Hebrew-first" }, "."],
-        "d": "Full RTL support from the ground up — not bolted on after. Every layout, component, and type decision was made with Hebrew as the primary language."
+        "t": [
+          "Built for RTL ",
+          {
+            "em": "from day one"
+          },
+          "."
+        ],
+        "d": "RTL/LTR support is built into the system architecture, with native Hebrew, Arabic, and English across layouts, typography, and interactions."
       },
       {
         "ix": "P · 02",
-        "t": [{ "em": "See" }, " what's coming."],
-        "d": "A financial timeline that surfaces upcoming charges before they hit. Push and email reminders give you a one-tap path to cancel — no fine print digging."
+        "t": [
+          "Financial visibility ",
+          {
+            "em": "before"
+          },
+          " charges hit."
+        ],
+        "d": "The timeline is built around upcoming charges, reminders, and recurring cash flow, so users see what is leaving the account before it does."
       },
       {
         "ix": "P · 03",
-        "t": ["Production ", { "em": "standards" }, "."],
-        "d": "Soft-delete, structured logging, typed error codes, token rotation with mutex — built as if it were going to production, because it is."
+        "t": [
+          "Built for long-term ",
+          {
+            "em": "maintainability"
+          },
+          "."
+        ],
+        "d": "Structured logging, typed errors, token rotation, background workers, and shared domain models keep the product coherent as it grows."
       }
     ],
-    "techlbl": "Built with",
+    "techlbl": "Core stack",
     "techChips": [
-      { "label": "React 19", "acc": true },
-      { "label": "Next.js 15", "acc": true },
-      { "label": "TypeScript", "acc": true },
-      { "label": "Tailwind v4" },
-      { "label": "shadcn/ui" },
-      { "label": "Node · Express" },
-      { "label": "PostgreSQL · Kysely" },
-      { "label": "BullMQ · Redis" },
-      { "label": "Socket.io" },
-      { "label": "i18next · RTL" },
-      { "label": "pnpm workspaces" },
-      { "label": "Zod" }
+      {
+        "label": "React 19",
+        "acc": true
+      },
+      {
+        "label": "Next.js 15",
+        "acc": true
+      },
+      {
+        "label": "TypeScript",
+        "acc": true
+      },
+      {
+        "label": "Tailwind v4"
+      },
+      {
+        "label": "shadcn/ui"
+      },
+      {
+        "label": "Node · Express"
+      },
+      {
+        "label": "PostgreSQL · Kysely"
+      },
+      {
+        "label": "BullMQ · Redis"
+      },
+      {
+        "label": "Socket.io"
+      },
+      {
+        "label": "i18next · RTL"
+      },
+      {
+        "label": "pnpm workspaces"
+      },
+      {
+        "label": "Zod"
+      }
     ],
     "liveUrl": "https://cashplus-app.com",
     "liveLabel": "↗ Visit cashplus-app.com"
   },
   "exp": {
     "num": "04 / Track record",
-    "title": ["Where I've ", { "em": "shipped" }, "."],
+    "title": [
+      "What I've ",
+      {
+        "em": "shipped"
+      },
+      "."
+    ],
     "now": "● Now",
     "range": "2021 — Present",
-    "role": [{ "em": "Frontend Engineer" }, " · Cinten"],
+    "role": [
+      {
+        "em": "Frontend Engineer"
+      },
+      " · Cinten"
+    ],
     "sub": " (formerly BeST)",
     "meta": "Tel Aviv · B2B SaaS platform · React / TypeScript",
     "bullets": [
@@ -205,71 +412,154 @@
   },
   "edu": {
     "num": "05 / Education",
-    "title": ["Where it ", { "em": "started" }, "."],
+    "title": [
+      "Where it ",
+      {
+        "em": "started"
+      },
+      "."
+    ],
     "c1k": "Certificate · 2020–2021",
-    "c1t": [{ "em": "SVCollege" }],
+    "c1t": [
+      {
+        "em": "SVCollege"
+      }
+    ],
     "c1tSub": "Frontend Development",
     "c1m": "React · JS · UI fundamentals",
     "c2k": "Final GPA",
-    "c2v": [{ "em": "97" }],
+    "c2v": [
+      {
+        "em": "97"
+      }
+    ],
     "c2m": "Top of cohort · Capstone project shipped to production"
   },
   "play": {
     "num": "06 / Misc",
-    "title": ["Things on the ", { "em": "side" }, "."],
+    "title": [
+      "Things on the ",
+      {
+        "em": "side"
+      },
+      "."
+    ],
     "cards": [
       {
         "l": "Languages",
-        "t": ["Hebrew ", { "em": "·" }, " English"],
-        "d": "Native Hebrew, professional working English. Comfortable in async teams, remote-first, written-spec workflows.",
+        "t": [
+          "Hebrew ",
+          {
+            "em": "·"
+          },
+          " English · Arabic"
+        ],
+        "d": "Native Hebrew, professional English, and Arabic support built into the product from day one.",
         "s": "Bilingual UI work"
       },
       {
         "l": "Practice",
-        "t": [{ "em": "Motion" }, " & micro-UX"],
+        "t": [
+          {
+            "em": "Motion"
+          },
+          " & micro-UX"
+        ],
         "d": "An ongoing study of the small choices — easings, hover states, loading rhythms — that make products feel alive instead of correct.",
         "s": "Always shipping"
       },
       {
         "l": "Workflow",
-        "t": ["AI-assisted ", { "em": "dev" }],
-        "d": "Heavy use of AI tooling for refactors, tests, debugging loops and codebase navigation — to spend more time on the product and less on the plumbing.",
+        "t": [
+          "AI-assisted ",
+          {
+            "em": "dev"
+          }
+        ],
+        "d": "Daily use of AI-assisted development tools for refactoring, testing, debugging, and navigating large codebases more efficiently.",
         "s": "Daily"
       }
     ]
   },
   "contact": {
     "pre": "07 / Let's talk · Available Q1 2026",
-    "l1": "Have a product",
-    "l2": ["that ", { "em": "deserves" }, " a better front?"],
+    "l1": "A better frontend",
+    "l2": [
+      "for a ",
+      {
+        "em": "real"
+      },
+      " product."
+    ],
     "email": "pini5192@gmail.com",
     "channels": [
-      { "label": "✶ Email", "href": "mailto:pini5192@gmail.com" },
-      { "label": "✶ +972 54 834 5192", "href": "tel:+972548345192" },
-      { "label": "✶ LinkedIn", "href": "https://linkedin.com/in/pini-shteren" },
-      { "label": "✶ GitHub", "href": "https://github.com/PiniShterenNew" },
-      { "label": "↑ Back to top", "href": "#top" }
+      {
+        "label": "✶ Email",
+        "href": "mailto:pini5192@gmail.com"
+      },
+      {
+        "label": "✶ +972 54 834 5192",
+        "href": "tel:+972548345192"
+      },
+      {
+        "label": "✶ LinkedIn",
+        "href": "https://linkedin.com/in/pini-shteren"
+      },
+      {
+        "label": "✶ GitHub",
+        "href": "https://github.com/PiniShterenNew"
+      },
+      {
+        "label": "↑ Back to top",
+        "href": "#top"
+      }
     ]
   },
   "footer": {
     "left": "© 2026 Pini Shteren",
-    "center": "Designed & built by hand.",
+    "center": "Designed and built from scratch.",
     "right": "v1.0 · IL",
     "logoAlt": "Pini Shteren"
   },
   "marquee": {
     "items": [
-      { "text": "React" },
-      { "text": "TypeScript", "acc": true },
-      { "text": "Next.js" },
-      { "text": "Tailwind" },
-      { "text": "shadcn/ui", "acc": true },
-      { "text": "Zustand" },
-      { "text": "Playwright" },
-      { "text": "Vitest", "acc": true },
-      { "text": "Vite" },
-      { "text": "Node" },
-      { "text": "PostgreSQL", "acc": true }
+      {
+        "text": "React"
+      },
+      {
+        "text": "TypeScript",
+        "acc": true
+      },
+      {
+        "text": "Next.js"
+      },
+      {
+        "text": "Tailwind"
+      },
+      {
+        "text": "shadcn/ui",
+        "acc": true
+      },
+      {
+        "text": "Zustand"
+      },
+      {
+        "text": "Playwright"
+      },
+      {
+        "text": "Vitest",
+        "acc": true
+      },
+      {
+        "text": "Vite"
+      },
+      {
+        "text": "Node"
+      },
+      {
+        "text": "PostgreSQL",
+        "acc": true
+      }
     ]
   },
   "ticker": {
@@ -297,7 +587,12 @@
     "backToPortfolio": "← Back to portfolio",
     "access": {
       "appName": "AccessOS",
-      "navItems": ["Roles", "Features", "Users", "Audit log"],
+      "navItems": [
+        "Roles",
+        "Features",
+        "Users",
+        "Audit log"
+      ],
       "activeNav": "Features",
       "pageTitle": "Feature Permissions",
       "pageDesc": "Manage which roles can access each feature. Changes are applied immediately.",
@@ -305,22 +600,109 @@
       "featureColumnLabel": "Feature",
       "tip": "Click any toggle to instantly update permissions. All changes are version-controlled and reflected in the audit log.",
       "publishBtn": "Publish changes",
-      "roles": ["admin", "manager", "trainer", "trainee", "viewer"],
-      "roleCounts": { "admin": 3, "manager": 8, "trainer": 24, "trainee": 212, "viewer": 47 },
+      "roles": [
+        "admin",
+        "manager",
+        "trainer",
+        "trainee",
+        "viewer"
+      ],
+      "roleCounts": {
+        "admin": 3,
+        "manager": 8,
+        "trainer": 24,
+        "trainee": 212,
+        "viewer": 47
+      },
       "features": [
-        { "name": "Manage users", "description": "Create, edit and deactivate user accounts", "roles": { "admin": true, "manager": true, "trainer": false, "trainee": false, "viewer": false } },
-        { "name": "View analytics", "description": "Access usage metrics and performance reports", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "Start session", "description": "Launch live training sessions", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "Join session", "description": "Participate in a training session", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": true, "viewer": false } },
-        { "name": "Edit content", "description": "Modify drills, programs and media", "roles": { "admin": true, "manager": false, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "Export data", "description": "Download reports as CSV/PDF", "roles": { "admin": true, "manager": true, "trainer": false, "trainee": false, "viewer": false } },
-        { "name": "View live feed", "description": "Watch real-time session activity", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": true, "viewer": true } }
+        {
+          "name": "Manage users",
+          "description": "Create, edit and deactivate user accounts",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": false,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "View analytics",
+          "description": "Access usage metrics and performance reports",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "Start session",
+          "description": "Launch live training sessions",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "Join session",
+          "description": "Participate in a training session",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": true,
+            "viewer": false
+          }
+        },
+        {
+          "name": "Edit content",
+          "description": "Modify drills, programs and media",
+          "roles": {
+            "admin": true,
+            "manager": false,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "Export data",
+          "description": "Download reports as CSV/PDF",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": false,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "View live feed",
+          "description": "Watch real-time session activity",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": true,
+            "viewer": true
+          }
+        }
       ]
     },
     "performance": {
       "appName": "PerfView",
       "appVersion": "v2.4.1",
-      "navItems": ["Overview", "Bundle", "Vitals", "History"],
+      "navItems": [
+        "Overview",
+        "Bundle",
+        "Vitals",
+        "History"
+      ],
       "activeNav": "Overview",
       "pageTitle": "Performance Report",
       "pageMeta": "cinten-platform · main · last run 2 min ago",
@@ -336,25 +718,99 @@
       "passLabel": "✓ Pass",
       "kbUnit": "kb",
       "audits": [
-        { "label": "Performance", "score": 85, "icon": "⚡" },
-        { "label": "Accessibility", "score": 94, "icon": "♿" },
-        { "label": "Best Practices", "score": 92, "icon": "✓" },
-        { "label": "SEO", "score": 97, "icon": "🔍" }
+        {
+          "label": "Performance",
+          "score": 85,
+          "icon": "⚡"
+        },
+        {
+          "label": "Accessibility",
+          "score": 94,
+          "icon": "♿"
+        },
+        {
+          "label": "Best Practices",
+          "score": 92,
+          "icon": "✓"
+        },
+        {
+          "label": "SEO",
+          "score": 97,
+          "icon": "🔍"
+        }
       ],
       "bundles": [
-        { "name": "vendor.js", "before": 412, "after": 268 },
-        { "name": "main.js", "before": 188, "after": 124 },
-        { "name": "ui.js", "before": 96, "after": 58 },
-        { "name": "utils.js", "before": 44, "after": 30 },
-        { "name": "icons.js", "before": 38, "after": 16 }
+        {
+          "name": "vendor.js",
+          "before": 412,
+          "after": 268
+        },
+        {
+          "name": "main.js",
+          "before": 188,
+          "after": 124
+        },
+        {
+          "name": "ui.js",
+          "before": 96,
+          "after": 58
+        },
+        {
+          "name": "utils.js",
+          "before": 44,
+          "after": 30
+        },
+        {
+          "name": "icons.js",
+          "before": 38,
+          "after": 16
+        }
       ],
-      "months": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
+      "months": [
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May"
+      ],
       "vitals": [
-        { "metric": "FCP", "name": "First Contentful Paint", "before": "3.8s", "after": "1.2s" },
-        { "metric": "LCP", "name": "Largest Contentful Paint", "before": "5.1s", "after": "1.8s" },
-        { "metric": "TBT", "name": "Total Blocking Time", "before": "620ms", "after": "90ms" },
-        { "metric": "CLS", "name": "Cumulative Layout Shift", "before": "0.18", "after": "0.02" },
-        { "metric": "TTI", "name": "Time to Interactive", "before": "7.2s", "after": "2.4s" }
+        {
+          "metric": "FCP",
+          "name": "First Contentful Paint",
+          "before": "3.8s",
+          "after": "1.2s"
+        },
+        {
+          "metric": "LCP",
+          "name": "Largest Contentful Paint",
+          "before": "5.1s",
+          "after": "1.8s"
+        },
+        {
+          "metric": "TBT",
+          "name": "Total Blocking Time",
+          "before": "620ms",
+          "after": "90ms"
+        },
+        {
+          "metric": "CLS",
+          "name": "Cumulative Layout Shift",
+          "before": "0.18",
+          "after": "0.02"
+        },
+        {
+          "metric": "TTI",
+          "name": "Time to Interactive",
+          "before": "7.2s",
+          "after": "2.4s"
+        }
       ],
       "toggleBefore": "before",
       "toggleAfter": "after"
@@ -362,7 +818,12 @@
     "realtime": {
       "appName": "Cinten",
       "appSubtitle": "Platform",
-      "navItems": ["live", "sessions", "analytics", "settings"],
+      "navItems": [
+        "live",
+        "sessions",
+        "analytics",
+        "settings"
+      ],
       "wsStatus": "WebSocket connected",
       "connectedNowLabel": "Connected now",
       "statsLabel": "Stats",
@@ -373,23 +834,78 @@
       "eventThroughputLabel": "Event throughput (last 24s)",
       "liveStreamLabel": "Live event stream",
       "stats": [
-        { "label": "Active sessions", "value": "247" },
-        { "label": "Avg latency", "valueSuffix": "ms" },
-        { "label": "Events / min", "value": "1,842" }
+        {
+          "label": "Active sessions",
+          "value": "247"
+        },
+        {
+          "label": "Avg latency",
+          "valueSuffix": "ms"
+        },
+        {
+          "label": "Events / min",
+          "value": "1,842"
+        }
       ],
       "metricCards": [
-        { "label": "Active users", "value": "247", "delta": "+12" },
-        { "label": "Avg latency", "valueSuffix": "ms", "delta": "< 1s" },
-        { "label": "Events/min", "value": "1,842", "delta": "↑ 8%" },
-        { "label": "Error rate", "value": "0.02%", "delta": "↓ stable" }
+        {
+          "label": "Active users",
+          "value": "247",
+          "delta": "+12"
+        },
+        {
+          "label": "Avg latency",
+          "valueSuffix": "ms",
+          "delta": "< 1s"
+        },
+        {
+          "label": "Events/min",
+          "value": "1,842",
+          "delta": "↑ 8%"
+        },
+        {
+          "label": "Error rate",
+          "value": "0.02%",
+          "delta": "↓ stable"
+        }
       ],
       "users": [
-        { "name": "Roei K.", "role": "Trainer", "status": "active", "sessions": 3 },
-        { "name": "Noa S.", "role": "Trainee", "status": "active", "sessions": 1 },
-        { "name": "Amit D.", "role": "Manager", "status": "idle", "sessions": 0 },
-        { "name": "Liran M.", "role": "Trainee", "status": "active", "sessions": 2 },
-        { "name": "Hila R.", "role": "Trainer", "status": "active", "sessions": 4 },
-        { "name": "Yoni P.", "role": "Trainee", "status": "idle", "sessions": 1 }
+        {
+          "name": "Roei K.",
+          "role": "Trainer",
+          "status": "active",
+          "sessions": 3
+        },
+        {
+          "name": "Noa S.",
+          "role": "Trainee",
+          "status": "active",
+          "sessions": 1
+        },
+        {
+          "name": "Amit D.",
+          "role": "Manager",
+          "status": "idle",
+          "sessions": 0
+        },
+        {
+          "name": "Liran M.",
+          "role": "Trainee",
+          "status": "active",
+          "sessions": 2
+        },
+        {
+          "name": "Hila R.",
+          "role": "Trainer",
+          "status": "active",
+          "sessions": 4
+        },
+        {
+          "name": "Yoni P.",
+          "role": "Trainee",
+          "status": "idle",
+          "sessions": 1
+        }
       ]
     }
   }
