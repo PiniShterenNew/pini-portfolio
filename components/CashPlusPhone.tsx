@@ -13,9 +13,11 @@ export default function CashPlusPhone() {
         <Image
           src='/cashplus-screenshot.png'
           alt='Cash Plus app screenshot'
-          fill
+          width={320}
+          height={700}
           className='phone__screenshot'
-          sizes='320px'
+          quality={100}
+          unoptimized
         />
       </div>
     </div>
