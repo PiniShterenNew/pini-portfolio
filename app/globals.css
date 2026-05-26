@@ -1581,6 +1581,10 @@ html[dir="rtl"] .project__pitch {
   border-radius: 36px;
   overflow: hidden;
 }
+.phone__screenshot {
+  object-fit: cover;
+  object-position: top center;
+}
 .phone__inner {
   position: absolute;
   inset: 0;
