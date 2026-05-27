@@ -52,6 +52,34 @@
   --lh-label: 1.45;
 }
 
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+html.light {
+  --bg: #f8f6f1;
+  --bg-elev: #eeeadf;
+  --ink: #1c1b18;
+  --ink-2: #3a3931;
+  --ink-dim: rgba(28, 27, 24, 0.52);
+  --ink-faint: rgba(28, 27, 24, 0.14);
+  --line: rgba(28, 27, 24, 0.1);
+  --line-strong: rgba(28, 27, 24, 0.2);
+}
+
+html.light .nav {
+  background: rgba(248, 246, 241, 0.88);
+}
+
+html.light .hero__portrait__frame {
+  filter: contrast(1.02) saturate(0.96);
+}
+
+html.light .pui-balance,
+html.light .pui-sub,
+html.light .phone__inner {
+  background-color: #181816;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -286,6 +314,27 @@ li,
 }
 .langtoggle .on {
   color: var(--accent);
+}
+
+.themetoggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 13px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+.themetoggle:hover {
+  border-color: var(--accent);
+  color: var(--ink);
 }
 
 /* ====================  HERO  ==================== */
@@ -2061,6 +2110,10 @@ html[dir="rtl"] .techstrip .lbl {
     max-width: 360px;
     margin-inline: auto;
     width: 100%;
+    transform: rotate(-1deg);
+  }
+  .hero__portrait:hover {
+    transform: rotate(0deg) translateY(-4px);
   }
   .hero__meta {
     grid-template-columns: 1fr 1fr;
@@ -2219,6 +2272,37 @@ html[dir="rtl"] .techstrip .lbl {
 }
 
 @media (max-width: 480px) {
+  .hero__portrait {
+    transform: none;
+    padding-bottom: 52px;
+    max-width: 300px;
+  }
+  .hero__portrait:hover {
+    transform: none;
+  }
+
+  /* increase legibility of small-label text on mobile */
+  .section__num,
+  .hero__meta .label,
+  .fact .k,
+  .edu__card .k,
+  .contact__pre,
+  .play .label,
+  .play .stamp,
+  .metric .k,
+  .pillar .ix,
+  .techstrip .lbl,
+  .project__brandline,
+  .tl-item__date,
+  .tl-meta,
+  .footer,
+  .chip,
+  .skillrow__cat,
+  .hero__portrait-badge {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
   .hero__meta {
     grid-template-columns: 1fr;
     justify-items: center;
