@@ -56,20 +56,20 @@
    LIGHT MODE
    ========================================================= */
 html.light {
-  /* warm olive mid-tone — gives ~3.8:1 contrast with lime #c8f15a */
-  --bg: #7c7256;
-  --bg-elev: #8a8063;
+  /* warm espresso/walnut — gives 10:1+ contrast with both lime accent and cream text */
+  --bg: #2c2317;
+  --bg-elev: #3a2e1f;
   --ink: #f0ebe0;
-  --ink-2: #c8c2b2;
-  --ink-dim: rgba(240, 235, 224, 0.55);
+  --ink-2: #d3cdbc;
+  --ink-dim: rgba(240, 235, 224, 0.58);
   --ink-faint: rgba(240, 235, 224, 0.16);
   --line: rgba(240, 235, 224, 0.12);
-  --line-strong: rgba(240, 235, 224, 0.25);
-  --warm-soft: rgba(232, 140, 90, 0.18);
+  --line-strong: rgba(240, 235, 224, 0.26);
+  --warm-soft: rgba(232, 140, 90, 0.2);
 }
 
 html.light .nav {
-  background: rgba(110, 102, 76, 0.88);
+  background: rgba(44, 35, 23, 0.85);
 }
 
 html.light .hero__portrait__frame {
@@ -326,17 +326,19 @@ li,
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: var(--ink-2);
-  font-size: 13px;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
   padding: 0;
-  line-height: 1;
+  line-height: 0;
+}
+.themetoggle svg {
+  display: block;
 }
 .themetoggle:hover {
   border-color: var(--accent);
-  color: var(--ink);
+  color: var(--accent);
 }
 
 /* ====================  HERO  ==================== */
@@ -2220,8 +2222,56 @@ html[dir="rtl"] .techstrip .lbl {
   }
   .stage__right {
     padding-inline-end: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .metric {
+    text-align: center;
+  }
+  .metric .desc {
+    text-align: center;
+    margin-inline: auto;
   }
   .pillars {
+    grid-template-columns: 1fr;
+  }
+  .pillar {
+    align-items: center;
+    text-align: center;
+  }
+  .pillar .t,
+  .pillar .d {
+    text-align: center;
+  }
+  .play {
+    align-items: center;
+    text-align: center;
+  }
+  .play .ttl,
+  .play .desc {
+    text-align: center;
+  }
+  .play .stamp {
+    justify-content: center;
+  }
+  .about__bio p {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .tl-bullets {
+    text-align: center;
+    align-items: center;
+  }
+  .tl-bullets li {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .tl-bullets li::before,
+  .tl-bullets li::after {
+    display: none;
+  }
+  html[dir="rtl"] .tl-bullets li {
     grid-template-columns: 1fr;
   }
   .techstrip {
