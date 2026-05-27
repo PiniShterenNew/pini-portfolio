@@ -1472,6 +1472,11 @@ html[dir="ltr"] .contact__channel--utility {
   background: transparent !important;
   color: var(--ink) !important;
 }
+/* phone numbers always render LTR regardless of page direction */
+.contact__channels a[href^="tel:"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
 
 /* ============ TESTIMONIALS ============ */
 
@@ -2178,7 +2183,7 @@ html[dir="rtl"] .techstrip .lbl {
     text-align: center;
   }
   .tl-bullets {
-    text-align: start;
+    text-align: center;
     margin-inline: auto;
   }
   .edu {
@@ -2321,6 +2326,8 @@ html[dir="rtl"] .techstrip .lbl {
   }
   .edu__card {
     padding: 28px;
+    align-items: center;
+    text-align: center;
   }
   .edu__card .gpa {
     font-size: 72px;
@@ -2333,8 +2340,7 @@ html[dir="rtl"] .techstrip .lbl {
 @media (max-width: 480px) {
   .hero__portrait {
     transform: none;
-    padding-bottom: 52px;
-    max-width: 300px;
+    padding: 14px 14px 52px;
   }
   .hero__portrait:hover {
     transform: none;
