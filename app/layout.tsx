@@ -35,6 +35,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pini-portfolio.vercel.app'),
   title: "Pini Shteren — Product Designer",
   description: "Portfolio of Pini Shteren, product designer specializing in fintech and mobile experiences.",
   icons: {

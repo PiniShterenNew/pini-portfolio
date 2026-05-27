@@ -12,44 +12,26 @@
   },
   "hero": {
     "metaBased": "Based in",
-    "metaBasedV": "Israel · UTC+3",
+    "metaBasedV": "Tel Aviv, Israel · UTC+3",
     "metaYears": "Experience",
-    "metaYearsV": "5+ years shipping production products",
+    "metaYearsV": "4+ years of production development",
     "metaStatus": "Availability",
-    "metaStatusV": "● Open to new work · 2026",
-    "l1": [
-      "Frontend"
-    ],
-    "l2": [
-      "engineer ",
-      {
-        "em": "building"
-      }
-    ],
-    "l3": [
-      {
-        "stroke": "interfaces"
-      },
-      " users"
-    ],
-    "l4": [
-      "actually ",
-      {
-        "em": "enjoy"
-      },
-      " using."
-    ],
+    "metaStatusV": "● Open to new opportunities · 2026",
+    "l1": ["Frontend"],
+    "l2": ["engineer ", { "em": "building" }],
+    "l3": [{ "stroke": "interfaces" }, " users"],
+    "l4": ["actually ", { "em": "love" }, "."],
     "tag": "I design and build product interfaces with React and TypeScript, with a strong focus on responsiveness, usability, and interaction details.",
     "cta1": "See the work",
     "cta2": "Say hello",
     "ctaArrow": "→",
     "ctaEmail": "mailto:pini5192@gmail.com",
     "scroll": "Scroll",
-    "portraitBadge": "P.S — Tel Aviv",
+    "portraitBadge": "P.S  Tel Aviv",
     "portraitAlt": "Pini Shteren"
   },
   "about": {
-    "num": "01 / About",
+    "num": "05 / About",
     "title": [
       {
         "em": "Hello."
@@ -61,9 +43,9 @@
       {
         "em": "Pini"
       },
-      " — a frontend engineer with five years of building React and TypeScript apps that run in production every day. I care about the details users actually feel — interaction timing, motion, empty states, and the small UX decisions that shape how a product feels in daily use."
+      "  a frontend engineer with five years of building React and TypeScript apps that run in production every day. I care about the details users actually feel  interaction timing, motion, empty states, and the small UX decisions that shape how a product feels in daily use."
     ],
-    "p2": "I work end-to-end on product UI — from rough Figma to shipped feature, talking to design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
+    "p2": "I work end-to-end on product UI  from rough Figma to shipped feature, talking to design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
     "f1k": "Currently",
     "f1v": [
       {
@@ -93,7 +75,7 @@
     "f4s": "Empty states. Hover. Motion."
   },
   "skills": {
-    "num": "02 / Stack",
+    "num": "04 / Stack",
     "title": [
       "The ",
       {
@@ -214,7 +196,7 @@
     ]
   },
   "proj": {
-    "num": "03 / Selected work",
+    "num": "01 / Selected work",
     "head": [
       "One ",
       {
@@ -229,7 +211,7 @@
         "em": "Plus"
       }
     ],
-    "pitch": "A full-stack financial commitment platform for tracking recurring obligations, variable bills, loans, rent, and one-time payments — with reminders, forecasts, and a timeline that shows what is coming next.",
+    "pitch": "A full-stack financial commitment platform for tracking recurring obligations, variable bills, loans, rent, and one-time payments  with reminders, forecasts, and a timeline that shows what is coming next.",
     "ui": {
       "greet": "Hey, Pini ↗",
       "balL": "Monthly subscriptions",
@@ -383,8 +365,20 @@
     "liveUrl": "https://cashplus-app.com",
     "liveLabel": "↗ Visit cashplus-app.com"
   },
+  "testimonials": {
+    "num": "03 / Testimonials",
+    "title": ["What ", { "em": "others" }, " say."],
+    "items": [
+      {
+        "quote": "Pini is the kind of frontend engineer that's hard to find—he doesn't just write code, he understands the product. At Cinten, he took full ownership of complex features from end to end. His ability to combine robust architecture under the hood with a meticulously crafted UX is rare. You can trust him implicitly to take a task and ship it to production flawlessly. A true asset to any R&D team.",
+        "author": "Nir Cohen",
+        "role": "CTO",
+        "company": "Cinten"
+      }
+    ]
+  },
   "exp": {
-    "num": "04 / Track record",
+    "num": "02 / Track record",
     "title": [
       "What I've ",
       {
@@ -393,7 +387,7 @@
       "."
     ],
     "now": "● Now",
-    "range": "2021 — Present",
+    "range": "2021  Present",
     "role": [
       {
         "em": "Frontend Engineer"
@@ -411,7 +405,7 @@
     ]
   },
   "edu": {
-    "num": "05 / Education",
+    "num": "06 / Education",
     "title": [
       "Where it ",
       {
@@ -436,7 +430,7 @@
     "c2m": "Top of cohort · Capstone project shipped to production"
   },
   "play": {
-    "num": "06 / Misc",
+    "num": "07 / Misc",
     "title": [
       "Things on the ",
       {
@@ -465,7 +459,7 @@
           },
           " & micro-UX"
         ],
-        "d": "An ongoing study of the small choices — easings, hover states, loading rhythms — that make products feel alive instead of correct.",
+        "d": "An ongoing study of the small choices  easings, hover states, loading rhythms  that make products feel alive instead of correct.",
         "s": "Always shipping"
       },
       {
@@ -482,7 +476,7 @@
     ]
   },
   "contact": {
-    "pre": "07 / Let's talk · Available Q1 2026",
+    "pre": "08 / Let's talk · Available Q1 2026",
     "l1": "A better frontend",
     "l2": [
       "for a ",
@@ -577,9 +571,9 @@
     ]
   },
   "meta": {
-    "title": "Pini Shteren — Frontend Engineer",
+    "title": "Pini Shteren  Frontend Engineer",
     "description": "Frontend engineer building React and TypeScript products. 5+ years shipping production UI.",
-    "ogTitle": "Pini Shteren — Frontend Engineer",
+    "ogTitle": "Pini Shteren  Frontend Engineer",
     "ogDescription": "React · TypeScript · Product UI",
     "ogImageAlt": "Pini Shteren"
   },

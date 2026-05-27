@@ -25,7 +25,7 @@ export default function Experience() {
               <br />
               {e.range}
             </div>
-            <div className="tl-item__body">
+            <div className="tl-item__body rtl:text-right ltr:text-left">
               <h3 className="tl-role">
                 <Segments parts={e.role} />
                 <span style={{ fontSize: "0.6em", color: "var(--ink-dim)" }}>{e.sub}</span>

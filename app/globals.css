@@ -330,7 +330,7 @@ li,
 }
 .hero__meta .label {
   display: block;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   margin-bottom: 6px;
   font-size: 9px;
 }
@@ -621,7 +621,7 @@ html[dir="rtl"] .btn:hover .arrow {
   pointer-events: none;
   overflow: hidden;
   height: 28px;
-  opacity: 0.22;
+  opacity: 0.38;
   display: flex;
   align-items: center;
   margin-top: 32px;
@@ -882,10 +882,9 @@ html[dir="rtl"] .fact .sub {
 }
 .skill:not(:last-child)::after {
   content: "·";
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   margin-inline-start: 10px;
   font-size: 0.7em;
-  opacity: 0.7;
 }
 .skill--hl {
   color: var(--accent);
@@ -904,7 +903,7 @@ html[dir="rtl"] .skill--hl {
 .skillrow__count {
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   letter-spacing: 0.14em;
   align-self: center;
   padding-inline-end: 8px;
@@ -1410,7 +1409,6 @@ html[dir="ltr"] .contact__channel--primary {
   font-size: 10px;
   padding-block: 8px;
   padding-inline: 12px;
-  opacity: 0.75;
 }
 html[dir="ltr"] .contact__channel--utility {
   letter-spacing: 0.18em;
@@ -1420,6 +1418,108 @@ html[dir="ltr"] .contact__channel--utility {
   border-color: transparent !important;
   background: transparent !important;
   color: var(--ink) !important;
+}
+
+/* ============ TESTIMONIALS ============ */
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.testimonial-card {
+  position: relative;
+  background: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: clamp(32px, 4vw, 56px);
+  overflow: hidden;
+}
+
+.testimonial-card__quote-mark {
+  position: absolute;
+  top: 20px;
+  inset-inline-end: 32px;
+  font-family: var(--serif);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+  font-style: normal;
+}
+
+html[dir="rtl"] .testimonial-card__quote-mark {
+  inset-inline-end: auto;
+  inset-inline-start: 32px;
+}
+
+.testimonial-card__body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.testimonial-card__text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 72ch;
+  margin: 0;
+}
+
+html[dir="rtl"] .testimonial-card__text {
+  font-family: var(--hebrew);
+  font-style: normal;
+}
+
+.testimonial-card__credit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0a0a09;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonial-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-card__author {
+  font-size: var(--fs-body-sm);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.testimonial-card__role {
+  font-size: var(--fs-label);
+  color: var(--ink-dim);
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.testimonial-card__company {
+  color: var(--accent);
 }
 
 /* ============ FOOTER ============ */
@@ -1477,11 +1577,12 @@ html[dir="rtl"] .footer {
   overflow: hidden;
 }
 .project__head {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
   margin-bottom: 80px;
-  align-items: end;
 }
 .project__brandline {
   font-family: var(--mono);
@@ -1493,6 +1594,7 @@ html[dir="rtl"] .footer {
   display: flex;
   gap: 16px;
   align-items: center;
+  justify-content: center;
 }
 .project__brandline::before {
   content: "";
@@ -1522,8 +1624,8 @@ html[dir="rtl"] .project__name {
   font-size: clamp(22px, 2.6vw, 32px);
   line-height: 1.35;
   color: var(--ink-2);
-  max-width: 42ch;
-  text-align: start;
+  max-width: 52ch;
+  text-align: center;
 }
 html[dir="rtl"] .project__pitch {
   font-family: var(--hebrew);
@@ -1536,6 +1638,15 @@ html[dir="rtl"] .project__pitch {
   grid-template-columns: 1.2fr 1fr;
   gap: 56px;
   align-items: center;
+}
+html[dir="rtl"] .stage {
+  grid-template-columns: 1fr 1.2fr;
+}
+html[dir="rtl"] .stage__left {
+  order: 2;
+}
+html[dir="rtl"] .stage__right {
+  order: 1;
 }
 .stage__left {
   position: relative;
@@ -1818,6 +1929,7 @@ html[dir="rtl"] .metric .desc {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 18px;
   min-height: 280px;
   transition: transform 0.4s var(--ease-out), border-color 0.4s, background 0.4s;
@@ -1865,9 +1977,10 @@ html[dir="rtl"] .pillar .d {
 
 .techstrip {
   margin-top: 100px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
   border-top: 1px solid var(--line);
   padding-top: 30px;
 }
@@ -1877,7 +1990,7 @@ html[dir="rtl"] .pillar .d {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-dim);
-  padding-top: 4px;
+  text-align: center;
 }
 html[dir="rtl"] .techstrip .lbl {
   font-family: var(--hebrew);
@@ -1888,15 +2001,19 @@ html[dir="rtl"] .techstrip .lbl {
 .techstrip__right {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
+  width: 100%;
 }
 .techstrip .stack {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 .project__live {
-  align-self: flex-start;
+  align-self: center;
+  width: fit-content;
 }
 .chip {
   font-family: var(--mono);
@@ -2031,14 +2148,10 @@ html[dir="rtl"] .techstrip .lbl {
   .stage__right {
     padding-inline-end: 0;
   }
-  .project__head {
-    grid-template-columns: 1fr;
-  }
   .pillars {
     grid-template-columns: 1fr;
   }
   .techstrip {
-    grid-template-columns: 1fr;
     gap: 20px;
   }
   .marquee__track {
@@ -2178,6 +2291,12 @@ html[dir="rtl"] .techstrip .lbl {
   }
   .playground {
     gap: 12px;
+  }
+  .testimonial-card__text {
+    font-size: clamp(16px, 4.5vw, 20px);
+  }
+  .testimonial-card__quote-mark {
+    font-size: 80px;
   }
   .footer {
     flex-direction: column;

@@ -2,7 +2,7 @@
   "dir": "rtl",
   "nav": {
     "mark": "פיני שטרן / Frontend",
-    "work": "עבודה",
+    "work": "פרויקטים",
     "about": "אודות",
     "contact": "צור קשר",
     "logoAlt": "פיני שטרן",
@@ -11,265 +11,548 @@
     "langHe": "עב"
   },
   "hero": {
-    "metaBased": "ממוקם ב",
-    "metaBasedV": "ישראל · UTC+3",
+    "metaBased": "מיקום",
+    "metaBasedV": "תל אביב, ישראל · UTC+3",
     "metaYears": "ניסיון",
-    "metaYearsV": "5+ שנים של שיפ לפרודקשן",
-    "metaStatus": "זמינות",
-    "metaStatusV": "● פנוי להזדמנויות · 2026",
-    "l1": ["מהנדס"],
-    "l2": ["פרונטאנד ", { "em": "שבונה" }],
-    "l3": [{ "stroke": "ממשקים" }, " שאנשים"],
-    "l4": ["באמת ", { "em": "נהנים" }, " מהם."],
-    "tag": "אני מעצב ובונה ממשקי מוצר עם React ו-TypeScript, עם דגש חזק על שימושיות, ביצועים וחוויית משתמש מדויקת.",
-    "cta1": "לעבודות",
-    "cta2": "להגיד שלום",
+    "metaYearsV": "מעל 4 שנות ניסיון בפיתוח לפרודקשן",
+    "metaStatus": "סטטוס",
+    "metaStatusV": "● פתוח להזדמנויות · 2026",
+    "l1": ["מפתח"],
+    "l2": ["Frontend ", { "em": "שבונה" }],
+    "l3": [{ "stroke": "ממשקים" }, " שמשתמשים"],
+    "l4": ["באמת ", { "em": "אוהבים" }, "."],
+    "tag": "אני מפתח Frontend מנוסה הבונה ממשקי משתמש מורכבים ב-React ו-TypeScript, בדגש חזק על ביצועים, רספונסיביות וחוויית משתמש (UX) מוקפדת.",
+    "cta1": "לצפייה בפרויקטים",
+    "cta2": "בואו נדבר",
     "ctaArrow": "←",
     "ctaEmail": "mailto:pini5192@gmail.com",
-    "scroll": "גלול",
+    "scroll": "גלול מטה",
     "portraitBadge": "פיני · תל אביב",
     "portraitAlt": "פיני שטרן"
   },
   "about": {
-    "num": "01 / אודות",
-    "title": [{ "em": "שלום." }, " הגרסה הקצרה."],
+    "num": "05 / אודות",
+    "title": [
+      {
+        "em": "שלום."
+      },
+      " נעים להכיר."
+    ],
     "p1": [
       "אני ",
-      { "em": "פיני" },
-      " — מהנדס פרונטאנד עם חמש שנים של בניית אפליקציות React ו-TypeScript שרצות בפרודקשן יום-יום. אכפת לי מהפרטים שהמשתמשים באמת מרגישים — תזמון אינטראקציות, תנועה, empty states, והחלטות UX קטנות שמעצבות איך מוצר מרגיש בשימוש יומי."
+      {
+        "em": "פיני"
+      },
+      " — מפתח Frontend מנוסה עם קרוב ל-4 שנות ניסיון בפיתוח אפליקציות ב-React ו-TypeScript שרצות בסביבת Production ביומיום. חשוב לי לייצר ממשקים שמרגישים פרימיום — מזמני התגובה (Latency), דרך ה-Micro-interactions וה-Empty states, ועד לבחירות הקטנות ב-UX שהופכות את המוצר לטבעי לשימוש."
     ],
-    "p2": "אני עובד end-to-end על UI מוצרי — מ-Figma מחוספס ועד פיצ׳ר שמותקן, מדבר עם עיצוב, באקאנד ו-QA לאורך הדרך. לאחרונה אני נשען חזק על workflows מבוססי AI לרפקטורים, בדיקות ולופי דיבאג מהירים.",
+    "p2": "גישת הפיתוח שלי היא End-to-End בצד ה-Client: מ-Figma ועד העלייה לאוויר. אני עובד בצמוד למעצבים, אנשי Backend ו-QA, ושם דגש על כתיבת קוד נקי ותחזוקתי. ביומיום שלי, אני משלב כלי פיתוח מבוססי AI כחלק מה-Workflow האורגני לטובת Refactoring מהיר, כתיבת טסטים וייעול תהליכי דיבאג.",
     "f1k": "כרגע",
-    "f1v": [{ "em": "Cinten" }],
-    "f1s": "B2B SaaS · מאז 2021 (לשעבר BeST)",
+    "f1v": [
+      {
+        "em": "Cinten"
+      }
+    ],
+    "f1s": "מערכת B2B SaaS · מאז 2021",
     "f2k": "סטאק מועדף",
-    "f2v": ["React", { "em": "·" }, "TS"],
+    "f2v": [
+      "React",
+      {
+        "em": "·"
+      },
+      "TS"
+    ],
     "f2s": "Tailwind, shadcn, Vite, Zustand",
-    "f3k": "משיק מאז",
-    "f3v": ["202", { "em": "1" }],
-    "f3s": "פיצ׳רים בפרודקשן, יום-יום",
-    "f4k": "אוהב",
-    "f4v": "מיקרו-UX",
-    "f4s": "Empty states · Hover · Motion"
+    "f3k": "משחרר לאוויר מאז",
+    "f3v": [
+      "202",
+      {
+        "em": "1"
+      }
+    ],
+    "f3s": "דילוור שוטף בסביבת Production",
+    "f4k": "חיבה מיוחדת ל",
+    "f4v": "Micro-UX",
+    "f4s": "אסתטיקה נקייה · אנימציות · Dark Mode"
   },
   "skills": {
-    "num": "02 / Stack",
-    "title": ["ה", { "em": "כלים" }, ", לפי שעות שימוש."],
+    "num": "04 / סטאק טכנולוגי",
+    "title": [
+      "ה",
+      {
+        "em": "כלים"
+      },
+      " שאני עובד איתם ביומיום."
+    ],
     "rows": [
       {
         "cat": "Frontend",
         "items": [
-          { "text": "React", "hl": true },
-          { "text": "TypeScript", "hl": true },
-          { "text": "JavaScript ES6+" },
-          { "text": "Next.js" },
-          { "text": "HTML5" },
-          { "text": "CSS3" }
+          {
+            "text": "React",
+            "hl": true
+          },
+          {
+            "text": "TypeScript",
+            "hl": true
+          },
+          {
+            "text": "JavaScript ES6+"
+          },
+          {
+            "text": "Next.js"
+          },
+          {
+            "text": "HTML5"
+          },
+          {
+            "text": "CSS3"
+          }
         ],
         "count": "06"
       },
       {
         "cat": "State & Data",
         "items": [
-          { "text": "Redux Toolkit" },
-          { "text": "Zustand", "hl": true },
-          { "text": "Context API" }
+          {
+            "text": "Redux Toolkit"
+          },
+          {
+            "text": "Zustand",
+            "hl": true
+          },
+          {
+            "text": "Context API"
+          }
         ],
         "count": "03"
       },
       {
         "cat": "UI & עיצוב",
         "items": [
-          { "text": "Tailwind", "hl": true },
-          { "text": "Styled Components" },
-          { "text": "shadcn/ui", "hl": true },
-          { "text": "Ant Design" },
-          { "text": "i18n" }
+          {
+            "text": "Tailwind",
+            "hl": true
+          },
+          {
+            "text": "Styled Components"
+          },
+          {
+            "text": "shadcn/ui",
+            "hl": true
+          },
+          {
+            "text": "Glassmorphism"
+          },
+          {
+            "text": "i18n & RTL"
+          }
         ],
         "count": "05"
       },
       {
         "cat": "Backend & APIs",
         "items": [
-          { "text": "Node.js" },
-          { "text": "Express" },
-          { "text": "REST APIs" },
-          { "text": "PostgreSQL" },
-          { "text": "MongoDB" }
+          {
+            "text": "Node.js"
+          },
+          {
+            "text": "Express"
+          },
+          {
+            "text": "REST APIs"
+          },
+          {
+            "text": "PostgreSQL"
+          },
+          {
+            "text": "MongoDB"
+          }
         ],
         "count": "05"
       },
       {
         "cat": "Testing & כלים",
         "items": [
-          { "text": "Vitest", "hl": true },
-          { "text": "Playwright", "hl": true },
-          { "text": "Vite" },
-          { "text": "Git" },
-          { "text": "כלי AI לפיתוח" }
+          {
+            "text": "Vitest",
+            "hl": true
+          },
+          {
+            "text": "Playwright",
+            "hl": true
+          },
+          {
+            "text": "Vite"
+          },
+          {
+            "text": "Git"
+          },
+          {
+            "text": "כלי AI לפיתוח"
+          }
         ],
         "count": "05"
       }
     ]
   },
   "proj": {
-    "num": "03 / עבודה נבחרת",
-    "head": ["דבר ", { "em": "אחד" }, " בכל פעם."],
-    "brandline": "מערכת לניהול התחייבויות פיננסיות · Full-Stack · 2025",
-    "name": ["Cash ", { "em": "Plus" }],
-    "pitch": "מערכת Full-Stack לניהול התחייבויות פיננסיות — מנויים, חשבונות משתנים, הלוואות, שכירות ותשלומים חד־פעמיים — עם תזכורות, תחזיות וציר זמן שמראה מה עומד לרדת ומתי.",
+    "num": "01 / עבודה נבחרת",
+    "head": [
+      "פרויקט ",
+      {
+        "em": "דגל"
+      },
+      "."
+    ],
+    "brandline": "מערכת לניהול התחייבויות פיננסיות · Full-Stack · 2026",
+    "name": [
+      "Cash ",
+      {
+        "em": "Plus"
+      }
+    ],
+    "pitch": "מערכת Full-Stack חכמה לניהול התחייבויות פיננסיות  מנויים, חשבונות שוטפים, הלוואות, שכירות ותשלומים משתנים. המערכת כוללת תזכורות אוטומטיות, תחזיות, ותזרים הוצאות (Cash flow) ברור שמשקף למשתמש את הסטטוס הפיננסי שלו בכל רגע נתון.",
     "ui": {
       "greet": "היי, פיני ↗",
-      "balL": "מנויים חודשיים",
-      "balV": ["$", { "em": "184" }, ".50"],
-      "balD": "↓ חסכת $32 החודש",
-      "upcoming": "חידושים השבוע",
+      "balL": "הוצאות קבועות",
+      "balV": [
+        "₪",
+        {
+          "em": "184"
+        },
+        ".50"
+      ],
+      "balD": "↓ חסכת ₪32 החודש",
+      "upcoming": "חיובים קרובים",
       "sub1": "מתחדש · ב׳",
       "sub2": "מתחדש · ד׳",
       "sub3": "מתחדש · ה׳",
       "sub4": "מתחדש · ש׳",
-      "cta": "סקירה וביטול",
-      "subNames": ["Netflix Premium", "Spotify Family", "Figma Pro", "Adobe CC"],
-      "subPrices": ["$22.99", "$16.99", "$15.00", "$54.99"],
-      "subIcons": ["N", "S", "F", "A"],
-      "subColors": ["#ff5b5b", "#1db954", "#c8f15a", "#a78bfa"],
+      "cta": "ניהול וביטול",
+      "subNames": [
+        "Netflix Premium",
+        "Spotify Family",
+        "Figma Pro",
+        "Adobe CC"
+      ],
+      "subPrices": [
+        "₪69",
+        "₪31",
+        "₪55",
+        "₪185"
+      ],
+      "subIcons": [
+        "N",
+        "S",
+        "F",
+        "A"
+      ],
+      "subColors": [
+        "#ff5b5b",
+        "#1db954",
+        "#c8f15a",
+        "#a78bfa"
+      ],
       "subCount": "04"
     },
     "metrics": [
       {
         "k": "ארכיטקטורת ולידציה משותפת",
-        "v": [{ "em": "Zod" }],
-        "d": "Schemas משותפים בין ה־client וה־server במונורפו של pnpm, כך שהחוזה נשאר עקבי מה־DB ועד ה־UI."
+        "v": [
+          {
+            "em": "Zod"
+          }
+        ],
+        "d": "שימוש ב-Schemas משותפים ל-Client ול-Server בסביבת pnpm Monorepo, לשמירה על אחידות וחוזה נתונים הדוק מה-DB ועד ה-UI."
       },
       {
-        "k": "ארכיטקטורת אימות",
-        "v": [{ "em": "JWT" }, " ×2"],
-        "d": "אימות מבוסס JWT עם refresh tokens מתחלפים, נתיבים מוגנים, וניהול סשנים שמוכן לפרודקשן."
+        "k": "ניהול אימות (Auth)",
+        "v": [
+          {
+            "em": "JWT"
+          },
+          " ×2"
+        ],
+        "d": "מערכת אותנטיקציה מבוססת JWT הכוללת רוטציית טוקנים (Refresh Tokens), נתיבים מוגנים (Protected Routes) וניהול סשנים מאובטח המוכר ל-Production."
       },
       {
-        "k": "מנועים ועיבוד ברקע",
-        "v": [{ "em": "Realtime" }],
-        "d": "Socket.io לעדכונים חיים, ו־BullMQ יחד עם Redis מטפלים בתזכורות מתוזמנות, עבודות חיוב חוזרות ועיבוד אסינכרוני."
+        "k": "תהליכי רקע ו-Real-time",
+        "v": [
+          {
+            "em": "Realtime"
+          }
+        ],
+        "d": "שילוב Socket.io לעדכונים בזמן אמת, לצד BullMQ ו-Redis לניהול משימות רקע (Background Jobs), תזכורות ועיבוד אסינכרוני."
       }
     ],
     "pillars": [
       {
         "ix": "P · 01",
-        "t": ["נבנה עבור RTL ", { "em": "מהיום הראשון" }, "."],
-        "d": "תמיכה ב־RTL/LTR מובנית בארכיטקטורה עצמה, עם עברית, ערבית ואנגלית בכל הפריסות, הטיפוגרפיה והאינטראקציות."
+        "t": [
+          "נבנה עבור RTL ",
+          {
+            "em": "מהיום הראשון"
+          },
+          "."
+        ],
+        "d": "תמיכה מובנית בשפות מימין לשמאל (RTL) ברמת הארכיטקטורה, עם התאמה מלאה לעברית ולאנגלית בפריסות, בטיפוגרפיה ובאינטראקציות."
       },
       {
         "ix": "P · 02",
-        "t": ["רואים את מה ש", { "em": "עומד לרדת" }, "."],
-        "d": "ציר הזמן בנוי סביב חיובים קרובים, תזכורות וזרימת מזומן חוזרת, כדי לראות מה עומד לרדת לפני שזה קורה."
+        "t": [
+          "שיקוף מלא של ",
+          {
+            "em": "ההתחייבויות"
+          },
+          "."
+        ],
+        "d": "ציר הזמן (Timeline) בנוי סביב חיובים קרובים והוצאות קבועות, כדי שהמשתמש ידע בדיוק מה עומד לרדת עוד לפני שזה קורה."
       },
       {
         "ix": "P · 03",
-        "t": ["נבנה לתחזוקה ", { "em": "ארוכה" }, "."],
-        "d": "לוגים מובנים, שגיאות מטופסות, רוטציית טוקנים, workers ברקע ומודלי דומיין משותפים שומרים על קוהרנטיות כשהמוצר גדל."
+        "t": [
+          "ארכיטקטורה ",
+          {
+            "em": "סקיילבילית"
+          },
+          "."
+        ],
+        "d": "כתיבת קוד Type-safe עם טיפול חכם בשגיאות, שילוב לוגים מובנים ומודלים משותפים המבטיחים יציבות לטווח הארוך."
       }
     ],
     "techlbl": "הסטאק המרכזי",
     "techChips": [
-      { "label": "React 19", "acc": true },
-      { "label": "Next.js 15", "acc": true },
-      { "label": "TypeScript", "acc": true },
-      { "label": "Tailwind v4" },
-      { "label": "shadcn/ui" },
-      { "label": "Node · Express" },
-      { "label": "PostgreSQL · Kysely" },
-      { "label": "BullMQ · Redis" },
-      { "label": "Socket.io" },
-      { "label": "i18next · RTL" },
-      { "label": "pnpm workspaces" },
-      { "label": "Zod" }
+      {
+        "label": "React 19",
+        "acc": true
+      },
+      {
+        "label": "Next.js 15",
+        "acc": true
+      },
+      {
+        "label": "TypeScript",
+        "acc": true
+      },
+      {
+        "label": "Tailwind v4"
+      },
+      {
+        "label": "shadcn/ui"
+      },
+      {
+        "label": "Node · Express"
+      },
+      {
+        "label": "PostgreSQL · Kysely"
+      },
+      {
+        "label": "BullMQ · Redis"
+      },
+      {
+        "label": "Socket.io"
+      },
+      {
+        "label": "i18next · RTL"
+      },
+      {
+        "label": "pnpm workspaces"
+      },
+      {
+        "label": "Zod"
+      }
     ],
     "liveUrl": "https://cashplus-app.com",
     "liveLabel": "↗ cashplus-app.com"
   },
+  "testimonials": {
+    "num": "03 / מה אומרים עלי",
+    "title": ["המלצות ", { "em": "מהשטח" }, "."],
+    "items": [
+      {
+        "quote": "פיני הוא מסוג המפתחים שנדיר למצוא היום  הוא לא רק מקבל אפיון וכותב קוד, הוא באמת מבין מוצר. ב-Cinten הוא לקח Ownership מלא על פיצ'רים מורכבים משלב התכנון ועד לפרודקשן. היכולת שלו לשלב ארכיטקטורה חכמה מתחת למכסה המנוע יחד עם חוויית משתמש (UX) סופר-מוקפדת, היא משהו שלא רואים הרבה. אפשר לסמוך עליו בעיניים עצומות. נכס אמיתי לכל צוות R&D.",
+        "author": "ניר כהן",
+        "role": "CTO",
+        "company": "Cinten"
+      }
+    ]
+  },
   "exp": {
-    "num": "04 / ניסיון",
-    "title": ["איפה ", { "em": "עבדתי" }, "."],
-    "now": "● עכשיו",
-    "range": "2021 — היום",
-    "role": [{ "em": "Frontend Engineer" }, " · Cinten"],
+    "num": "02 / ניסיון",
+    "title": [
+      "איפה ",
+      {
+        "em": "עבדתי"
+      },
+      "."
+    ],
+    "now": "● היום",
+    "range": "2021  היום",
+    "role": [
+      {
+        "em": "מפתח Frontend מנוסה"
+      },
+      " · Cinten"
+    ],
     "sub": " (לשעבר BeST)",
     "meta": "תל אביב · פלטפורמת B2B SaaS · React / TypeScript",
     "bullets": [
-      "בניתי ותחזקתי פיצ׳רים ופלואו של משתמש קצה במגוון אזורי מוצר בקודבייס פרודקשן ב-React/TypeScript.",
-      "שיפתי קומפוננטות UI רספונסיביות וחיברתי את הצד הקדמי ל-APIs ולעדכונים בזמן אמת.",
-      "מימוש פלואו של אימות, נתיבים מוגנים והתנהגות UI לפי הרשאות — מקצה לקצה.",
-      "שיפור שמישות, ביצועי רינדור ותחזוקתיות קוד לאורך המוצר.",
-      "תרמתי לכיסוי בדיקות עם Vitest ו-Playwright; נשען על כלי AI להאצת מימוש, רפקטור ודיבאג."
+      "פיתוח ותחזוקת פיצ'רים ו-Flows של משתמשי קצה במגוון מוצרים, תחת Codebase מורכב ב-React ו-TypeScript בסביבת Production.",
+      "בניית קומפוננטות UI רספונסיביות, אינטגרציה צמודה מול צד שרת (REST APIs) והזרקת נתונים בזמן אמת (Real-time).",
+      "מימוש תהליכי Auth, ניהול הרשאות (Roles) והגדרת Protected Routes מקצה לקצה.",
+      "אופטימיזציה לביצועי רינדור ב-Client, שיפור חוויית משתמש (UX) ושמירה על קוד נקי ותחזוקתי בהיקפים גדולים.",
+      "הרחבת כיסוי הטסטים עם Vitest ו-Playwright, לצד עבודה שוטפת עם כלי AI לזירוז פיתוח, Refactoring מהיר ודיבאג חכם."
     ]
   },
   "edu": {
-    "num": "05 / השכלה",
-    "title": ["איפה זה ", { "em": "התחיל" }, "."],
-    "c1k": "תעודה · 2020–2021",
-    "c1t": [{ "em": "SVCollege" }],
+    "num": "06 / הכשרה",
+    "title": [
+      "איפה זה ",
+      {
+        "em": "התחיל"
+      },
+      "."
+    ],
+    "c1k": "הכשרה מקצועית · 2020–2021",
+    "c1t": [
+      {
+        "em": "SVCollege"
+      }
+    ],
     "c1tSub": "פיתוח Frontend",
-    "c1m": "React · JS · יסודות UI",
+    "c1m": "React · JS · עקרונות UI/UX",
     "c2k": "ציון סופי",
-    "c2v": [{ "em": "97" }],
-    "c2m": "ראש המחזור · פרויקט גמר שהותקן לפרודקשן"
+    "c2v": [
+      {
+        "em": "97"
+      }
+    ],
+    "c2m": "מצטיין מחזור · פרויקט הגמר שוחרר לפרודקשן"
   },
   "play": {
-    "num": "06 / שונות",
-    "title": ["דברים ", { "em": "בצד" }, "."],
+    "num": "07 / שונות",
+    "title": [
+      "מעבר ",
+      {
+        "em": "לשעות העבודה"
+      },
+      "."
+    ],
     "cards": [
       {
-        "l": "שפות",
-        "t": ["עברית ", { "em": "·" }, " אנגלית · ערבית"],
-        "d": "עברית שפת אם, אנגלית מקצועית, ותמיכה בערבית כחלק מהמערכת מהיום הראשון.",
-        "s": "עבודה דו-לשונית"
+        "l": "i18n & RTL",
+        "t": [
+          "התאמה לשפות ",
+          {
+            "em": "מרובות"
+          }
+        ],
+        "d": "ניסיון עשיר בארכיטקטורת Frontend התומכת ב-RTL ו-LTR. בניית ממשקים התומכים בעברית ובאנגלית בצורה שקופה משלב התכנון הראשוני.",
+        "s": "Frontend רב-לשוני"
       },
       {
-        "l": "תרגול",
-        "t": [{ "em": "Motion" }, " & micro-UX"],
-        "d": "מחקר מתמשך של הבחירות הקטנות — easings, hover, קצב טעינה — שגורמות למוצר להרגיש חי במקום פשוט נכון.",
-        "s": "תמיד משיק"
+        "l": "UX & תנועה",
+        "t": [
+          {
+            "em": "Motion"
+          },
+          " & Micro-UX"
+        ],
+        "d": "מחקר מתמיד של הניואנסים הקטנים — Animations, Hover states וקצבי טעינה — שהופכים ממשק נכון טכנית לממשק שמרגיש אנושי וטבעי.",
+        "s": "אסתטיקה ותחושה"
       },
       {
-        "l": "Workflow",
-        "t": ["AI-assisted ", { "em": "dev" }],
-        "d": "שימוש יומי בכלי פיתוח מבוססי AI לרפקטורים, בדיקות, דיבאג וניווט יעיל בקודבייסים גדולים.",
-        "s": "יום-יום"
+        "l": "פרודוקטיביות",
+        "t": [
+          "AI-Assisted ",
+          {
+            "em": "Dev"
+          }
+        ],
+        "d": "שימוש בטכניקות של Prompt Engineering ועבודה יומיומית עם מודלי AI לטובת ניווט בקוד, שכתוב יעיל וכתיבת בדיקות.",
+        "s": "עבודה יומיומית"
       }
     ]
   },
   "contact": {
-    "pre": "07 / בוא נדבר · זמין Q1 2026",
-    "l1": "פרונט טוב יותר",
-    "l2": ["למוצר ", { "em": "אמיתי" }, "."],
+    "pre": "08 / בוא נדבר · זמין לפרויקטים",
+    "l1": "Frontend ברמה גבוהה",
+    "l2": [
+      "למוצר ",
+      {
+        "em": "שלך"
+      },
+      "."
+    ],
     "email": "pini5192@gmail.com",
     "channels": [
-      { "label": "✶ Email", "href": "mailto:pini5192@gmail.com" },
-      { "label": "✶ +972 54 834 5192", "href": "tel:+972548345192" },
-      { "label": "✶ LinkedIn", "href": "https://linkedin.com/in/pini-shteren" },
-      { "label": "✶ GitHub", "href": "https://github.com/PiniShterenNew" },
-      { "label": "↑ חזרה למעלה", "href": "#top" }
+      {
+        "label": "✶ Email",
+        "href": "mailto:pini5192@gmail.com"
+      },
+      {
+        "label": "✶ +972 54 834 5192",
+        "href": "tel:+972548345192"
+      },
+      {
+        "label": "✶ LinkedIn",
+        "href": "https://linkedin.com/in/pini-shteren"
+      },
+      {
+        "label": "✶ GitHub",
+        "href": "https://github.com/PiniShterenNew"
+      },
+      {
+        "label": "↑ חזרה למעלה",
+        "href": "#top"
+      }
     ]
   },
   "footer": {
     "left": "© 2026 פיני שטרן",
-    "center": "עוצב ונבנה ביד.",
+    "center": "קודד ועוצב מאפס.",
     "right": "v1.0 · IL",
     "logoAlt": "פיני שטרן"
   },
   "marquee": {
     "items": [
-      { "text": "React" },
-      { "text": "TypeScript", "acc": true },
-      { "text": "Next.js" },
-      { "text": "Tailwind" },
-      { "text": "shadcn/ui", "acc": true },
-      { "text": "Zustand" },
-      { "text": "Playwright" },
-      { "text": "Vitest", "acc": true },
-      { "text": "Vite" },
-      { "text": "Node" },
-      { "text": "PostgreSQL", "acc": true }
+      {
+        "text": "React"
+      },
+      {
+        "text": "TypeScript",
+        "acc": true
+      },
+      {
+        "text": "Next.js"
+      },
+      {
+        "text": "Tailwind"
+      },
+      {
+        "text": "shadcn/ui",
+        "acc": true
+      },
+      {
+        "text": "Zustand"
+      },
+      {
+        "text": "Playwright"
+      },
+      {
+        "text": "Vitest",
+        "acc": true
+      },
+      {
+        "text": "Vite"
+      },
+      {
+        "text": "Node"
+      },
+      {
+        "text": "PostgreSQL",
+        "acc": true
+      }
     ]
   },
   "ticker": {
@@ -278,18 +561,18 @@
       "TYPESCRIPT",
       "PRODUCT UI",
       "MICRO-INTERACTIONS",
-      "SHIPPING DAILY",
+      "PRODUCTION READY",
       "B2B SAAS",
-      "FRONTEND ENGINEER",
+      "FRONTEND DEVELOPER",
       "ISRAEL",
       "AVAILABLE 2026",
       "★"
     ]
   },
   "meta": {
-    "title": "פיני שטרן — מהנדס Frontend",
-    "description": "מהנדס פרונטאנד שבונה מוצרי React ו-TypeScript. 5+ שנות ניסיון בפרודקשן.",
-    "ogTitle": "פיני שטרן — מהנדס Frontend",
+    "title": "פיני שטרן  מפתח Frontend",
+    "description": "מפתח Frontend מנוסה הבונה ממשקים מורכבים ב-React ו-TypeScript. כ-4 שנות ניסיון בסביבת פרודקשן.",
+    "ogTitle": "פיני שטרן  מפתח Frontend",
     "ogDescription": "React · TypeScript · Product UI",
     "ogImageAlt": "פיני שטרן"
   },
@@ -297,99 +580,325 @@
     "backToPortfolio": "← חזרה לפורטפוליו",
     "access": {
       "appName": "AccessOS",
-      "navItems": ["תפקידים", "פיצ׳רים", "משתמשים", "לוג ביקורת"],
+      "navItems": [
+        "תפקידים",
+        "פיצ׳רים",
+        "משתמשים",
+        "לוג ביקורת"
+      ],
       "activeNav": "פיצ׳רים",
-      "pageTitle": "הרשאות פיצ׳רים",
-      "pageDesc": "ניהול אילו תפקידים יכולים לגשת לכל פיצ׳ר. השינויים מיושמים מיידית.",
+      "pageTitle": "הרשאות מערכת (RBAC)",
+      "pageDesc": "ניהול גישה לפיצ'רים למערך התפקידים. עדכונים מוחלים בזמן אמת.",
       "usersLabel": "משתמשים",
       "featureColumnLabel": "פיצ׳ר",
-      "tip": "לחץ על כל טוגל לעדכון מיידי של הרשאות. כל השינויים מנוהלי גרסאות ומשתקפים בלוג הביקורת.",
-      "publishBtn": "פרסם שינויים",
-      "roles": ["admin", "manager", "trainer", "trainee", "viewer"],
-      "roleCounts": { "admin": 3, "manager": 8, "trainer": 24, "trainee": 212, "viewer": 47 },
+      "tip": "לעדכון הרשאות יש ללחוץ על ה-Toggle. כל הפעולות מתועדות ונשמרות כגרסאות בלוג הביקורת.",
+      "publishBtn": "שמירה ופרסום",
+      "roles": [
+        "admin",
+        "manager",
+        "trainer",
+        "trainee",
+        "viewer"
+      ],
+      "roleCounts": {
+        "admin": 3,
+        "manager": 8,
+        "trainer": 24,
+        "trainee": 212,
+        "viewer": 47
+      },
       "features": [
-        { "name": "ניהול משתמשים", "description": "יצירה, עריכה והשבתה של חשבונות משתמשים", "roles": { "admin": true, "manager": true, "trainer": false, "trainee": false, "viewer": false } },
-        { "name": "צפייה בניתוחים", "description": "גישה למדדי שימוש ודוחות ביצועים", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "התחלת סשן", "description": "הפעלת סשני אימון בזמן אמת", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "הצטרפות לסשן", "description": "השתתפות בסשן אימון", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": true, "viewer": false } },
-        { "name": "עריכת תוכן", "description": "שינוי תרגילים, תכניות ומדיה", "roles": { "admin": true, "manager": false, "trainer": true, "trainee": false, "viewer": false } },
-        { "name": "ייצוא נתונים", "description": "הורדת דוחות כ-CSV/PDF", "roles": { "admin": true, "manager": true, "trainer": false, "trainee": false, "viewer": false } },
-        { "name": "צפייה בפיד חי", "description": "צפייה בפעילות סשן בזמן אמת", "roles": { "admin": true, "manager": true, "trainer": true, "trainee": true, "viewer": true } }
+        {
+          "name": "ניהול משתמשים",
+          "description": "יצירה, עריכה והשעיית חשבונות",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": false,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "דוחות ואנליטיקה",
+          "description": "גישה למדדי שימוש וביצועים",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "פתיחת סשן",
+          "description": "יצירת סשן אימון חדש ב-Live",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "הצטרפות לסשן",
+          "description": "כניסה לסשן אימון פעיל",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": true,
+            "viewer": false
+          }
+        },
+        {
+          "name": "עריכת תוכן",
+          "description": "ניהול תרגילים, תכניות עבודה ומדיה",
+          "roles": {
+            "admin": true,
+            "manager": false,
+            "trainer": true,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "ייצוא נתונים",
+          "description": "הורדת דוחות בפורמט CSV או PDF",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": false,
+            "trainee": false,
+            "viewer": false
+          }
+        },
+        {
+          "name": "סטרים בזמן אמת",
+          "description": "צפייה בפעילות המתאמנים ב-Live",
+          "roles": {
+            "admin": true,
+            "manager": true,
+            "trainer": true,
+            "trainee": true,
+            "viewer": true
+          }
+        }
       ]
     },
     "performance": {
       "appName": "PerfView",
       "appVersion": "v2.4.1",
-      "navItems": ["סקירה", "Bundle", "Vitals", "היסטוריה"],
+      "navItems": [
+        "סקירה",
+        "Bundle",
+        "Vitals",
+        "היסטוריה"
+      ],
       "activeNav": "סקירה",
       "pageTitle": "דוח ביצועים",
-      "pageMeta": "cinten-platform · main · ריצה אחרונה לפני 2 דקות",
-      "runAuditBtn": "הרץ ביקורת",
+      "pageMeta": "cinten-platform · main · הופעל לפני 2 דקות",
+      "runAuditBtn": "הרצת בדיקה",
       "lighthouseLabel": "ציוני Lighthouse",
-      "bundleSizeLabel": "גודל Bundle",
+      "bundleSizeLabel": "משקל ה-Bundle",
       "beforeLabel": "לפני",
       "afterLabel": "אחרי",
-      "reductionLabel": "הפחתה",
-      "historyLabel": "היסטוריית ציון Lighthouse",
-      "historyDelta": "+30 נקודות ב-12 חודשים",
+      "reductionLabel": "חיסכון",
+      "historyLabel": "היסטוריית ציונים",
+      "historyDelta": "שיפור של 30 נקודות בשנה",
       "vitalsLabel": "Core Web Vitals",
-      "passLabel": "✓ עובר",
+      "passLabel": "✓ תקין (Pass)",
       "kbUnit": "kb",
       "audits": [
-        { "label": "ביצועים", "score": 85, "icon": "⚡" },
-        { "label": "נגישות", "score": 94, "icon": "♿" },
-        { "label": "שיטות עבודה מומלצות", "score": 92, "icon": "✓" },
-        { "label": "SEO", "score": 97, "icon": "🔍" }
+        {
+          "label": "ביצועים",
+          "score": 85,
+          "icon": "⚡"
+        },
+        {
+          "label": "נגישות",
+          "score": 94,
+          "icon": "♿"
+        },
+        {
+          "label": "Best Practices",
+          "score": 92,
+          "icon": "✓"
+        },
+        {
+          "label": "SEO",
+          "score": 97,
+          "icon": "🔍"
+        }
       ],
       "bundles": [
-        { "name": "vendor.js", "before": 412, "after": 268 },
-        { "name": "main.js", "before": 188, "after": 124 },
-        { "name": "ui.js", "before": 96, "after": 58 },
-        { "name": "utils.js", "before": 44, "after": 30 },
-        { "name": "icons.js", "before": 38, "after": 16 }
+        {
+          "name": "vendor.js",
+          "before": 412,
+          "after": 268
+        },
+        {
+          "name": "main.js",
+          "before": 188,
+          "after": 124
+        },
+        {
+          "name": "ui.js",
+          "before": 96,
+          "after": 58
+        },
+        {
+          "name": "utils.js",
+          "before": 44,
+          "after": 30
+        },
+        {
+          "name": "icons.js",
+          "before": 38,
+          "after": 16
+        }
       ],
-      "months": ["יונ", "יול", "אוג", "ספט", "אוק", "נוב", "דצמ", "ינו", "פבר", "מרץ", "אפר", "מאי"],
+      "months": [
+        "יונ",
+        "יול",
+        "אוג",
+        "ספט",
+        "אוק",
+        "נוב",
+        "דצמ",
+        "ינו",
+        "פבר",
+        "מרץ",
+        "אפר",
+        "מאי"
+      ],
       "vitals": [
-        { "metric": "FCP", "name": "First Contentful Paint", "before": "3.8s", "after": "1.2s" },
-        { "metric": "LCP", "name": "Largest Contentful Paint", "before": "5.1s", "after": "1.8s" },
-        { "metric": "TBT", "name": "Total Blocking Time", "before": "620ms", "after": "90ms" },
-        { "metric": "CLS", "name": "Cumulative Layout Shift", "before": "0.18", "after": "0.02" },
-        { "metric": "TTI", "name": "Time to Interactive", "before": "7.2s", "after": "2.4s" }
+        {
+          "metric": "FCP",
+          "name": "First Contentful Paint",
+          "before": "3.8s",
+          "after": "1.2s"
+        },
+        {
+          "metric": "LCP",
+          "name": "Largest Contentful Paint",
+          "before": "5.1s",
+          "after": "1.8s"
+        },
+        {
+          "metric": "TBT",
+          "name": "Total Blocking Time",
+          "before": "620ms",
+          "after": "90ms"
+        },
+        {
+          "metric": "CLS",
+          "name": "Cumulative Layout Shift",
+          "before": "0.18",
+          "after": "0.02"
+        },
+        {
+          "metric": "TTI",
+          "name": "Time to Interactive",
+          "before": "7.2s",
+          "after": "2.4s"
+        }
       ],
       "toggleBefore": "לפני",
       "toggleAfter": "אחרי"
     },
     "realtime": {
       "appName": "Cinten",
-      "appSubtitle": "פלטפורמה",
-      "navItems": ["חי", "סשנים", "ניתוחים", "הגדרות"],
+      "appSubtitle": "Platform",
+      "navItems": [
+        "Live",
+        "סשנים",
+        "אנליטיקה",
+        "הגדרות"
+      ],
       "wsStatus": "WebSocket מחובר",
-      "connectedNowLabel": "מחוברים עכשיו",
+      "connectedNowLabel": "מחוברים כעת",
       "statsLabel": "סטטיסטיקות",
-      "pageTitle": "פעילות בזמן אמת",
-      "pageMetaPrefix": "סטרים WebSocket בזמן אמת · tick #",
-      "exportBtn": "ייצוא",
+      "pageTitle": "פעילות ב-Real-time",
+      "pageMetaPrefix": "Stream אירועים חי · חתימת זמן #",
+      "exportBtn": "ייצוא נתונים",
       "newSessionBtn": "+ סשן חדש",
-      "eventThroughputLabel": "תפוקת אירועים (24 שניות אחרונות)",
-      "liveStreamLabel": "סטרים אירועים חי",
+      "eventThroughputLabel": "קצב אירועים (24 שניות אחרונות)",
+      "liveStreamLabel": "לוג אירועים (Live)",
       "stats": [
-        { "label": "סשנים פעילים", "value": "247" },
-        { "label": "Latency ממוצע", "valueSuffix": "ms" },
-        { "label": "אירועים / דקה", "value": "1,842" }
+        {
+          "label": "סשנים פעילים",
+          "value": "247"
+        },
+        {
+          "label": "Latency ממוצע",
+          "valueSuffix": "ms"
+        },
+        {
+          "label": "אירועים / דקה",
+          "value": "1,842"
+        }
       ],
       "metricCards": [
-        { "label": "משתמשים פעילים", "value": "247", "delta": "+12" },
-        { "label": "Latency ממוצע", "valueSuffix": "ms", "delta": "< 1s" },
-        { "label": "אירועים/דקה", "value": "1,842", "delta": "↑ 8%" },
-        { "label": "שיעור שגיאות", "value": "0.02%", "delta": "↓ יציב" }
+        {
+          "label": "משתמשים פעילים",
+          "value": "247",
+          "delta": "+12"
+        },
+        {
+          "label": "Latency ממוצע",
+          "valueSuffix": "ms",
+          "delta": "< 1s"
+        },
+        {
+          "label": "אירועים / דקה",
+          "value": "1,842",
+          "delta": "↑ 8%"
+        },
+        {
+          "label": "שיעור שגיאות",
+          "value": "0.02%",
+          "delta": "↓ יציב"
+        }
       ],
       "users": [
-        { "name": "Roei K.", "role": "מאמן", "status": "active", "sessions": 3 },
-        { "name": "Noa S.", "role": "מתאמן", "status": "active", "sessions": 1 },
-        { "name": "Amit D.", "role": "מנהל", "status": "idle", "sessions": 0 },
-        { "name": "Liran M.", "role": "מתאמן", "status": "active", "sessions": 2 },
-        { "name": "Hila R.", "role": "מאמנת", "status": "active", "sessions": 4 },
-        { "name": "Yoni P.", "role": "מתאמן", "status": "idle", "sessions": 1 }
+        {
+          "name": "Roei K.",
+          "role": "מאמן",
+          "status": "active",
+          "sessions": 3
+        },
+        {
+          "name": "Noa S.",
+          "role": "מתאמנת",
+          "status": "active",
+          "sessions": 1
+        },
+        {
+          "name": "Amit D.",
+          "role": "מנהל",
+          "status": "idle",
+          "sessions": 0
+        },
+        {
+          "name": "Liran M.",
+          "role": "מתאמן",
+          "status": "active",
+          "sessions": 2
+        },
+        {
+          "name": "Hila R.",
+          "role": "מאמנת",
+          "status": "active",
+          "sessions": 4
+        },
+        {
+          "name": "Yoni P.",
+          "role": "מתאמן",
+          "status": "idle",
+          "sessions": 1
+        }
       ]
     }
   }

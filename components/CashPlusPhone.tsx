@@ -16,7 +16,6 @@ export default function CashPlusPhone() {
           width={320}
           height={700}
           className='phone__screenshot'
-          quality={100}
           unoptimized
         />
       </div>

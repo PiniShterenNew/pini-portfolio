@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
-import About from "@/sections/About";
-import Stack from "@/sections/Stack";
 import Work from "@/sections/Work";
 import Experience from "@/sections/Experience";
+import Testimonials from "@/sections/Testimonials";
+import Stack from "@/sections/Stack";
+import About from "@/sections/About";
 import Education from "@/sections/Education";
 import Playground from "@/sections/Playground";
 import Contact from "@/sections/Contact";
@@ -15,10 +16,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Stack />
         <Work />
         <Experience />
+        <Testimonials />
+        <Stack />
+        <About />
         <Education />
         <Playground />
         <Contact />

@@ -20,7 +20,7 @@ export default function Playground() {
 
         <div className="playground">
           {p.cards.map((c, i) => (
-            <Reveal key={i} className="play" delay={i * 80}>
+            <Reveal key={i} className="play rtl:text-right ltr:text-left" delay={i * 80}>
               <span className="label">{c.l}</span>
               <h4 className="ttl">
                 <Segments parts={c.t} />

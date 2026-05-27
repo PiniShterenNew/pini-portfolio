@@ -20,7 +20,7 @@ export default function About() {
         </Reveal>
 
         <Reveal className="about">
-          <div className="about__bio">
+          <div className="about__bio rtl:text-right ltr:text-left">
             <p>
               <Segments parts={a.p1} />
             </p>
