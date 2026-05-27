@@ -64,6 +64,11 @@ html.light {
   --ink-faint: rgba(28, 27, 24, 0.14);
   --line: rgba(28, 27, 24, 0.1);
   --line-strong: rgba(28, 27, 24, 0.2);
+  /* darken accent for readability on light background (~5:1 contrast) */
+  --accent: #4a7c0e;
+  --accent-deep: #375e0a;
+  --accent-glow: rgba(74, 124, 14, 0.18);
+  --warm-soft: rgba(232, 140, 90, 0.12);
 }
 
 html.light .nav {
@@ -2232,18 +2237,25 @@ html[dir="rtl"] .techstrip .lbl {
   .section__head {
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  .section__title {
+    text-align: center;
+  }
+  .section__num {
+    align-self: center;
   }
   html[dir="rtl"] .section__head {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
+    align-items: center;
+    text-align: center;
   }
   html[dir="rtl"] .section__num {
-    align-self: flex-start;
+    align-self: center;
   }
   html[dir="rtl"] .section__title {
-    text-align: start;
+    text-align: center;
   }
   .contact {
     padding-block: 100px 80px;
@@ -2279,6 +2291,11 @@ html[dir="rtl"] .techstrip .lbl {
   }
   .hero__portrait:hover {
     transform: none;
+  }
+  .hero__portrait-badge {
+    inset-inline-end: 2px;
+    transform: rotate(4deg);
+    top: 20px;
   }
 
   /* increase legibility of small-label text on mobile */
