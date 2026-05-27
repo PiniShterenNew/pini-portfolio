@@ -85,7 +85,13 @@ export default function Work() {
               rel='noopener noreferrer'
               className='btn btn--solid project__live'
             >
-              {p.liveLabel}
+              <img
+                src='https://cashplus-app.com/logo.svg'
+                alt='Cash Plus'
+                className='project__live-logo'
+                aria-hidden='true'
+              />
+              <span>{p.liveLabel}</span>
             </a>
           </div>
         </Reveal>

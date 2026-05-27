@@ -2014,6 +2014,15 @@ html[dir="rtl"] .techstrip .lbl {
 .project__live {
   align-self: center;
   width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.project__live-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
 }
 .chip {
   font-family: var(--mono);
@@ -2138,6 +2147,15 @@ html[dir="rtl"] .techstrip .lbl {
   .stage {
     grid-template-columns: 1fr;
     gap: 56px;
+  }
+  html[dir="rtl"] .stage {
+    grid-template-columns: 1fr;
+  }
+  html[dir="rtl"] .stage__left {
+    order: 1;
+  }
+  html[dir="rtl"] .stage__right {
+    order: 2;
   }
   .phone-wrap {
     transform: none;
