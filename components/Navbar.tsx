@@ -100,7 +100,7 @@ export default function Navbar() {
     <nav className='nav' ref={navRef}>
       <div className='nav__mark'>
         <Image
-          src='/logo.svg'
+          src={theme === 'light' ? '/logo-light.svg' : '/logo.svg'}
           alt={t.nav.logoAlt}
           width={28}
           height={28}
