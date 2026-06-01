@@ -49,7 +49,7 @@ export default function Hero() {
           '.hero__portrait',
           {
             opacity: 0,
-            x: lang === 'he' ? -30 : 30,
+            y: 24,
             duration: 0.85,
             ease: 'power2.out',
           },
