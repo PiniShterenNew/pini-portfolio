@@ -1,7 +1,7 @@
 {
   "dir": "ltr",
   "nav": {
-    "mark": "Pini Shteren / FE",
+    "mark": "Pini Shteren / FS",
     "work": "Work",
     "about": "About",
     "contact": "Contact",
@@ -14,14 +14,14 @@
     "metaBased": "Based in",
     "metaBasedV": "Tel Aviv, Israel · UTC+3",
     "metaYears": "Experience",
-    "metaYearsV": "4+ years of production development",
+    "metaYearsV": "5+ years · frontend to backend",
     "metaStatus": "Availability",
     "metaStatusV": "● Open to new opportunities · 2026",
-    "l1": ["Frontend"],
+    "l1": ["Full-Stack"],
     "l2": ["engineer ", { "em": "building" }],
-    "l3": [{ "stroke": "interfaces" }, " users"],
+    "l3": [{ "stroke": "products" }, " users"],
     "l4": ["actually ", { "em": "love" }, "."],
-    "tag": "I design and build product interfaces with React and TypeScript, with a strong focus on responsiveness, usability, and interaction details.",
+    "tag": "I build full-stack products end-to-end — React and TypeScript on the front, Node and PostgreSQL on the back — with a sharp focus on interaction details and things that feel right in daily use.",
     "cta1": "See the work",
     "cta2": "Say hello",
     "ctaArrow": "→",
@@ -43,9 +43,9 @@
       {
         "em": "Pini"
       },
-      "  a frontend engineer with five years of building React and TypeScript apps that run in production every day. I care about the details users actually feel  interaction timing, motion, empty states, and the small UX decisions that shape how a product feels in daily use."
+      " — a fullstack engineer with five years of shipping production software. I build across the entire stack: React and TypeScript on the frontend, Node, Express, and PostgreSQL on the backend. I care deeply about the details users feel — interaction timing, motion, empty states, and the small UX decisions that make a product feel alive."
     ],
-    "p2": "I work end-to-end on product UI  from rough Figma to shipped feature, talking to design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
+    "p2": "I own features end-to-end — from DB schema and API design through to polished UI — coordinating with design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
     "f1k": "Currently",
     "f1v": [
       {
@@ -61,7 +61,7 @@
       },
       "TS"
     ],
-    "f2s": "Tailwind, shadcn, Vite, Zustand",
+    "f2s": "Node · PostgreSQL · Tailwind · shadcn",
     "f3k": "Shipping since",
     "f3v": [
       "202",
@@ -390,17 +390,17 @@
     "range": "2021  Present",
     "role": [
       {
-        "em": "Frontend Engineer"
+        "em": "Full-Stack Engineer"
       },
       " · Cinten"
     ],
     "sub": " (formerly BeST)",
-    "meta": "Tel Aviv · B2B SaaS platform · React / TypeScript",
+    "meta": "Tel Aviv · B2B SaaS platform · React / TypeScript / Node",
     "bullets": [
-      "Built and maintained user-facing features across multiple product areas in a production React and TypeScript codebase.",
-      "Shipped responsive UI components and integrated the frontend with backend APIs and real-time data streams.",
-      "Implemented authentication flows, protected routes, and role-based access control end-to-end.",
-      "Improved usability, rendering performance, and long-term code maintainability across the product.",
+      "Built and owned product features end-to-end — from API and DB layer through React UI — across a complex production codebase.",
+      "Designed and implemented RESTful APIs with Node and Express, integrated real-time data streams, and shipped responsive frontend components.",
+      "Built authentication flows end-to-end: JWT with refresh rotation, protected routes, and role-based access control.",
+      "Improved rendering performance, UI responsiveness, and long-term code maintainability across the product.",
       "Expanded test coverage with Vitest and Playwright, and leveraged AI-assisted tools to accelerate implementation, refactoring, and debugging."
     ]
   },
@@ -477,7 +477,7 @@
   },
   "contact": {
     "pre": "08 / Let's talk · Available Q1 2026",
-    "l1": "A better frontend",
+    "l1": "A better product,",
     "l2": [
       "for a ",
       {
@@ -564,17 +564,17 @@
       "MICRO-INTERACTIONS",
       "SHIPPING DAILY",
       "B2B SAAS",
-      "FRONTEND ENGINEER",
+      "FULL-STACK ENGINEER",
       "ISRAEL",
       "AVAILABLE 2026",
       "★"
     ]
   },
   "meta": {
-    "title": "Pini Shteren  Frontend Engineer",
-    "description": "Frontend engineer building React and TypeScript products. 5+ years shipping production UI.",
-    "ogTitle": "Pini Shteren  Frontend Engineer",
-    "ogDescription": "React · TypeScript · Product UI",
+    "title": "Pini Shteren — Full-Stack Engineer",
+    "description": "Full-stack engineer building React, TypeScript and Node products end-to-end. 5+ years shipping to production.",
+    "ogTitle": "Pini Shteren — Full-Stack Engineer",
+    "ogDescription": "React · TypeScript · Node · PostgreSQL",
     "ogImageAlt": "Pini Shteren"
   },
   "workPages": {
