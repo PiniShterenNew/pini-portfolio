@@ -4,14 +4,32 @@
 
 'use client'
 
+import { useRef } from 'react'
 import Image from 'next/image'
 import { useApp } from '@/contexts/AppContext'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from '@/lib/gsap'
 
 export default function Navbar() {
   const { lang, toggleLang, t, theme, toggleTheme } = useApp()
+  const navRef = useRef<HTMLElement>(null)
+
+  useGSAP(
+    () => {
+      const nav = navRef.current
+      if (!nav) return
+
+      ScrollTrigger.create({
+        start: 'top -60',
+        onEnter: () => nav.classList.add('scrolled'),
+        onLeaveBack: () => nav.classList.remove('scrolled'),
+      })
+    },
+    { scope: navRef }
+  )
 
   return (
-    <nav className='nav'>
+    <nav className='nav' ref={navRef}>
       <div className='nav__mark'>
         <Image
           src='/logo.svg'
