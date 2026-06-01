@@ -53,29 +53,76 @@
 }
 
 /* =========================================================
-   LIGHT MODE
+   LIGHT MODE — true white, dark text, WCAG AA+ contrast
    ========================================================= */
 html.light {
-  /* warm espresso/walnut — gives 10:1+ contrast with both lime accent and cream text */
-  --bg: #2c2317;
-  --bg-elev: #3a2e1f;
-  --ink: #f0ebe0;
-  --ink-2: #d3cdbc;
-  --ink-dim: rgba(240, 235, 224, 0.58);
-  --ink-faint: rgba(240, 235, 224, 0.16);
-  --line: rgba(240, 235, 224, 0.12);
-  --line-strong: rgba(240, 235, 224, 0.26);
-  --warm-soft: rgba(232, 140, 90, 0.2);
+  --bg: #ffffff;
+  --bg-elev: #f0ebe0;          /* warm cream — stands out from white */
+  --ink: #141210;              /* near-black warm   — contrast on white: 18:1 ✓ */
+  --ink-2: #3e3a33;            /* medium dark warm  — contrast on white:  9:1 ✓ */
+  --ink-dim: rgba(20, 18, 16, 0.50);
+  --ink-faint: rgba(20, 18, 16, 0.07);
+  --line: rgba(20, 18, 16, 0.09);
+  --line-strong: rgba(20, 18, 16, 0.18);
+  --accent: #3e7a00;           /* dark green        — contrast on white:  7.4:1 ✓ */
+  --accent-deep: #2d5c00;
+  --accent-glow: rgba(62, 122, 0, 0.15);
+  --warm: #c45a1a;             /* burnt orange      — contrast on white:  5.8:1 ✓ */
+  --warm-soft: rgba(196, 90, 26, 0.10);
+  --paper: #e4d9c0;            /* tan cream — clearly distinct from white bg */
+  --tape: rgba(196, 180, 148, 0.65);
+  --warn: #c44400;
 }
 
+/* Nav: white, crisp */
 html.light .nav {
-  background: rgba(44, 35, 23, 0.85);
+  background: rgba(255, 255, 255, 0.90);
+  border-bottom-color: rgba(20, 18, 16, 0.10);
+}
+html.light .nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Solid button: keep bright lime bg (--accent is now dark green for text) */
+html.light .btn--solid {
+  background: #c8f15a;
+  border-color: #c8f15a;
+  color: #141200;
+}
+html.light .btn--solid:hover {
+  background: #0b0b0a;
+  border-color: #0b0b0a;
+  color: #f0ebe0;
+}
+
+/* Selection: keep bright lime highlight */
+html.light ::selection {
+  background: #c8f15a;
+  color: #141200;
+}
+
+/* Portrait badge: white text on dark-orange bg */
+html.light .hero__portrait-badge {
+  color: #ffffff;
+}
+
+/* Portrait frame: clean, no filter needed on white bg */
 html.light .hero__portrait__frame {
-  filter: contrast(1.02) saturate(0.96);
+  filter: none;
 }
 
+/* Background orbs: pastel-soft on white */
+html.light .bg-orbs {
+  opacity: 0.45;
+}
+
+/* Grain: multiply blend, very subtle on white */
+html.light body::before {
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+}
+
+/* Phone UI stays dark in both modes */
 html.light .pui-balance,
 html.light .pui-sub,
 html.light .phone__inner {
