@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useRef, ElementType, ReactNode } from "react";
+import { useRef, ElementType, ReactNode } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 interface RevealProps {
   children: ReactNode;
@@ -17,27 +19,40 @@ export default function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            window.setTimeout(() => el.classList.add("in"), delay);
-            io.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [delay]);
+  useGSAP(
+    () => {
+      const el = ref.current;
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          delay: delay / 1000,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            once: true,
+          },
+        }
+      );
+
+      return () => {
+        ScrollTrigger.getAll()
+          .filter((st) => st.trigger === el)
+          .forEach((st) => st.kill());
+      };
+    },
+    { scope: ref, dependencies: [delay] }
+  );
 
   const Tag = As as ElementType;
   return (
-    <Tag ref={ref} className={`reveal ${className}`}>
+    <Tag ref={ref} className={className} style={{ opacity: 0 }}>
       {children}
     </Tag>
   );

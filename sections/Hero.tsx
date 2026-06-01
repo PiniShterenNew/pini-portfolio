@@ -4,16 +4,63 @@
 
 'use client'
 
+import { useRef } from 'react'
 import { useApp } from '@/contexts/AppContext'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '@/lib/gsap'
 import Segments from '@/components/Segments'
 import Ticker from '@/components/Ticker'
 import PortraitPicture from '@/components/PortraitPicture'
 
 export default function Hero() {
   const { t, lang } = useApp()
+  const containerRef = useRef<HTMLElement>(null)
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+      tl.from('.hero__meta .item', {
+        opacity: 0,
+        y: 14,
+        stagger: 0.07,
+        duration: 0.55,
+      })
+        .from(
+          '.hero__content .stack',
+          {
+            opacity: 0,
+            y: 44,
+            stagger: 0.08,
+            duration: 0.75,
+          },
+          '-=0.25'
+        )
+        .from(
+          '.hero__sub',
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          '-=0.35'
+        )
+        .from(
+          '.hero__portrait',
+          {
+            opacity: 0,
+            x: lang === 'he' ? -30 : 30,
+            duration: 0.85,
+            ease: 'power2.out',
+          },
+          '-=0.7'
+        )
+    },
+    { scope: containerRef }
+  )
 
   return (
-    <section className='hero shell' id='top'>
+    <section className='hero shell' id='top' ref={containerRef}>
       <div className='wrap hero__grid'>
         <div className='hero__content'>
           <div className='hero__meta'>
