@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Geist, Heebo, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
+import BackgroundOrbs from "@/components/BackgroundOrbs";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
         <AppProvider>
+          <BackgroundOrbs />
           {children}
           <div
             id="gsap-overlay"

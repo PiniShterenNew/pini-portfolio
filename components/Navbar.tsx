@@ -32,53 +32,68 @@ export default function Navbar() {
 
   const handleThemeToggle = () => {
     const overlay = document.getElementById('gsap-overlay')
-    if (!overlay) { toggleTheme(); return }
+    const btn = themeBtnRef.current
+    if (!overlay || !btn) { toggleTheme(); return }
 
-    // Capture current bg before the theme changes
+    const rect = btn.getBoundingClientRect()
+    const cx = rect.left + rect.width / 2
+    const cy = rect.top + rect.height / 2
+    const maxR = Math.hypot(
+      Math.max(cx, window.innerWidth - cx),
+      Math.max(cy, window.innerHeight - cy)
+    ) * 1.1
+
+    // Lock overlay to current theme's bg color
     const currentBg = getComputedStyle(document.documentElement)
       .getPropertyValue('--bg').trim()
     overlay.style.background = currentBg
+    overlay.style.opacity = '1'
+    overlay.style.clipPath = `circle(0px at ${cx}px ${cy}px)`
 
-    // Spin the icon
-    if (themeBtnRef.current) {
-      gsap.fromTo(
-        themeBtnRef.current,
-        { rotate: 0, scale: 1 },
-        { rotate: 180, scale: 0.75, duration: 0.15, ease: 'power2.in',
-          onComplete: () => gsap.to(themeBtnRef.current, { rotate: 360, scale: 1, duration: 0.25, ease: 'back.out(2)' })
-        }
-      )
-    }
+    // Icon spins as the wipe expands
+    gsap.to(btn, {
+      rotate: 360,
+      duration: 0.75,
+      ease: 'power2.inOut',
+      onComplete: () => gsap.set(btn, { rotate: 0 }),
+    })
 
+    // Circle wipe out → toggle → circle wipe in
     gsap.timeline()
-      .to(overlay, { opacity: 1, duration: 0.14, ease: 'power1.in' })
+      .to(overlay, {
+        clipPath: `circle(${maxR}px at ${cx}px ${cy}px)`,
+        duration: 0.42,
+        ease: 'power2.in',
+      })
       .call(toggleTheme)
-      .to(overlay, { opacity: 0, duration: 0.38, ease: 'power2.out' }, '+=0.02')
+      .to(overlay, {
+        clipPath: `circle(0px at ${cx}px ${cy}px)`,
+        duration: 0.48,
+        ease: 'power2.out',
+        onComplete: () => {
+          overlay.style.opacity = '0'
+          overlay.style.clipPath = ''
+        },
+      })
   }
 
   const handleLangToggle = () => {
     const main = document.querySelector('main')
     if (!main) { toggleLang(); return }
 
-    // EN→HE: exit left, enter from right. HE→EN: exit right, enter from left.
-    const isGoingRTL = lang === 'en'
-    const exitX = isGoingRTL ? -28 : 28
-    const enterX = isGoingRTL ? 28 : -28
-
-    // Flash the lang button
+    // Scale-pulse on the lang button
     if (langBtnRef.current) {
-      gsap.fromTo(
-        langBtnRef.current,
-        { scale: 1 },
-        { scale: 0.85, duration: 0.1, yoyo: true, repeat: 1, ease: 'power2.inOut' }
-      )
+      gsap.timeline()
+        .to(langBtnRef.current, { scale: 0.8, duration: 0.1, ease: 'power2.in' })
+        .to(langBtnRef.current, { scale: 1, duration: 0.25, ease: 'back.out(3)' })
     }
 
+    // Fade + slight Y lift (Y avoids overflow-x:clip clipping the motion)
     gsap.timeline()
-      .to(main, { opacity: 0, x: exitX, duration: 0.2, ease: 'power2.in' })
+      .to(main, { opacity: 0, y: 18, scale: 0.985, duration: 0.22, ease: 'power2.in' })
       .call(toggleLang)
-      .set(main, { x: enterX })
-      .to(main, { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out' })
+      .set(main, { y: -18 })
+      .to(main, { opacity: 1, y: 0, scale: 1, duration: 0.42, ease: 'power3.out' })
   }
 
   return (
