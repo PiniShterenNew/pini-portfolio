@@ -36,16 +36,16 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pini-portfolio.vercel.app'),
-  title: "Pini Shteren — Product Designer",
-  description: "Portfolio of Pini Shteren, product designer specializing in fintech and mobile experiences.",
+  title: "Pini Shteren — Full-Stack Engineer",
+  description: "Full-stack engineer building React, TypeScript and Node products end-to-end. 5+ years shipping to production.",
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: "Pini Shteren — Product Designer",
-    description: "Portfolio of Pini Shteren, product designer specializing in fintech and mobile experiences.",
+    title: "Pini Shteren — Full-Stack Engineer",
+    description: "Full-stack engineer building React, TypeScript and Node products end-to-end.",
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'he_IL',
@@ -63,7 +63,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          {children}
+          <div
+            id="gsap-overlay"
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'var(--bg)',
+              opacity: 0,
+              pointerEvents: 'none',
+              zIndex: 9998,
+            }}
+          />
+        </AppProvider>
       </body>
     </html>
   )

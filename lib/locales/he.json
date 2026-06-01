@@ -1,7 +1,7 @@
 {
   "dir": "rtl",
   "nav": {
-    "mark": "פיני שטרן / Frontend",
+    "mark": "פיני שטרן / Full-Stack",
     "work": "פרויקטים",
     "about": "אודות",
     "contact": "צור קשר",
@@ -14,14 +14,14 @@
     "metaBased": "מיקום",
     "metaBasedV": "תל אביב, ישראל · UTC+3",
     "metaYears": "ניסיון",
-    "metaYearsV": "מעל 4 שנות ניסיון בפיתוח לפרודקשן",
+    "metaYearsV": "5+ שנות ניסיון · frontend עד backend",
     "metaStatus": "סטטוס",
     "metaStatusV": "● פתוח להזדמנויות · 2026",
     "l1": ["מפתח"],
-    "l2": ["Frontend ", { "em": "שבונה" }],
-    "l3": [{ "stroke": "ממשקים" }, " שמשתמשים"],
+    "l2": ["Full-Stack ", { "em": "שבונה" }],
+    "l3": [{ "stroke": "מוצרים" }, " שמשתמשים"],
     "l4": ["באמת ", { "em": "אוהבים" }, "."],
-    "tag": "אני מפתח Frontend מנוסה הבונה ממשקי משתמש מורכבים ב-React ו-TypeScript, בדגש חזק על ביצועים, רספונסיביות וחוויית משתמש (UX) מוקפדת.",
+    "tag": "אני בונה מוצרים מקצה לקצה — React ו-TypeScript בצד הלקוח, Node ו-PostgreSQL בצד השרת — עם דגש חד על פרטי האינטראקציה ועל דברים שמרגישים נכון בשימוש יומיומי.",
     "cta1": "לצפייה בפרויקטים",
     "cta2": "בואו נדבר",
     "ctaArrow": "←",
@@ -43,9 +43,9 @@
       {
         "em": "פיני"
       },
-      " — מפתח Frontend מנוסה עם קרוב ל-4 שנות ניסיון בפיתוח אפליקציות ב-React ו-TypeScript שרצות בסביבת Production ביומיום. חשוב לי לייצר ממשקים שמרגישים פרימיום — מזמני התגובה (Latency), דרך ה-Micro-interactions וה-Empty states, ועד לבחירות הקטנות ב-UX שהופכות את המוצר לטבעי לשימוש."
+      " — מפתח Full-Stack עם חמש שנות ניסיון בבנייה ומשלוח תוכנה לפרודקשן. אני עובד בכל הסטאק: React ו-TypeScript בצד הלקוח, Node, Express ו-PostgreSQL בצד השרת. אני שם לב לפרטים שהמשתמשים מרגישים — זמני אינטראקציה, מוציה, Empty states, והחלטות UX קטנות שהופכות מוצר לטבעי לשימוש."
     ],
-    "p2": "גישת הפיתוח שלי היא End-to-End בצד ה-Client: מ-Figma ועד העלייה לאוויר. אני עובד בצמוד למעצבים, אנשי Backend ו-QA, ושם דגש על כתיבת קוד נקי ותחזוקתי. ביומיום שלי, אני משלב כלי פיתוח מבוססי AI כחלק מה-Workflow האורגני לטובת Refactoring מהיר, כתיבת טסטים וייעול תהליכי דיבאג.",
+    "p2": "אני מחזיק פיצ'רים מקצה לקצה — מה-DB schema ותכנון ה-API ועד לממשק משתמש מלוטש — תוך עבודה צמודה עם מעצבים, Backend ו-QA. ביומיום אני משלב כלי AI לטובת Refactoring מהיר, כתיבת טסטים וייעול תהליכי דיבאג.",
     "f1k": "כרגע",
     "f1v": [
       {
@@ -61,7 +61,7 @@
       },
       "TS"
     ],
-    "f2s": "Tailwind, shadcn, Vite, Zustand",
+    "f2s": "Node · PostgreSQL · Tailwind · shadcn",
     "f3k": "משחרר לאוויר מאז",
     "f3v": [
       "202",
@@ -390,18 +390,18 @@
     "range": "2021  היום",
     "role": [
       {
-        "em": "מפתח Frontend מנוסה"
+        "em": "מפתח Full-Stack"
       },
       " · Cinten"
     ],
     "sub": " (לשעבר BeST)",
-    "meta": "תל אביב · פלטפורמת B2B SaaS · React / TypeScript",
+    "meta": "תל אביב · פלטפורמת B2B SaaS · React / TypeScript / Node",
     "bullets": [
-      "פיתוח ותחזוקת פיצ'רים ו-Flows של משתמשי קצה במגוון מוצרים, תחת Codebase מורכב ב-React ו-TypeScript בסביבת Production.",
-      "בניית קומפוננטות UI רספונסיביות, אינטגרציה צמודה מול צד שרת (REST APIs) והזרקת נתונים בזמן אמת (Real-time).",
-      "מימוש תהליכי Auth, ניהול הרשאות (Roles) והגדרת Protected Routes מקצה לקצה.",
-      "אופטימיזציה לביצועי רינדור ב-Client, שיפור חוויית משתמש (UX) ושמירה על קוד נקי ותחזוקתי בהיקפים גדולים.",
-      "הרחבת כיסוי הטסטים עם Vitest ו-Playwright, לצד עבודה שוטפת עם כלי AI לזירוז פיתוח, Refactoring מהיר ודיבאג חכם."
+      "בעלות מלאה על פיצ'רים מקצה לקצה — מה-API וה-DB ועד ממשק המשתמש — בתוך Codebase מורכב בסביבת Production.",
+      "תכנון ומימוש RESTful APIs עם Node ו-Express, אינטגרציית נתוני Real-time, ובניית קומפוננטות UI רספונסיביות.",
+      "בניית מערכת Auth מקצה לקצה: JWT עם Refresh rotation, Protected routes וניהול הרשאות (RBAC).",
+      "אופטימיזציה לביצועי רינדור, שיפור חוויית משתמש ושמירה על קוד נקי ותחזוקתי בהיקפים גדולים.",
+      "הרחבת כיסוי הטסטים עם Vitest ו-Playwright, לצד שימוש שוטף בכלי AI לזירוז פיתוח, Refactoring ודיבאג."
     ]
   },
   "edu": {
@@ -476,7 +476,7 @@
   },
   "contact": {
     "pre": "08 / בוא נדבר · זמין לפרויקטים",
-    "l1": "Frontend ברמה גבוהה",
+    "l1": "Full-Stack ברמה גבוהה,",
     "l2": [
       "למוצר ",
       {
@@ -563,17 +563,17 @@
       "MICRO-INTERACTIONS",
       "PRODUCTION READY",
       "B2B SAAS",
-      "FRONTEND DEVELOPER",
+      "FULL-STACK DEVELOPER",
       "ISRAEL",
       "AVAILABLE 2026",
       "★"
     ]
   },
   "meta": {
-    "title": "פיני שטרן  מפתח Frontend",
-    "description": "מפתח Frontend מנוסה הבונה ממשקים מורכבים ב-React ו-TypeScript. כ-4 שנות ניסיון בסביבת פרודקשן.",
-    "ogTitle": "פיני שטרן  מפתח Frontend",
-    "ogDescription": "React · TypeScript · Product UI",
+    "title": "פיני שטרן — מפתח Full-Stack",
+    "description": "מפתח Full-Stack הבונה מוצרי React, TypeScript ו-Node מקצה לקצה. 5+ שנות ניסיון בפרודקשן.",
+    "ogTitle": "פיני שטרן — מפתח Full-Stack",
+    "ogDescription": "React · TypeScript · Node · PostgreSQL",
     "ogImageAlt": "פיני שטרן"
   },
   "workPages": {
