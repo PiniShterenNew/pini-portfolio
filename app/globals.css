@@ -242,33 +242,45 @@ li,
 }
 
 .orb--1 {
-  width: min(72vw, 860px);
-  height: min(72vw, 860px);
-  background: radial-gradient(ellipse at center, rgba(200, 241, 90, 0.10) 0%, transparent 62%);
-  top: -18%;
-  right: -12%;
+  width: min(85vw, 960px);
+  height: min(85vw, 960px);
+  background: radial-gradient(ellipse at center,
+    rgba(200, 241, 90, 0.28) 0%,
+    rgba(200, 241, 90, 0.10) 40%,
+    transparent 70%);
+  top: -22%;
+  right: -14%;
+  filter: blur(8px);
 }
 
 .orb--2 {
-  width: min(56vw, 680px);
-  height: min(56vw, 680px);
-  background: radial-gradient(ellipse at center, rgba(232, 140, 90, 0.09) 0%, transparent 62%);
-  top: 38%;
-  left: -14%;
+  width: min(68vw, 780px);
+  height: min(68vw, 780px);
+  background: radial-gradient(ellipse at center,
+    rgba(232, 140, 90, 0.24) 0%,
+    rgba(232, 140, 90, 0.08) 40%,
+    transparent 70%);
+  top: 40%;
+  left: -16%;
+  filter: blur(8px);
 }
 
 .orb--3 {
-  width: min(44vw, 540px);
-  height: min(44vw, 540px);
-  background: radial-gradient(ellipse at center, rgba(200, 241, 90, 0.07) 0%, transparent 62%);
-  bottom: 2%;
-  right: 18%;
+  width: min(54vw, 640px);
+  height: min(54vw, 640px);
+  background: radial-gradient(ellipse at center,
+    rgba(200, 241, 90, 0.20) 0%,
+    rgba(200, 241, 90, 0.07) 40%,
+    transparent 70%);
+  bottom: 0%;
+  right: 16%;
+  filter: blur(6px);
 }
 
 @media (max-width: 768px) {
-  .orb--1 { opacity: 0.7; }
-  .orb--2 { opacity: 0.6; }
-  .orb--3 { opacity: 0.5; }
+  .orb--1 { filter: blur(20px); }
+  .orb--2 { filter: blur(20px); }
+  .orb--3 { filter: blur(14px); }
 }
 
 /* ====================  TOP NAV  ==================== */
@@ -2160,7 +2172,7 @@ html[dir="rtl"] .techstrip .lbl {
     order: 1;
     aspect-ratio: 4 / 5;
     max-width: 360px;
-    width: 100%;
+    width: calc(100% - 32px); /* 16px breathing room per side for rotate(-1deg) */
     justify-self: center;
     align-self: start;
     transform: rotate(-1deg);
