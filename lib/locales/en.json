@@ -1,4 +1,4 @@
-{
+﻿{
   "dir": "ltr",
   "nav": {
     "mark": "Pini Shteren / FS",
@@ -23,7 +23,7 @@
     "l4": ["actually ", { "em": "love" }, "."],
     "tag": "I build full-stack products end-to-end — React and TypeScript on the front, Node and PostgreSQL on the back — with a sharp focus on interaction details and things that feel right in daily use.",
     "cta1": "See the work",
-    "cta2": "Say hello",
+    "cta2": "Get in touch",
     "ctaArrow": "→",
     "ctaEmail": "mailto:pini5192@gmail.com",
     "scroll": "Scroll",
@@ -41,7 +41,7 @@
     "p1": [
       "I'm ",
       {
-        "em": "Pini"
+        "em": "a Full-Stack Engineer"
       },
       " — a fullstack engineer with five years of shipping production software. I build across the entire stack: React and TypeScript on the frontend, Node, Express, and PostgreSQL on the backend. I care deeply about the details users feel — interaction timing, motion, empty states, and the small UX decisions that make a product feel alive."
     ],
@@ -53,13 +53,13 @@
       }
     ],
     "f1s": "B2B SaaS · since 2021 (was BeST)",
-    "f2k": "Stack of choice",
+    "f2k": "Primary Stack",
     "f2v": [
       "React",
       {
         "em": "·"
       },
-      "TS"
+      "TypeScript"
     ],
     "f2s": "Node · PostgreSQL · Tailwind · shadcn",
     "f3k": "Shipping since",
@@ -70,9 +70,9 @@
       }
     ],
     "f3s": "Production features, daily",
-    "f4k": "Loves",
-    "f4v": "Micro-UX",
-    "f4s": "Empty states. Hover. Motion."
+    "f4k": "Strength",
+    "f4v": "Product Thinking",
+    "f4s": "User needs · usability · product decisions"
   },
   "skills": {
     "num": "04 / Stack",
@@ -122,9 +122,12 @@
           },
           {
             "text": "Context API"
+          },
+          {
+            "text": "React Query"
           }
         ],
-        "count": "03"
+        "count": "04"
       },
       {
         "cat": "UI & Styling",
@@ -141,13 +144,10 @@
             "hl": true
           },
           {
-            "text": "Ant Design"
-          },
-          {
-            "text": "i18n"
+            "text": "i18n & RTL"
           }
         ],
-        "count": "05"
+        "count": "04"
       },
       {
         "cat": "Backend & APIs",
@@ -198,20 +198,20 @@
   "proj": {
     "num": "01 / Selected work",
     "head": [
-      "One ",
+      "Featured ",
       {
-        "em": "thing"
+        "em": "Project"
       },
-      " at a time."
+      "."
     ],
-    "brandline": "Financial Commitment System · Full-Stack · 2025",
+    "brandline": "Cash Plus · Side Project",
     "name": [
       "Cash ",
       {
         "em": "Plus"
       }
     ],
-    "pitch": "A full-stack financial commitment platform for tracking recurring obligations, variable bills, loans, rent, and one-time payments  with reminders, forecasts, and a timeline that shows what is coming next.",
+    "pitch": "Cash Plus is a side project focused on helping users manage subscriptions, recurring payments, and financial commitments.\n\nThe product provides upcoming charge visibility, automated reminders, Gmail-based subscription discovery, and bilingual support for Hebrew and English users.\n\nIt was built to give users a clearer picture of future expenses before charges occur. The product is currently in active beta with a small group of users.",
     "ui": {
       "greet": "Hey, Pini ↗",
       "balL": "Monthly subscriptions",
@@ -257,67 +257,67 @@
     },
     "metrics": [
       {
-        "k": "Shared validation architecture",
+        "k": "Unified data architecture",
         "v": [
           {
             "em": "Zod"
           }
         ],
-        "d": "Shared Zod schemas across client and server in a pnpm monorepo, keeping the data contract consistent from the database to the UI."
+        "d": "Shared schemas across client and server in a pnpm monorepo, keeping the data contract consistent from the database to the UI."
       },
       {
-        "k": "Authentication architecture",
+        "k": "Authentication & authorization",
         "v": [
           {
             "em": "JWT"
           },
           " ×2"
         ],
-        "d": "JWT-based auth with rotating refresh sessions, protected routes, and production-oriented session handling."
+        "d": "JWT-based auth with rotating refresh tokens, protected routes, and production-grade session management."
       },
       {
-        "k": "Engines & background processing",
+        "k": "Background jobs & real-time updates",
         "v": [
           {
             "em": "Realtime"
           }
         ],
-        "d": "Socket.io powers realtime updates, while BullMQ and Redis handle scheduled reminders, recurring billing jobs, and asynchronous processing."
+        "d": "Socket.io for real-time updates, alongside BullMQ and Redis for background jobs, reminders, and async processing."
       }
     ],
     "pillars": [
       {
         "ix": "P · 01",
         "t": [
-          "Built for RTL ",
+          "Full ",
           {
-            "em": "from day one"
+            "em": "RTL & LTR"
           },
-          "."
+          " support."
         ],
-        "d": "RTL/LTR support is built into the system architecture, with native Hebrew, Arabic, and English across layouts, typography, and interactions."
+        "d": "Interfaces built for Hebrew and English from day one, with full adaptation to layouts, typography, and interactions."
       },
       {
         "ix": "P · 02",
         "t": [
-          "Financial visibility ",
+          "Clear view of ",
           {
-            "em": "before"
+            "em": "upcoming charges"
           },
-          " charges hit."
+          "."
         ],
-        "d": "The timeline is built around upcoming charges, reminders, and recurring cash flow, so users see what is leaving the account before it does."
+        "d": "The timeline is built around upcoming charges and recurring payments, so users always know what is coming next."
       },
       {
         "ix": "P · 03",
         "t": [
-          "Built for long-term ",
+          "Type-safe ",
           {
-            "em": "maintainability"
+            "em": "architecture"
           },
           "."
         ],
-        "d": "Structured logging, typed errors, token rotation, background workers, and shared domain models keep the product coherent as it grows."
+        "d": "Typed errors, token rotation, background workers, and shared domain models keep the product maintainable long-term."
       }
     ],
     "techlbl": "Core stack",
@@ -370,7 +370,7 @@
     "title": ["What ", { "em": "others" }, " say."],
     "items": [
       {
-        "quote": "Pini is the kind of frontend engineer that's hard to find—he doesn't just write code, he understands the product. At Cinten, he took full ownership of complex features from end to end. His ability to combine robust architecture under the hood with a meticulously crafted UX is rare. You can trust him implicitly to take a task and ship it to production flawlessly. A true asset to any R&D team.",
+        "quote": "Pini consistently took ownership of complex features from planning through production.\n\nHe combines strong frontend execution with product thinking and communicates effectively across Product, Design, and Engineering teams.\n\nHe is dependable, proactive, and capable of moving important work forward with minimal oversight.",
         "author": "Nir Cohen",
         "role": "CTO",
         "company": "Cinten"
@@ -378,11 +378,11 @@
     ]
   },
   "exp": {
-    "num": "02 / Track record",
+    "num": "02 / Experience",
     "title": [
-      "What I've ",
+      "Professional ",
       {
-        "em": "shipped"
+        "em": "Experience"
       },
       "."
     ],
@@ -430,47 +430,47 @@
     "c2m": "Top of cohort · Capstone project shipped to production"
   },
   "play": {
-    "num": "07 / Misc",
+    "num": "07 / Specializations",
     "title": [
-      "Things on the ",
+      "Areas of ",
       {
-        "em": "side"
+        "em": "expertise"
       },
       "."
     ],
     "cards": [
       {
-        "l": "Languages",
+        "l": "i18n & RTL",
         "t": [
-          "Hebrew ",
+          "Full ",
           {
-            "em": "·"
+            "em": "RTL & LTR"
           },
-          " English · Arabic"
+          " support"
         ],
-        "d": "Native Hebrew, professional English, and Arabic support built into the product from day one.",
-        "s": "Bilingual UI work"
+        "d": "Experience building interfaces for Hebrew and English from the design stage, with full adaptation to layouts, typography, and interactions.",
+        "s": "Bilingual UI"
       },
       {
-        "l": "Practice",
+        "l": "Product UX",
         "t": [
+          "Product-focused ",
           {
-            "em": "Motion"
-          },
-          " & micro-UX"
+            "em": "user experience"
+          }
         ],
-        "d": "An ongoing study of the small choices  easings, hover states, loading rhythms  that make products feel alive instead of correct.",
-        "s": "Always shipping"
+        "d": "Focus on usability, clarity, and workflow design to build interfaces that are intuitive and easy to use.",
+        "s": "Product thinking"
       },
       {
         "l": "Workflow",
         "t": [
-          "AI-assisted ",
+          "Modern Development ",
           {
-            "em": "dev"
+            "em": "Workflow"
           }
         ],
-        "d": "Daily use of AI-assisted development tools for refactoring, testing, debugging, and navigating large codebases more efficiently.",
+        "d": "AI tools, test writing, and refactoring as part of the daily development process — to improve speed and quality.",
         "s": "Daily"
       }
     ]
@@ -479,11 +479,11 @@
     "pre": "08 / Let's talk · Available Q1 2026",
     "l1": "A better product,",
     "l2": [
-      "for a ",
+      "with product companies ",
       {
-        "em": "real"
+        "em": "and engineering teams"
       },
-      " product."
+      "."
     ],
     "email": "pini5192@gmail.com",
     "channels": [
@@ -511,7 +511,7 @@
   },
   "footer": {
     "left": "© 2026 Pini Shteren",
-    "center": "Designed and built from scratch.",
+    "center": "Full-Stack Engineer building SaaS products with React and TypeScript.",
     "right": "v1.0 · IL",
     "logoAlt": "Pini Shteren"
   },
