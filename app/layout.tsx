@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Geist, Heebo, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
-import BackgroundOrbs from "@/components/BackgroundOrbs";
+import FloatingCTA from "@/components/FloatingCTA";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -37,16 +37,16 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pini-portfolio.vercel.app'),
-  title: "Pini Shteren — Full-Stack Engineer",
-  description: "Full-stack engineer building React, TypeScript and Node products end-to-end. 5+ years shipping to production.",
+  title: "Pini Shteren · Frontend & Fullstack Engineer",
+  description: "Frontend & Fullstack Engineer — React, Next.js, TypeScript, Node.js. Product-minded, ships features end-to-end. 5+ years building SaaS products in production.",
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: "Pini Shteren — Full-Stack Engineer",
-    description: "Full-stack engineer building React, TypeScript and Node products end-to-end.",
+    title: "Pini Shteren · Frontend & Fullstack Engineer",
+    description: "React · Next.js · TypeScript · Node.js — product-minded engineer who ships features end-to-end.",
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'he_IL',
@@ -60,13 +60,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="he" dir="rtl" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <body
         className={`${instrumentSerif.variable} ${geist.variable} ${heebo.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
         <AppProvider>
-          <BackgroundOrbs />
           {children}
+          <FloatingCTA />
           <div
             id="gsap-overlay"
             style={{

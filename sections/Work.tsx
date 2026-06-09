@@ -1,4 +1,4 @@
-// Description: selected work section — Cash Plus project, all text from i18n
+// Description: selected work section - Cash Plus project, all text from i18n
 // Author: Pinchas
 // Created with claude.md rules
 
@@ -59,7 +59,12 @@ export default function Work() {
 
         <div className='pillars'>
           {p.pillars.map((pl, i) => (
-            <Reveal key={i} className='pillar' delay={i * 80}>
+            <Reveal key={i} className={`pillar${i === 0 ? ' pillar--annotated' : ''}`} delay={i * 80}>
+              {i === 0 && (
+                <span className='pillar__annot' aria-hidden='true'>
+                  {p.pillarAnnot}
+                </span>
+              )}
               <div className='ix'>{pl.ix}</div>
               <div className='t'>
                 <Segments parts={pl.t} />
@@ -68,6 +73,24 @@ export default function Work() {
             </Reveal>
           ))}
         </div>
+
+        {p.production && (
+          <Reveal className='prod-evidence'>
+            <div className='prod-evidence__head'>
+              <span className='prod-evidence__lbl'>{p.production.lbl}</span>
+              <h3 className='prod-evidence__title'>{p.production.title}</h3>
+            </div>
+            <div className='prod-evidence__stats'>
+              {p.production.items.map((it, i) => (
+                <div className='prod-stat' key={i}>
+                  <div className='prod-stat__v'>{it.v}</div>
+                  <div className='prod-stat__k'>{it.k}</div>
+                </div>
+              ))}
+            </div>
+            <p className='prod-evidence__proof'>{p.production.proof}</p>
+          </Reveal>
+        )}
 
         <Reveal className='techstrip'>
           <div className='lbl'>{p.techlbl}</div>

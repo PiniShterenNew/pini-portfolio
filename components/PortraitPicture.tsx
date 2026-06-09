@@ -13,7 +13,7 @@ export default function PortraitPicture({
 }: PortraitPictureProps) {
   return (
     <picture className={className}>
-      {/* Desktop (>=1024px) — landscape */}
+      {/* Desktop (>=1024px) - landscape */}
       <source
         type="image/avif"
         media="(min-width: 1024px)"
@@ -26,7 +26,7 @@ export default function PortraitPicture({
         srcSet="/pini-desktop-sm.webp 800w, /pini-desktop-md.webp 1200w, /pini-desktop.webp 1536w"
         sizes={sizes}
       />
-      {/* Mobile — portrait */}
+      {/* Mobile - portrait */}
       <source
         type="image/avif"
         srcSet="/pini-mobile-sm.avif 800w, /pini-mobile.avif 941w"

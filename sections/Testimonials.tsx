@@ -1,4 +1,4 @@
-// Description: Testimonials section — single large quote card from Nir Cohen (CTO @ Cinten)
+// Description: Testimonials section - single large quote card from Nir Cohen (CTO @ Cinten)
 // Author: Pinchas
 // Created with claude.md rules
 "use client";
