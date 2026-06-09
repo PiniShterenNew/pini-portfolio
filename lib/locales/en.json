@@ -1,7 +1,7 @@
-{
+﻿{
   "dir": "ltr",
   "nav": {
-    "mark": "Pini Shteren / FS",
+    "mark": "Pini Shteren / Frontend & Fullstack Engineer",
     "work": "Work",
     "about": "About",
     "contact": "Contact",
@@ -14,54 +14,88 @@
     "metaBased": "Based in",
     "metaBasedV": "Tel Aviv, Israel · UTC+3",
     "metaYears": "Experience",
-    "metaYearsV": "5+ years · frontend to backend",
+    "metaYearsV": "5+ years building SaaS products in production",
     "metaStatus": "Availability",
-    "metaStatusV": "● Open to new opportunities · 2026",
-    "l1": ["Full-Stack"],
-    "l2": ["engineer ", { "em": "building" }],
-    "l3": [{ "stroke": "products" }, " users"],
-    "l4": ["actually ", { "em": "love" }, "."],
-    "tag": "I build full-stack products end-to-end — React and TypeScript on the front, Node and PostgreSQL on the back — with a sharp focus on interaction details and things that feel right in daily use.",
+    "metaStatusV": "● Open to new opportunities",
+    "l1": [
+      "Frontend & ",
+      {
+        "em": "Fullstack"
+      }
+    ],
+    "l2": [
+      "Engineer"
+    ],
+    "l3": [
+      "who spots problems, makes "
+    ],
+    "l4": [
+      "decisions, and ",
+      {
+        "em": "ships"
+      },
+      "."
+    ],
+    "stackLine": "React • Next.js • TypeScript • Node.js • Product Thinking",
+    "stackChips": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind",
+      "Redis · BullMQ",
+      "Socket.io"
+    ],
+    "tag": "I build products end-to-end, from discovery to production — owning the React/Next.js front end and the Node backend, and the product decisions in between.",
     "cta1": "See the work",
-    "cta2": "Say hello",
+    "cta2": "Get in touch",
+    "ctaResume": "Download résumé",
+    "ctaResumeHref": "/cv.pdf",
     "ctaArrow": "→",
     "ctaEmail": "mailto:pini5192@gmail.com",
     "scroll": "Scroll",
-    "portraitBadge": "P.S  Tel Aviv",
+    "portraitBadge": "Pini · Tel Aviv",
     "portraitAlt": "Pini Shteren"
   },
+  "floatcta": {
+    "aria": "Quick actions",
+    "resume": "Résumé",
+    "contact": "Contact"
+  },
   "about": {
-    "num": "05 / About",
+    "num": "About",
     "title": [
+      "I don't start from technology. ",
       {
-        "em": "Hello."
+        "em": "I start from a problem"
       },
-      " The short version."
+      "."
     ],
     "p1": [
-      "I'm ",
+      "Before I ask \"what should I build this with,\" I ask \"what's the real problem, and what actually needs to be built to solve it.\" ",
       {
-        "em": "Pini"
+        "em": "That's"
       },
-      " — a fullstack engineer with five years of shipping production software. I build across the entire stack: React and TypeScript on the frontend, Node, Express, and PostgreSQL on the backend. I care deeply about the details users feel — interaction timing, motion, empty states, and the small UX decisions that make a product feel alive."
+      " where the value is - in the decisions, not in the layer I write code in. Once that's clear, I can build it end-to-end on my own (React, TypeScript, Node, PostgreSQL), down to the details users feel: timing, motion, empty states, and the choices that make a product feel natural."
     ],
-    "p2": "I own features end-to-end — from DB schema and API design through to polished UI — coordinating with design, backend, and QA along the way. Lately I've leaned heavily into AI-assisted workflows for refactors, tests, and faster debugging loops.",
+    "p2": "When I take a feature, I take it all the way - I'm accountable for getting it shipped, working, and actually solving what it's meant to. That means leading the decisions, closing the gaps with Design, Backend, and QA, and not stopping at the line of \"I wrote my part of the code.\"",
     "f1k": "Currently",
     "f1v": [
       {
         "em": "Cinten"
       }
     ],
-    "f1s": "B2B SaaS · since 2021 (was BeST)",
-    "f2k": "Stack of choice",
+    "f1s": "B2B SaaS · since 2021",
+    "f2k": "How I work",
     "f2v": [
-      "React",
+      "Problem → ",
       {
-        "em": "·"
+        "em": "Decision"
       },
-      "TS"
+      " → Outcome"
     ],
-    "f2s": "Node · PostgreSQL · Tailwind · shadcn",
+    "f2s": "A consistent pattern, not a stack",
     "f3k": "Shipping since",
     "f3v": [
       "202",
@@ -70,18 +104,18 @@
       }
     ],
     "f3s": "Production features, daily",
-    "f4k": "Loves",
-    "f4v": "Micro-UX",
-    "f4s": "Empty states. Hover. Motion."
+    "f4k": "Strength",
+    "f4v": "Product Thinking",
+    "f4s": "User needs · decisions · ownership"
   },
   "skills": {
-    "num": "04 / Stack",
+    "num": "Tech Stack",
     "title": [
       "The ",
       {
         "em": "tools"
       },
-      ", ordered by hours spent."
+      " I use every day."
     ],
     "rows": [
       {
@@ -122,12 +156,15 @@
           },
           {
             "text": "Context API"
+          },
+          {
+            "text": "React Query"
           }
         ],
-        "count": "03"
+        "count": "04"
       },
       {
-        "cat": "UI & Styling",
+        "cat": "UI & Design",
         "items": [
           {
             "text": "Tailwind",
@@ -141,13 +178,10 @@
             "hl": true
           },
           {
-            "text": "Ant Design"
-          },
-          {
-            "text": "i18n"
+            "text": "i18n & RTL"
           }
         ],
-        "count": "05"
+        "count": "04"
       },
       {
         "cat": "Backend & APIs",
@@ -188,7 +222,7 @@
             "text": "Git"
           },
           {
-            "text": "AI-assisted dev tools"
+            "text": "AI dev tools"
           }
         ],
         "count": "05"
@@ -196,25 +230,25 @@
     ]
   },
   "proj": {
-    "num": "01 / Selected work",
+    "num": "Selected Work",
     "head": [
-      "One ",
+      "Featured ",
       {
-        "em": "thing"
+        "em": "Project"
       },
-      " at a time."
+      "."
     ],
-    "brandline": "Financial Commitment System · Full-Stack · 2025",
+    "brandline": "Cash Plus · Case Study",
     "name": [
       "Cash ",
       {
         "em": "Plus"
       }
     ],
-    "pitch": "A full-stack financial commitment platform for tracking recurring obligations, variable bills, loans, rent, and one-time payments  with reminders, forecasts, and a timeline that shows what is coming next.",
+    "pitch": "I was tired of financial apps that tell you what already happened. I wanted to understand what's about to happen.\n\nCash Plus started from a personal problem, not a technical idea: to give users a clear picture of their upcoming financial commitments - before the charge hits, not after.\n\nAlong the way it became clear the problem was bigger than subscriptions. Users don't really want to \"manage subscriptions\" - they want to see all their future commitments in one place. That's what shifted the product from Subscription Tracking to Commitment Management. It's currently in active beta, running on real data.",
     "ui": {
       "greet": "Hey, Pini ↗",
-      "balL": "Monthly subscriptions",
+      "balL": "Recurring charges",
       "balV": [
         "$",
         {
@@ -223,7 +257,7 @@
         ".50"
       ],
       "balD": "↓ $32 saved this month",
-      "upcoming": "Upcoming this week",
+      "upcoming": "Upcoming charges",
       "sub1": "Renews · Mon",
       "sub2": "Renews · Wed",
       "sub3": "Renews · Thu",
@@ -257,69 +291,95 @@
     },
     "metrics": [
       {
-        "k": "Shared validation architecture",
+        "k": "The problem",
         "v": [
+          "Data you can ",
           {
-            "em": "Zod"
+            "em": "trust"
           }
         ],
-        "d": "Shared Zod schemas across client and server in a pnpm monorepo, keeping the data contract consistent from the database to the UI."
+        "d": "When data flows between server and client, one small mismatch in the contract breaks the whole experience. I decided the model would be defined once and shared across the system, from the DB to the UI - so a mismatch simply can't happen."
       },
       {
-        "k": "Authentication architecture",
+        "k": "The decision",
         "v": [
+          "Sign-in without ",
           {
-            "em": "JWT"
-          },
-          " ×2"
-        ],
-        "d": "JWT-based auth with rotating refresh sessions, protected routes, and production-oriented session handling."
-      },
-      {
-        "k": "Engines & background processing",
-        "v": [
-          {
-            "em": "Realtime"
+            "em": "friction"
           }
         ],
-        "d": "Socket.io powers realtime updates, while BullMQ and Redis handle scheduled reminders, recurring billing jobs, and asynchronous processing."
+        "d": "A user who gets logged out mid-session is a user who leaves. I built a sign-in flow that stays stable and secure over time, without asking the user to log in again and again."
+      },
+      {
+        "k": "The outcome",
+        "v": [
+          "Always ",
+          {
+            "em": "up to date"
+          }
+        ],
+        "d": "Users need to see their real state right now, not a minute ago. Reminders, updates, and heavy processing run in the background and in real time, so the screen always reflects reality."
       }
     ],
     "pillars": [
       {
         "ix": "P · 01",
         "t": [
-          "Built for RTL ",
+          "From a personal problem ",
           {
-            "em": "from day one"
+            "em": "to a product"
           },
           "."
         ],
-        "d": "RTL/LTR support is built into the system architecture, with native Hebrew, Arabic, and English across layouts, typography, and interactions."
+        "d": "The product didn't start from technology - it started from real frustration. The first decision was to change the question: from \"how do you track subscriptions\" to \"how do you see all your future commitments.\""
       },
       {
         "ix": "P · 02",
         "t": [
-          "Financial visibility ",
+          "Detecting commitments from ",
           {
-            "em": "before"
+            "em": "unstructured data"
           },
-          " charges hit."
+          "."
         ],
-        "d": "The timeline is built around upcoming charges, reminders, and recurring cash flow, so users see what is leaving the account before it does."
+        "d": "The real challenge wasn't the UI - it was extracting commitments out of emails. I built a three-layer system - Gmail Query, Regex extraction, and AI classification - that turns free text into a usable data point. It's a decision-making system, not a list of technologies."
       },
       {
         "ix": "P · 03",
         "t": [
-          "Built for long-term ",
+          "In a money app, ",
           {
-            "em": "maintainability"
+            "em": "one error breaks trust"
           },
           "."
         ],
-        "d": "Structured logging, typed errors, token rotation, background workers, and shared domain models keep the product coherent as it grows."
+        "d": "When it's people's money, a single wrong number and the user is gone. So I built the system to protect itself: one shared data contract that prevents mismatches, a sign-in that stays stable over time, and heavy processing that runs in the background - so the product stays trustworthy as it grows."
       }
     ],
+    "pillarAnnot": "built from commit #1",
+    "production": {
+      "lbl": "Production Evidence",
+      "title": "A live product, not a demo.",
+      "items": [
+        {
+          "v": "20",
+          "k": "beta users"
+        },
+        {
+          "v": "13",
+          "k": "Gmail accounts connected"
+        },
+        {
+          "v": "62",
+          "k": "commitments detected"
+        },
+        {
+          "v": "15",
+          "k": "active Push devices"
+        }
+      ],
+      "proof": "Not \"I know Next.js\" - but: I know how to spot a problem, build a solution around it, and learn from reality."
+    },
     "techlbl": "Core stack",
     "techChips": [
       {
@@ -365,12 +425,66 @@
     "liveUrl": "https://cashplus-app.com",
     "liveLabel": "Visit cashplus-app.com"
   },
-  "testimonials": {
-    "num": "03 / Testimonials",
-    "title": ["What ", { "em": "others" }, " say."],
+  "projects": {
+    "num": "Selected Projects",
+    "title": [
+      "More things I've ",
+      {
+        "em": "built"
+      },
+      "."
+    ],
     "items": [
       {
-        "quote": "Pini is the kind of frontend engineer that's hard to find—he doesn't just write code, he understands the product. At Cinten, he took full ownership of complex features from end to end. His ability to combine robust architecture under the hood with a meticulously crafted UX is rare. You can trust him implicitly to take a task and ship it to production flawlessly. A true asset to any R&D team.",
+        "name": "Cinten Platform",
+        "summary": "Real-time B2B SaaS platform — WebSocket architecture, in-app chat, and list virtualization for large datasets.",
+        "tech": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Socket.io"
+        ],
+        "linkLabel": "",
+        "linkHref": ""
+      },
+      {
+        "name": "i18n Inspector",
+        "summary": "Developer tool for inspecting and managing i18n translation files — catches missing keys, unused strings and structural drift across locales.",
+        "tech": [
+          "TypeScript",
+          "Node.js",
+          "i18n",
+          "CLI"
+        ],
+        "linkLabel": "Source ↗",
+        "linkHref": "https://github.com/PiniShterenNew/i18n-inspector"
+      },
+      {
+        "name": "This Portfolio",
+        "summary": "Editorial, bilingual (EN/HE + full RTL) portfolio with GSAP scroll animations and a hand-built design system.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "GSAP",
+          "i18n · RTL"
+        ],
+        "linkLabel": "Source ↗",
+        "linkHref": "https://github.com/PiniShterenNew/pini-portfolio"
+      }
+    ]
+  },
+  "testimonials": {
+    "num": "Testimonials",
+    "title": [
+      "What ",
+      {
+        "em": "others"
+      },
+      " say."
+    ],
+    "items": [
+      {
+        "quote": "Pini consistently took ownership of complex features from planning through production.\n\nHe combines product thinking with strong execution and communicates effectively across Product, Design, and Engineering teams.\n\nHe is dependable, proactive, and capable of moving important work forward with minimal oversight.",
         "author": "Nir Cohen",
         "role": "CTO",
         "company": "Cinten"
@@ -378,31 +492,80 @@
     ]
   },
   "exp": {
-    "num": "02 / Track record",
+    "num": "Experience",
     "title": [
-      "What I've ",
+      "Professional ",
       {
-        "em": "shipped"
+        "em": "Experience"
       },
       "."
     ],
     "now": "● Now",
-    "range": "2021  Present",
+    "range": "2021 - Present",
     "role": [
       {
-        "em": "Full-Stack Engineer"
+        "em": "Leading features end-to-end"
       },
       " · Cinten"
     ],
     "sub": " (formerly BeST)",
     "meta": "Tel Aviv · B2B SaaS platform · React / TypeScript / Node",
-    "bullets": [
-      "Built and owned product features end-to-end — from API and DB layer through React UI — across a complex production codebase.",
-      "Designed and implemented RESTful APIs with Node and Express, integrated real-time data streams, and shipped responsive frontend components.",
-      "Built authentication flows end-to-end: JWT with refresh rotation, protected routes, and role-based access control.",
-      "Improved rendering performance, UI responsiveness, and long-term code maintainability across the product.",
-      "Expanded test coverage with Vitest and Playwright, and leveraged AI-assisted tools to accelerate implementation, refactoring, and debugging."
-    ]
+    "evLabels": {
+      "problem": "Problem",
+      "decision": "Decision",
+      "outcome": "Outcome"
+    },
+    "evidence": [
+      {
+        "ix": "01",
+        "title": "From laggy updates to real time",
+        "problem": "Features that needed continuous updates ran on polling - repeated round-trips to the server, with a delay users felt.",
+        "decision": "I proposed moving to a WebSocket architecture and was involved on both the client and the server.",
+        "outcome": "A genuine real-time experience instead of repeated polling.",
+        "tag": "Initiative · architectural decision"
+      },
+      {
+        "ix": "02",
+        "title": "A new channel, born from a real need",
+        "problem": "Users were missing a group communication channel inside the product workflow.",
+        "decision": "I led a chat system end-to-end, including real-time behavior.",
+        "outcome": "A meaningful feature that went into daily use inside the existing product.",
+        "tag": "Spotting a need · end-to-end build"
+      },
+      {
+        "ix": "03",
+        "title": "An interface you don't have to learn",
+        "problem": "A brand-new interface creates a learning curve and confuses users.",
+        "decision": "Instead of inventing a new UX, I adopted familiar patterns from messaging apps everyone already knows.",
+        "outcome": "Users understood the interface intuitively, almost without explanation.",
+        "tag": "Product thinking"
+      },
+      {
+        "ix": "04",
+        "title": "Keeping large data usable",
+        "problem": "Screens with long lists got heavy and hurt the smoothness of the experience.",
+        "decision": "I implemented virtualization that renders only what's actually on screen.",
+        "outcome": "Smooth scrolling even on lists with very large amounts of data.",
+        "tag": "Performance as UX"
+      },
+      {
+        "ix": "05",
+        "title": "Cutting the wait on heavy screens",
+        "problem": "Screens loaded requests one after another for no reason - and the user waited for nothing.",
+        "decision": "I found where loading could happen in parallel and ran the requests together.",
+        "outcome": "Shorter load times and a noticeably faster-feeling product.",
+        "tag": "Optimization"
+      },
+      {
+        "ix": "06",
+        "title": "Making sure users always know what changed",
+        "problem": "Users didn't see updated content after images changed, and didn't know what changed between versions.",
+        "decision": "A mechanism that forces stale content to refresh, and a clear way to communicate every version change.",
+        "outcome": "Users see up-to-date content and know what's new.",
+        "tag": "Ownership beyond the code"
+      }
+    ],
+    "pattern": "One pattern repeats across all of these: you don't start from technology - you start from a problem."
   },
   "edu": {
     "num": "06 / Education",
@@ -430,88 +593,95 @@
     "c2m": "Top of cohort · Capstone project shipped to production"
   },
   "play": {
-    "num": "07 / Misc",
+    "num": "07 / Specializations",
     "title": [
-      "Things on the ",
+      "Areas of ",
       {
-        "em": "side"
+        "em": "expertise"
       },
       "."
     ],
     "cards": [
       {
-        "l": "Languages",
+        "l": "i18n & RTL",
         "t": [
-          "Hebrew ",
+          "Full ",
           {
-            "em": "·"
+            "em": "RTL & LTR"
           },
-          " English · Arabic"
+          " support"
         ],
-        "d": "Native Hebrew, professional English, and Arabic support built into the product from day one.",
-        "s": "Bilingual UI work"
+        "d": "Experience building interfaces for Hebrew and English from the design stage, with full adaptation to layouts, typography, and interactions.",
+        "s": "Bilingual UI"
       },
       {
-        "l": "Practice",
+        "l": "Product UX",
         "t": [
+          "Product-focused ",
           {
-            "em": "Motion"
-          },
-          " & micro-UX"
+            "em": "user experience"
+          }
         ],
-        "d": "An ongoing study of the small choices  easings, hover states, loading rhythms  that make products feel alive instead of correct.",
-        "s": "Always shipping"
+        "d": "Focus on usability, clarity, and workflow design to build interfaces that are intuitive and easy to use.",
+        "s": "Product thinking"
       },
       {
         "l": "Workflow",
         "t": [
-          "AI-assisted ",
+          "Modern Development ",
           {
-            "em": "dev"
+            "em": "Workflow"
           }
         ],
-        "d": "Daily use of AI-assisted development tools for refactoring, testing, debugging, and navigating large codebases more efficiently.",
-        "s": "Daily"
+        "d": "AI tools, test writing, and refactoring as part of the daily development process - to improve speed and quality.",
+        "s": "Daily work"
       }
     ]
   },
   "contact": {
-    "pre": "08 / Let's talk · Available Q1 2026",
-    "l1": "A better product,",
+    "pre": "Let's talk · Open to opportunities",
+    "l1": "Open to opportunities",
     "l2": [
-      "for a ",
+      "as a Frontend or Fullstack Engineer on teams ",
       {
-        "em": "real"
+        "em": "that value ownership and product thinking"
       },
-      " product."
+      "."
     ],
+    "resumeLabel": "Download résumé (PDF)",
+    "resumeHref": "/cv.pdf",
     "email": "pini5192@gmail.com",
     "channels": [
       {
-        "label": "✶ Email",
-        "href": "mailto:pini5192@gmail.com"
+        "label": "Email",
+        "href": "mailto:pini5192@gmail.com",
+        "icon": "email"
       },
       {
-        "label": "✶ +972 54 834 5192",
-        "href": "tel:+972548345192"
+        "label": "+972 54 834 5192",
+        "href": "tel:+972548345192",
+        "icon": "phone"
       },
       {
-        "label": "✶ LinkedIn",
-        "href": "https://linkedin.com/in/pini-shteren"
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/pini-shteren",
+        "icon": "linkedin"
       },
       {
-        "label": "✶ GitHub",
-        "href": "https://github.com/PiniShterenNew"
+        "label": "GitHub",
+        "href": "https://github.com/PiniShterenNew",
+        "icon": "github"
       },
       {
-        "label": "↑ Back to top",
-        "href": "#top"
+        "label": "Back to top",
+        "href": "#top",
+        "icon": "arrowup"
       }
     ]
   },
   "footer": {
     "left": "© 2026 Pini Shteren",
-    "center": "Designed and built from scratch.",
+    "center": "Spotting problems, making decisions, and owning them from idea to production.",
     "right": "v1.0 · IL",
     "logoAlt": "Pini Shteren"
   },
@@ -558,23 +728,21 @@
   },
   "ticker": {
     "items": [
+      "PROBLEM → DECISION → OUTCOME",
+      "PRODUCT-MINDED ENGINEER",
+      "OWNERSHIP",
       "REACT",
       "TYPESCRIPT",
-      "PRODUCT UI",
-      "MICRO-INTERACTIONS",
-      "SHIPPING DAILY",
-      "B2B SAAS",
-      "FULL-STACK ENGINEER",
-      "ISRAEL",
-      "AVAILABLE 2026",
+      "SAAS",
+      "PRODUCTION SYSTEMS",
       "★"
     ]
   },
   "meta": {
-    "title": "Pini Shteren — Full-Stack Engineer",
-    "description": "Full-stack engineer building React, TypeScript and Node products end-to-end. 5+ years shipping to production.",
-    "ogTitle": "Pini Shteren — Full-Stack Engineer",
-    "ogDescription": "React · TypeScript · Node · PostgreSQL",
+    "title": "Pini Shteren - Frontend & Fullstack Engineer",
+    "description": "Frontend & Fullstack Engineer specializing in React, Next.js, TypeScript and Node.js. Product-minded, ships features end-to-end. 5+ years building SaaS products in production.",
+    "ogTitle": "Pini Shteren - Frontend & Fullstack Engineer",
+    "ogDescription": "React · Next.js · TypeScript · Node.js · PostgreSQL",
     "ogImageAlt": "Pini Shteren"
   },
   "workPages": {

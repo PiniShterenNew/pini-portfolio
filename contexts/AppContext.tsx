@@ -18,12 +18,12 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("he");
+  const [lang, setLangState] = useState<Lang>("en");
   const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
     try {
-      const saved = (localStorage.getItem("pini.lang") as Lang) || "he";
+      const saved = (localStorage.getItem("pini.lang") as Lang) || "en";
       setLangState(saved);
     } catch {}
   }, []);
